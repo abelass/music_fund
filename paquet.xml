@@ -1,0 +1,22 @@
+<paquet
+	prefix="music_fund"
+	categorie="squelette"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[3.1.0;3.1.*]"
+	logo=""
+	documentation=""
+>
+	<!--
+		Paquet genere le 2016-02-11 16:19:13
+	-->
+
+	<nom>Music Fund</nom>
+
+	<auteur>Rainer</auteur>
+
+	<licence>GNU/GPL</licence>
+
+
+
+</paquet>
