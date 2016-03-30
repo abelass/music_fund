@@ -1,0 +1,40 @@
+<header id="header" class="full-header static-sticky">
+			<div id="header-wrap">
+				<div class="container clearfix">
+					<div id="primary-menu-trigger"><i class="icon-reorder"></i></div>
+					<!-- Logo -->
+					<div id="logo">
+	
+	                  <a  href="#URL_SITE_SPIP/" title="<:accueil_site:>" class="standard-logo" alt="musicfund">[(#LOGO_SITE_SPIP)]</a>
+	
+                    </div>
+
+<nav id="primary-menu">
+	<ul>
+	[(#ENV{home,'non'}|=={oui}|?{
+		<li class="current"><a href=""><div>Home</div></a></li>
+		,
+		<li ><a href="/spip"><div>Home</div></a></li>
+		})]
+		<li><a href="spip.php?rubrique4"><div>News</div></a></li>
+		<li><a href="spip.php?page=donate"><div>Donate</div></a></li>
+		<li><a href="spip.php?page=contact"><div>Contact</div></a>
+            <ul>
+				<li><a href="contact.html"><div>Contact Us</div></a></li>
+				<li><a href="depot.html"><div>Dropoff points</div></a></li>
+				<li><a href="promo.html"><div>Medias</div></a></li>
+			</ul>
+		</li>
+
+	</ul>
+	<div id="top-cart">
+					<a href="https://www.facebook.com/MusicFund" target="_blank" title="Facebook"><i class="icon-facebook"></i></a>
+					<a href="https://twitter.com/musicfund_2005" target="_blank" title="Twitter"><i class="icon-twitter"></i></a>
+					<a href="index.html"><button class="btn btn-primary" type="button">EN</button></a>
+					<a href="index-fr.html"><button class="btn btn-default" type="button">FR</button></a>
+					<a href="index-nl.html"><button class="btn btn-default" type="button">NL</button></a>
+				</div><!-- #top-cart end -->
+			</nav><!-- #primary-menu end -->
+		</div>
+	</div>
+</header><!-- #header end -->
