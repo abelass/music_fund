@@ -1,0 +1,115 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
+<!-- Page Title
+		============================================= data-stellar-background-ratio="0.8"-->
+		<section id="page-title" class="page-title-parallax page-title-dark full-screen clearfix" style="padding: 10% 0; max-height:850px;background-image: url('IMG/hp.jpg'); background-size: cover; background-position: center center;" >
+			<div class="container clearfix pt">
+				<!--<h1 class="pth1" data-caption-animate="fadeInUp" data-caption-delay="200">Music Fund</h1>
+				<span class="ptspan" data-caption-animate="fadeInUp" data-caption-delay="200">Give music a chance</span>-->
+		      <p class="ptp" data-caption-animate="fadeInUp" data-caption-delay="200">
+
+		        <BOUCLE_article(ARTICLES){id_rubrique=3}>
+
+                  #TEXTE
+
+                </BOUCLE_article>
+                </p>
+              <br />
+              <h1 class="ptbot" data-caption-animate="fadeInUp" data-caption-delay="200">
+		          <a href="?page=donate.html">Donate</a>
+		      </h1>
+		    </div>
+		</section><!-- #page-title end -->
+		<section id="content">
+		  <div class="row clearfix">
+				<div class="col-md-1 topbottommargin"></div>
+				<div class="col-md-10 topbottommargin">
+					<div class="news clearfix">
+						<div class="news-image">
+							<img src="IMG/news.jpg" alt="image">
+						</div>
+						<div class="news-desc">
+
+
+		                        <BOUCLE_articles(ARTICLES){id_rubrique=4} {par date}{inverse}{id_rubrique=4}{0,1}>
+		                          <div class="news-title"><h4>#TITRE</h4></div>
+		                          <div class="news-content">
+		                          <p>
+		                          #TEXTE
+		                          <p>
+		                          </div>
+		                        </BOUCLE_articles>
+
+							<a href="#" class="social-icon si-rounded si-small si-light si-facebook">
+								<i class="icon-facebook"></i>
+								<i class="icon-facebook"></i>
+							</a>
+							<a href="#" class="social-icon si-rounded si-small si-light si-twitter">
+								<i class="icon-twitter"></i>
+								<i class="icon-twitter"></i>
+							</a>
+				        </div>
+					</div>
+				</div>
+				<div class="col-md-1 topbottommargin"></div>
+		  </div>
+        </section>
+		<!-- Content -->
+		<section id="content">
+			<div class="content-wrap nopadding">
+				<div class="section parallax full-screen dark nomargin noborder" style="background-image: url('IMG/hp2.jpg');opacity:1;" data-stellar-background-ratio="0.4">
+					<div class="vertical-middle">
+						<div class="container clearfix" style="background-color: #555;opacity:0.8;">
+							<div class="row" >
+								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn">
+									<div class="counter counter-large counter-lined"><span data-from="100" data-to="5000" data-refresh-interval="100" data-speed="2000"></span></div>
+									<h5>Collected instruments</h5>
+								</div>
+
+								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn" data-delay="200">
+									<div class="counter counter-large counter-lined"><span data-from="100" data-to="2500" data-refresh-interval="100" data-speed="2000"></span></div>
+									<h5>Reapaired and given instruments</h5>
+								</div>
+
+								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn" data-delay="400">
+									<div class="counter counter-large counter-lined"><span data-from="1" data-to="16" data-refresh-interval="1" data-speed="500"></span></div>
+									<h5>Partners-projets in 8 countries: Palestine, IsraÃ«l, Mozambique, DR Congo, South Africa, Morocco, HaÃ¯ti and Belgium</h5>
+								</div>
+							</div>
+							<div class="row" >
+								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn" data-delay="600">
+									<div class="counter counter-large counter-lined"><span data-from="1" data-to="10" data-refresh-interval="1" data-speed="500"></span></div>
+									<h5>musical instruments repair technicians trained</h5>
+								</div>
+								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn" data-delay="600">
+									<div class="counter counter-large counter-lined"><span data-from="1" data-to="9" data-refresh-interval="1" data-speed="500"></span></div>
+									<h5>permanent repair workshops created</h5>
+								</div>
+								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn" data-delay="600">
+									<div class="counter counter-large counter-lined"><span data-from="1" data-to="18" data-refresh-interval="1" data-speed="500"></span></div>
+									<h5>permanent collection points in 6 european countries</h5>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- background-image: url('mf/img/hp4.jpg');-->
+				<div class="section parallax  nomargin noborder" style="padding: 150px 0; background-color:#eee; " data-stellar-background-ratio="0.4">
+					<div class="container center clearfix">
+						<div class="emphasis-title">
+							<h2>Get in touch with us</h2>
+							<div class="col-md-12">
+
+								<ul class="list-unstyled">
+									<li><i class="icon-map-marker"></i> Galerie de la Reine, 28, B-1000 Bruxelles, Belgique</li>
+									<li><i class="icon-map-marker"></i> Rue Chantraine, 4, 6900 Marche-en-Famenne, Belgique</li>
+									<!--<li><i class="fa fa-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>-->
+									<li><i class="icon-line-mail"></i> <strong>Email:</strong> <a href="mailto:info@musicfund.eu">info@musicfund.eu</a></li>
+								</ul>
+								<hr>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!-- #content end -->
+</BOUCLE_content>
