@@ -5,6 +5,9 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 		
+	//D
+	'donation_taxe' => 'To make a tax efficient donation, use the information hereafter.<br />Thank you for your support!',
+		
 	// G
 	'get_in_touch' => 'Get in Touch With Us',
 
