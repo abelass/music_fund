@@ -6,7 +6,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 		
 	// G
-	'get_in_touch' => 'N\'hésitez pas à prendre contact',
+	'get_in_touch' => 'Contacteer ons',
 
 	// M
 	'music_fund_titre' => 'Music Fund',
