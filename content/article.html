@@ -1,0 +1,50 @@
+<section id="content">
+ 
+			<div class="content-wrap">
+ 
+				<div class="container clearfix">
+ 
+					<!-- Post Content
+					============================================= -->
+					<div class="postcontent nobottommargin clearfix">
+ 
+						<div class="single-post nobottommargin">
+ 
+							<!-- Single Post
+							============================================= -->
+							<div class="entry clearfix">
+ 
+								<!-- Entry Title
+								============================================= -->
+								<BOUCLE_content(ARTICLES){id_article}>
+								<div class="entry-title">
+									<h2>#TITRE</h2>
+								</div><!-- .entry-title end -->
+ 
+								<!-- Entry Meta
+								============================================= -->
+								<ul class="entry-meta clearfix">
+									<li><i class="icon-calendar3"></i>#DATE</li>
+								</ul><!-- .entry-meta end -->
+ 
+								<!-- Entry Content
+								============================================= -->
+								<div class="entry-content notopmargin">
+ 
+									<!-- Entry Image
+									============================================= -->
+									<div class="entry-image alignleft">
+										<img src="[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]" alt="">
+									</div><!-- .entry-image end -->
+									<p>#TEXTE</p>
+									<!-- Post Single - Content End -->
+								</div>
+								</BOUCLE_content>
+							</div><!-- .entry end -->
+						</div>
+ 
+					</div><!-- .postcontent end -->
+				</div>
+			</div>
+		</section>
+		<!-- #content end -->

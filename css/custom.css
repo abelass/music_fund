@@ -2,6 +2,61 @@
 @media (max-width: 500px){
 	.nomobile {display:none;}
 }
+/* header logo...*/
+@media (max-width: 479px) {
+	#top-cart {
+		margin: 40px 0 40px 15px !important;
+	}
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+.contain{
+  width:100%;
+}
+#top-cart {
+    margin: 30px 0 40px 15px;
+}
+#logo img {
+height: 70px;
+}
+#header, #header-wrap,  #primary-menu:not(.style-2), #primary-menu:not(.style-2) > ul {
+	height: 75px;
+}
+#primary-menu ul ul, #primary-menu ul li .mega-menu-content {
+    top: 73px;
+}
+/*footer*/
+.stretched #footer {
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+}
+#footer .container {
+	width: 99%;
+    margin: auto;
+}
+#footer .col-md-1{
+	padding: 0;
+}
+/*post*/
+.postcontent {
+    width: 100%;
+}
+/*donate*/
+.donatehdr {
+	padding: 0% 0 !important; 
+	background-size: contain; 
+	height:400px;
+	background-position:50% 20% !important;	
+}
+.entry {
+    position: relative;
+    margin: 0 0 0px; 
+    padding: 0 0 0px; 
+    border-bottom: 0px solid #F5F5F5; 
+}
 /* header */
 @media (max-width: 991px){
 	#logo {
@@ -63,20 +118,29 @@
 }
 /* 1st content */
 #page-title .pt {
-	background-color: rgba(0, 0, 0, 0.3);
-    width: 100%;
+	/*background-color: rgba(0, 0, 0, 0.3);*/
+    background: -moz-linear-gradient(top, rgba(50,50,50,0.7) 0%, rgba(50,50,50,0.7) 70%, rgba(0,0,0,0) 70%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(50,50,50,0.7) 0%,rgba(50,50,50,0.7) 70%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(50,50,50,0.7) 0%,rgba(50,50,50,0.7) 70%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+	width: 100%;
     padding-left: 10%;	
-	margin-top: 20%;
-	padding-top: 5px;
+	margin-top: 0%;
+	padding-top: 2%;
 	padding-bottom: 5px;
+	
 }
 #page-title.page-title-parallax .ptbot {
 	font-size: 40px ;
 	font-weight: bolder;
 	text-align: center;
+	margin-top: 500px;
 }
 #page-title.page-title-parallax .ptbot a {
-	color: #eee ;
+	color: #fff;
+    border-radius: 5px;
+	padding: 5px;
+	background-color: rgba(50,50,50,0.7);
 }
 #page-title.page-title-parallax .ptbot a:hover {
 	border-radius: 5px;
@@ -89,18 +153,18 @@
     /*text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);*/
 }
 #page-title.page-title-parallax .ptspan {
-    color: #EEE;
+    color: #fff;
     font-size: 40px;
 	font-weight: bolder;
     /*text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);*/
 	max-width: 800px;
 }
 #page-title.page-title-parallax .ptp {
-    color: #EEE;
+    color: #fff;
     font-size: 30px;
 	font-weight: bolder;
     /*text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);*/
-	max-width: 1200px;
+	max-width: 95%;
 }
 /* Foint awesome */
 .fa {
@@ -108,8 +172,8 @@
 }
 /* News */
 .topbottommargin {
-	margin-bottom: 50px ;
-	margin-top: 50px ;
+	margin-bottom: 20px ;
+	margin-top: 20px ;
 	font-size: 200%;
 }
 .news-title h4 {
@@ -128,7 +192,7 @@
 
 .news-image {
 	float: left;
-    width: 600px;
+    width: 100%;
     margin-right: 30px;
 }
 .news-content {
@@ -255,4 +319,23 @@ ul.donate-list .donate-item {
 }
 .footerlarge {
 	min-height: 100px;
+}
+.ptbot{
+	margin-bottom: 2% !important;
+}
+.taille{
+	width :25px;
+}
+#header {
+top: 0;
+left: 0;
+position: fixed;
+width: 100%;
+z-index: 100;
+}
+.test{
+  width: 100px !important;
+}
+.ecart{
+	padding-top: 5%;
 }

@@ -1,23 +1,20 @@
 <body class="stretched">
 	<div class="page[ (#ENV{home}|oui)home]">
-		<div class="container">
-			<div class="header" id="header">
+		<div class="contain">
+			
 				<INCLURE{fond=header/#ENV{type-page},env} />
-			</div>
-			<div class="row">
+			
+			<div >
 				<div class="content span8 " id="content">
 					<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 					<INCLURE{fond=content/#ENV{type-page},env} />
 				</div>
-				<div class="aside secondary col span3 offset1" id="aside">
-					<INCLURE{fond=aside/#ENV{type-page},env} />
-					<INCLURE{fond=extra/#ENV{type-page},env} />
-				</div>
+				
 			</div>
 
-			<div class="footer" id="footer">
+			
 				<INCLURE{fond=footer/#ENV{type-page},env} />
-			</div>
+			
 		</div>
 	</div>
 </body>

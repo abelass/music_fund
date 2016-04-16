@@ -1,58 +1,100 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
 <!-- Page Title
 		============================================= data-stellar-background-ratio="0.8"-->
-		<section id="page-title" class="page-title-parallax page-title-dark full-screen clearfix" style="padding: 10% 0; max-height:850px;background-image: url('IMG/hp.jpg'); background-size: cover; background-position: center center;" >
-			<div class="container clearfix pt">
-				<!--<h1 class="pth1" data-caption-animate="fadeInUp" data-caption-delay="200">Music Fund</h1>
-				<span class="ptspan" data-caption-animate="fadeInUp" data-caption-delay="200">Give music a chance</span>-->
-		      <p class="ptp" data-caption-animate="fadeInUp" data-caption-delay="200">
-
-		        <BOUCLE_article(ARTICLES){id_rubrique=3}>
-
-                  #TEXTE
-
-                </BOUCLE_article>
-                </p>
-              <br />
-              <h1 class="ptbot" data-caption-animate="fadeInUp" data-caption-delay="200">
-		          <a href="?page=donate.html">Donate</a>
-		      </h1>
-		    </div>
+<section id="page-title" class="page-title-parallax page-title-dark full-screen clearfix" style="padding: 0 0; max-height:600px;background-image: url('IMG/hp.jpg'); background-size: cover; background-position: center center;" >
+			<div class="container clearfix ">
+				<h1 class="ptbot" data-caption-animate="fadeInUp" data-caption-delay="200"><a href="donation.html">Donate</a></h1>
+			</div>
 		</section><!-- #page-title end -->
 		<section id="content">
-		  <div class="row clearfix">
+			<div class="row clearfix">
 				<div class="col-md-1 topbottommargin"></div>
 				<div class="col-md-10 topbottommargin">
+					
+
+		                <BOUCLE_article(ARTICLES){id_rubrique}>
+                           <h3>
+                             #TEXTE
+                             
+                           </h3>
+                        </BOUCLE_article>
+                    
+                </div>
+				<div class="col-md-1 topbottommargin"></div>
+			</div>
+		</section>
+
+<section id="content">
+			<div class="row clearfix">
+				<div class="col-md-1 topbottommargin"></div>
+				
+					<BOUCLE_image1(ARTICLES) {id_rubrique IN 4, 11, 16 } {lang=#LANG} {par date}{inverse}{0,1}>
+                      <div class="col-md-2 topbottommargin">
+					   <div class="news-image">
+
+					   	  <img src="[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]">
+
+                       </div>
+                      </div>
+                      <div class="col-md-8 topbottommargin">
+					    <div class="news clearfix">
+						
+							<div class="news-desc">
+								
+								<div class="news-content">
+					               <a href="#URL_ARTICLE">
+		                              <div class="news-title"><h4>#TITRE</h4></div>
+		                             </a>
+		                              <div class="news-content">
+                                          <blockquote>
+                                          	<p>
+		                                       
+		                                       #TEXTE
+		                              
+		                                   </p>
+                                         </blockquote>
+		                              </div>
+		                        </div>
+		                    </div>
+		                </div>
+		              </div>
+					</BOUCLE_image1>
+			   <div class="col-md-1 topbottommargin"></div>
+			</div>
+		    <div class="row clearfix">
+			    <div class="col-md-1 topbottommargin"></div>
+			    <div class="col-md-8 topbottommargin">
 					<div class="news clearfix">
-						<div class="news-image">
-							<img src="IMG/news.jpg" alt="image">
-						</div>
-						<div class="news-desc">
-
-
-		                        <BOUCLE_articles(ARTICLES){id_rubrique=4} {par date}{inverse}{id_rubrique=4}{0,1}>
-		                          <div class="news-title"><h4>#TITRE</h4></div>
-		                          <div class="news-content">
-		                          <p>
-		                          #TEXTE
-		                          <p>
-		                          </div>
-		                        </BOUCLE_articles>
-
-							<a href="#" class="social-icon si-rounded si-small si-light si-facebook">
-								<i class="icon-facebook"></i>
-								<i class="icon-facebook"></i>
-							</a>
-							<a href="#" class="social-icon si-rounded si-small si-light si-twitter">
-								<i class="icon-twitter"></i>
-								<i class="icon-twitter"></i>
-							</a>
-				        </div>
+						
+							<div class="news-desc">
+								
+								<div class="news-content">
+									 <BOUCLE_articles2(ARTICLES) {id_rubrique IN 4, 11, 16 } {lang=#LANG} {par date}{inverse}{1,1}>
+		                             <a href="#URL_ARTICLE">
+		                              <div class="news-title"><h4>#TITRE</h4></div>
+		                             </a>
+		                              <div class="news-content">
+                                          <blockquote>
+                                          	<p>
+		                                       
+		                                       #TEXTE
+		                              
+		                                   </p>
+                                         </blockquote>
+		                              </div>
+		                        </div>
+		                    </div>
+		            </div>
+		        </div>
+		        <div class="col-md-2 topbottommargin">
+					<div class="news-image">
+						<img src="[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]">
 					</div>
 				</div>
+				</BOUCLE_articles2>
 				<div class="col-md-1 topbottommargin"></div>
-		  </div>
-        </section>
+		</div>
+	</section>
 		<!-- Content -->
 		<section id="content">
 			<div class="content-wrap nopadding">

@@ -1,63 +1,55 @@
 
-<footer id="footer" class="">
+<footer id="footer">
 			<div class="container">
 
 				<div class="container footerlarge">
 					<div class="footer-copyright">
 						<div class="row">
-							<h3>Sous le Haut Patronage de Sa Majesté la Reine</h3>
+							<h3>Under the High Patronage of Her Majesty the Queen Mathilde</h3>
 						</div>
 						<div class="row">
-							<div class="col-md-2">
-								<a href="index.html" class="logo">
-									<img alt="Music Fund" class="img-responsive" src="IMG/siteon0.png">
-								</a>
-							</div>
+							
 					
 							<div class="col-md-1">
 								<a href="http://www.flanders.be/en" class="logo">
-									<img alt="Vlaanderen" class="img-responsive" src="IMG/logo-vl.png">
+									<img alt="Vlaanderen" class="img-responsive test" src="IMG/logo-vl.png">
 								</a>
 							</div>
 							<div class="col-md-1">
 								<a href="http://www.federation-wallonie-bruxelles.be/" class="logo">
-									<img alt="FWB" class="img-responsive" src="IMG/logo-fwb.png">
+									<img alt="FWB" class="img-responsive test" src="IMG/logo-fwb.png">
 								</a>
 							</div>
 							<div class="col-md-1">
 								<a href="http://www.marche.be/" class="logo">
-									<img alt="Marche" class="img-responsive" src="IMG/logo-marche.png">
+									<img alt="Marche" class="img-responsive test" src="IMG/logo-marche.png">
 								</a>
 							</div>
 							<div class="col-md-1">
 								<a href="http://www.agoragroup.com/" class="logo">
-									<img alt="Agora" class="img-responsive" src="IMG/logo-agora.png">
+									<img alt="Agora" class="img-responsive test" src="IMG/logo-agora.png">
 								</a>
 							</div>
 							<div class="col-md-1">
 								<a href="http://www.loterie-nationale.be/" class="logo">
-									<img alt="Lotterie" class="img-responsive" src="IMG/logo-lotterie.png">
+									<img alt="Lotterie" class="img-responsive test" src="IMG/logo-lotterie.png">
 								</a>
 							</div>
 							<div class="col-md-1">
 								<a href="http://www.milanomusica.org/en/sezione-attivita/music-fund.html" class="logo">
-									<img alt="Milano Musica" class="img-responsive" src="IMG/logo-milano-musica.png">
+									<img alt="Milano Musica" class="img-responsive test" src="IMG/logo-milano-musica.png">
 								</a>
 							</div>
-							<div class="col-md-2">
+							<div class="col-md-1">
 								<a href="http://www.fondsbailletlatour.com/index.cfm?lang=FRA&pageID=39" class="logo">
-									<img alt="Baillet-latour" class="img-responsive" src="IMG/baillet-latour.png">
+									<img alt="Baillet-latour" class="img-responsive test" src="IMG/baillet-latour.png">
 								</a>
+							</div>							
+							<div class="col-md-5">
 							</div>
-							
-							<div class="col-md-2">
-								<nav id="primary-menu">
-									<ul>
-										<li><a href="https://www.facebook.com/MusicFund" target="_blank" title="Facebook"><i class="icon-facebook"></i></a></li>
-										<li><a href="https://twitter.com/musicfund_2005" target="_blank" title="Twitter"><i class="icon-twitter"></i></a></li>
-									</ul>
-								</nav>
-							</div>
+						</div>
+						<div class="row">
+							<p>&nbsp;</p>
 						</div>
 					</div>
 				</div>
@@ -65,15 +57,4 @@
 			</div>
 
 		</footer><!-- #footer end -->
-		<div class="footer clearfix">
-	<p class="colophon">
-		<BOUCLE_annee(ARTICLES){par date}{0,1}>[(#DATE|annee|!={#VAL{Y}|date}|oui)[(#DATE|annee)]]</BOUCLE_annee> - </B_annee>[(#DATE|annee) ]#NOM_SITE_SPIP
-		<br /><a rel="contents" href="#URL_PAGE{plan}" class="first"><:plan_site:></a>[
-		(#SESSION{id_auteur}|non) | <a href="[(#URL_PAGE{login}|parametre_url{url,#SELF})]" rel="nofollow" class='login_modal'><:lien_connecter:></a>][
-		(#AUTORISER{ecrire})| <a href="#EVAL{_DIR_RESTREINT_ABS}"><:espace_prive:></a>][
-		(#SESSION{id_auteur}|oui) | <a href="#URL_LOGOUT" rel="nofollow"><:icone_deconnecter:></a>] | 
-		<a rel="nofollow" href="#URL_PAGE{contact}"><:contact:></a> |
-		<a href="#URL_PAGE{backend}" rel="alternate" title="<:syndiquer_site:>" class="last">RSS&nbsp;2.0</a>
-	</p>
-	[<small class="generator"><a href="http://www.spip.net/" rel="generator" title="<:site_realise_avec_spip:>" class="generator spip_out">(#CHEMIN{spip.png}|balise_img|inserer_attribut{alt,SPIP})</a></small>]
-</div>
+		
