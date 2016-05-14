@@ -1,11 +1,11 @@
 <section id="content">
 
-			<div role="main" class="main" id="home">
+			<div role="main" class="main ecart" id="home">
 				<section class="parallax">
 					<div class="container">
 						<div class="row center">
 							<div class="col-md-12">
-								<h2 class="short text-shadow big bold" data-appear-animation="fadeInUp"><strong><:music_fund:get_in_touch:></strong></h2>
+								<h2 class="short text-shadow big bold" data-appear-animation="fadeInUp"><strong>#SLOGAN_SITE_SPIP</strong></h2>
 							</div>
 						</div>
 					</div>
@@ -29,8 +29,8 @@
 					</div>
 					</BOUCLE_orga>
 					  <ul class="team team-list clearfix">
-					   <BOUCLE_orga2(CONTACTS spip_mots_liens spip_mots) {titre_mot=Personne} {titre_mot=MFresp} >
-						<li class="col-md-4 col-sm-6 col-xs-12">
+					   <BOUCLE_orga2(CONTACTS spip_mots_liens spip_mots) {titre_mot=Personne} {titre_mot=MFresp}{par ordre} >
+						<li class="col-md-3 col-sm-6 col-xs-12">
 							<div class="team-desc">
 								<div class="team-desc">
 									<div class="team-title"><h4>#PRENOM #NOM</h4><span class="ctact-fonction">#FONCTION</span></div>
@@ -56,7 +56,7 @@
 			<div class="container bgcol">
 				<div class="row">					
 					<ul class="team team-list clearfix list-unstyled">
-					<BOUCLE_orga3(CONTACTS spip_mots_liens spip_mots) {titre_mot=Personne} {titre_mot=MFworld} >
+					<BOUCLE_orga3(CONTACTS spip_mots_liens spip_mots) {titre_mot=Personne} {titre_mot=MFworld}{par ordre} >
 						<li class="col-md-4 col-sm-6 col-xs-12">
 							<h2><strong>#DESCRIPTIF</strong></h2>
 							<div class="team-desc">

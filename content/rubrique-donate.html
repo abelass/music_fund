@@ -1,4 +1,4 @@
-<section id="page-title" class="donatehdr page-title-parallax page-title-dark nomobile clearfix" style="background-image: url('#CHEMIN{images/donate-1245-300-en.jpg}'); " >
+<section id="page-title" class="donatehdr page-title-parallax page-title-dark nomobile clearfix" style="background-image: url('IMG/donate-1245-300-en.jpg'); " >
 			<div class="container clearfix xpt">&nbsp;
 			</div>
 		</section>
@@ -9,7 +9,7 @@
 						<form class="paypal-button" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" >
 							<input type="hidden" name="cmd" value="_s-xclick">
 							<input type="hidden" name="hosted_button_id" value="EGTMMF6L4GQR2">
-							<input type="image" src="#CHEMIN{images/pp-en.png}" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+							<input type="image" src="IMG/pp-en.png" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sÃ©curisÃ©e !">
 							<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
 						</form>
 					</div>
@@ -18,14 +18,16 @@
 				<div class="row center " style="margin-top:0px; padding-top:0px;">
 					<div class="col-md-12" >
 						<p class="featured lead pull-left">
-							<:music_fund:donation_taxe:>
+							<BOUCLE_article1(ARTICLES spip_mots_liens spip_mots){id_rubrique}{titre_mot=Donate}{doublons}>
+							   #TEXTE
+							</BOUCLE_article1>
 						</p>
 					</div>
 				</div>
 			</div>
 			<div class="container bgcol">
 				<div class="row ">
-					<BOUCLE_article(ARTICLES){id_rubrique}>
+					<BOUCLE_article(ARTICLES spip_mots_liens spip_mots){id_rubrique}{doublons}>
 					<ul class="donate-list">
 
 						<li class="col-md-6 col-sm-6 col-xs-12">
@@ -40,13 +42,7 @@
 										</span>
 									</span>
 								</div>
-								<span class="thumb-info-caption">
-									Tax reduction<br />
-									<a href="https://www.kbs-frb.be/en/Flows/Gift/Checkout"  target="_blank">
-											Make a donation online<br />
-											https://www.kbs-frb.be/en/Flows/Gift/Checkout
-									</a>
-								</span>
+								
 							</div>
 							
 						</li>

@@ -1,7 +1,7 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
 <!-- Page Title
 		============================================= data-stellar-background-ratio="0.8"-->
-<section id="page-title" class="page-title-parallax page-title-dark full-screen clearfix" style="padding: 0 0; max-height:600px;background-image: url('#CHEMIN{images/hp.jpg}'); background-size: cover; background-position: center center;" >
+<section id="page-title" class="page-title-parallax page-title-dark full-screen clearfix" style="padding: 0 0; max-height:600px;background-image: url('IMG/hp.jpg'); background-size: cover; background-position: center center;" >
 			<div class="container clearfix ">
 				<h1 class="ptbot" data-caption-animate="fadeInUp" data-caption-delay="200"><a href="donation.html">Donate</a></h1>
 			</div>
@@ -12,12 +12,12 @@
 				<div class="col-md-10 topbottommargin">
 					
 
-		                <BOUCLE_article(ARTICLES){id_rubrique}>
+		                <BOUCLE_article(ARTICLES){id_rubrique}{0,1}>
                            <h3>
                              #TEXTE
                              
                            </h3>
-                    </BOUCLE_article>
+                        </BOUCLE_article>
                     
                 </div>
 				<div class="col-md-1 topbottommargin"></div>
@@ -49,7 +49,7 @@
                                           <blockquote>
                                           	<p>
 		                                       
-		                                       #TEXTE
+		                                       #CHAPO
 		                              
 		                                   </p>
                                          </blockquote>
@@ -69,7 +69,7 @@
 							<div class="news-desc">
 								
 								<div class="news-content">
-									 <BOUCLE_articles2(ARTICLES) {id_trad = 4} {lang=#LANG} {par date}{inverse}{1,1}>
+									 <BOUCLE_articles2(ARTICLES) {id_rubrique IN 4, 11, 16 } {lang=#LANG} {par date}{inverse}{1,1}>
 		                             <a href="#URL_ARTICLE">
 		                              <div class="news-title"><h4>#TITRE</h4></div>
 		                             </a>
@@ -77,7 +77,7 @@
                                           <blockquote>
                                           	<p>
 		                                       
-		                                       #TEXTE
+		                                       #CHAPO
 		                              
 		                                   </p>
                                          </blockquote>
@@ -98,39 +98,15 @@
 		<!-- Content -->
 		<section id="content">
 			<div class="content-wrap nopadding">
-				<div class="section parallax full-screen dark nomargin noborder" style="background-image: url('#CHEMIN{IMG/hp2.jpg}');opacity:1;" data-stellar-background-ratio="0.4">
+				<div class="section parallax full-screen dark nomargin noborder" style="background-image: url('IMG/hp2.jpg');opacity:1;" data-stellar-background-ratio="0.4">
 					<div class="vertical-middle">
 						<div class="container clearfix" style="background-color: #555;opacity:0.8;">
-							<div class="row" >
-								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn">
-									<div class="counter counter-large counter-lined"><span data-from="100" data-to="5000" data-refresh-interval="100" data-speed="2000"></span></div>
-									<h5>Collected instruments</h5>
-								</div>
-
-								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn" data-delay="200">
-									<div class="counter counter-large counter-lined"><span data-from="100" data-to="2500" data-refresh-interval="100" data-speed="2000"></span></div>
-									<h5>Reapaired and given instruments</h5>
-								</div>
-
-								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn" data-delay="400">
-									<div class="counter counter-large counter-lined"><span data-from="1" data-to="16" data-refresh-interval="1" data-speed="500"></span></div>
-									<h5>Partners-projets in 8 countries: Palestine, IsraÃ«l, Mozambique, DR Congo, South Africa, Morocco, HaÃ¯ti and Belgium</h5>
-								</div>
-							</div>
-							<div class="row" >
-								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn" data-delay="600">
-									<div class="counter counter-large counter-lined"><span data-from="1" data-to="10" data-refresh-interval="1" data-speed="500"></span></div>
-									<h5>musical instruments repair technicians trained</h5>
-								</div>
-								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn" data-delay="600">
-									<div class="counter counter-large counter-lined"><span data-from="1" data-to="9" data-refresh-interval="1" data-speed="500"></span></div>
-									<h5>permanent repair workshops created</h5>
-								</div>
-								<div class="col-md-4 bottommargin-sm center" data-animate="bounceIn" data-delay="600">
-									<div class="counter counter-large counter-lined"><span data-from="1" data-to="18" data-refresh-interval="1" data-speed="500"></span></div>
-									<h5>permanent collection points in 6 european countries</h5>
-								</div>
-							</div>
+							 <BOUCLE_article2(ARTICLES){id_rubrique}{1,1}>
+                                 <h3>
+                                   #TEXTE
+                             
+                                 </h3>
+                             </BOUCLE_article2>
 						</div>
 					</div>
 				</div>
@@ -138,16 +114,19 @@
 				<div class="section parallax  nomargin noborder" style="padding: 150px 0; background-color:#eee; " data-stellar-background-ratio="0.4">
 					<div class="container center clearfix">
 						<div class="emphasis-title">
-							<h2>Get in touch with us</h2>
+							<h2>#SLOGAN_SITE_SPIP</h2>
 							<div class="col-md-12">
-
+                               
 								<ul class="list-unstyled">
-									<li><i class="icon-map-marker"></i> Galerie de la Reine, 28, B-1000 Bruxelles, Belgique</li>
-									<li><i class="icon-map-marker"></i> Rue Chantraine, 4, 6900 Marche-en-Famenne, Belgique</li>
-									<!--<li><i class="fa fa-phone"></i> <strong>Phone:</strong> (123) 456-7890</li>-->
-									<li><i class="icon-line-mail"></i> <strong>Email:</strong> <a href="mailto:info@musicfund.eu">info@musicfund.eu</a></li>
+								   <BOUCLE_adresse1(ADRESSES spip_mots_liens spip_mots){titre_mot=MFaccueil}>
+									<li><i class="icon-map-marker"></i> #VOIE #CODE_POSTAL #VILLE, #PAYS</li>
+									</BOUCLE_adresse1>
+									<BOUCLE_email(EMAILS spip_mots_liens spip_mots){titre_mot=MFaccueil}>
+									<li><i class="icon-line-mail"></i> <strong>Email:</strong> <a href="mailto:#EMAIL">#EMAIL</a></li>
+									</BOUCLE_email>
 								</ul>
-								<hr>
+							
+								<hr/>
 							</div>
 						</div>
 					</div>

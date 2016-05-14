@@ -1,24 +1,27 @@
-<BOUCLE_rubrique(RUBRIQUES) {id_rubrique}{tout}>
 <section id="content">
-	<div role="main" class="main ecart" id="home">
-		<section class="parallax">
+			<div role="main" class="main ecart" id="home">
+				<section class="parallax">
 					<div class="container">
 						<div class="row center">
 							<div class="col-md-12">
-								<h2 class="short text-shadow big bold" data-appear-animation="fadeInUp"><strong>#TITRE</strong></h2>
+							 
+								<h2 class="short text-shadow big bold" data-appear-animation="fadeInUp"><strong>Dropoff</strong></h2>
+							 
+							</div>
 						</div>
 					</div>
-		</div>
-	</section>
+				</section>
 			</div>
 			<div class="container bgcol">
 			<BOUCLE_dropoff(MOTS){id_groupe=2}>
-			<div class="row">
+			<div class="test">
+			
 			  <h2><strong>#TITRE</strong></h2>
-			  <BOUCLE_orga(CONTACTS spip_mots_liens spip_mots) {titre_mot=Dropoff} {titre_mot}>
-                 <ul class="depot-list">
-              	    <li class="col-md-3 col-sm-6 col-xs-12">
-							<div class="depot-item">
+			  
+			  <BOUCLE_orga(CONTACTS spip_mots_liens spip_mots) {titre_mot=Dropoff} {titre_mot}{par ordre}>
+                 
+              	    
+							<div class="depot-item col-md-3 col-sm-6 col-xs-12 hei">
 								<div class="depot-1">
 										<span class="depot-title">#PRENOM #NOM</span>
 										<BOUCLE_adresse1(ADRESSES){id_contact}>
@@ -39,10 +42,9 @@
 									</ul>
 								</div>
 							</div>
-						</li>
-                 </ul>
+						
+                 
               </BOUCLE_orga>
+              
             </div>
 			</BOUCLE_dropoff>
-</section>
-</BOUCLE_rubrique>
