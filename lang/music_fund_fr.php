@@ -4,10 +4,15 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
-
+	//C
+	'creer_article' => 'Créer un article...',
 	//D
 	'donation_taxe' => 'Pour faire un don avec déduction fiscale, voir ci-après.<br />Merci pour votre aide!',
+	'donate' => 'Faire un don',
 
+	//F
+	'footer_title' => 'Sous le Haut Patronage de Sa Majesté la Reine Mathilde',
+	
 	// G
 	'get_in_touch' => 'N\'hésitez pas à prendre contact',
 
