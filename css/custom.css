@@ -1,3 +1,4 @@
+
 /* no mobile*/
 @media (max-width: 500px){
 	.nomobile {display:none;}
@@ -11,7 +12,31 @@
 body{
 	margin: 0;
 	padding: 0;
+	font-size: 24px;
+	font-family: 'Roboto', sans-serif;
 }
+blockquote {
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 90%;
+    border-left: 5px solid #eeeeee;
+}
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.5;
+    margin: 0 0 30px 0;
+    font-family: 'Roboto', sans-serif;
+}
+.counter.counter-large + h5, .counter.counter-xlarge + h5 {
+    font-size: 100%;
+}
+@media (min-width: 1800px){
+.container {
+    width: 1600px;
+}
+}
+/*.container {
+    width: 90%;
+}*/
 .contain{
   width:100%;
 }
@@ -48,7 +73,7 @@ height: 70px;
 .donatehdr {
 	padding: 0% 0 !important; 
 	background-size: contain; 
-	height:400px;
+	height:450px;
 	background-position:50% 20% !important;	
 }
 .entry {
@@ -57,6 +82,7 @@ height: 70px;
     padding: 0 0 0px; 
     border-bottom: 0px solid #F5F5F5; 
 }
+
 /* header */
 @media (max-width: 991px){
 	#logo {
@@ -174,7 +200,7 @@ height: 70px;
 .topbottommargin {
 	margin-bottom: 20px ;
 	margin-top: 20px ;
-	font-size: 200%;
+	font-size: 110%;
 }
 .news-title h4 {
     display: block;
@@ -287,7 +313,9 @@ ul.donate-list .donate-item {
 }
 #primary-menu ul li a {
     padding: 0 3px;
-	font-size: 14px;
+	font-size: 100%;
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
 }
 .entry-image img {
     margin: auto;

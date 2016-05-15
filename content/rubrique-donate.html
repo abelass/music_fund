@@ -1,4 +1,5 @@
-<section id="page-title" class="donatehdr page-title-parallax page-title-dark nomobile clearfix" style="background-image: url('IMG/donate-1245-300-en.jpg'); " >
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
+	<section id="page-title" class="donatehdr page-title-parallax page-title-dark nomobile clearfix" style="background-image: url('[(#LOGO_RUBRIQUE|image_reduire{2000}|extraire_attribut{src})]'); padding: 0 0; max-height:600px;background-position: center center;" >
 			<div class="container clearfix xpt">&nbsp;
 			</div>
 		</section>
@@ -15,25 +16,22 @@
 					</div>
  
 				</div>
-				<div class="row center " style="margin-top:0px; padding-top:0px;">
-					<div class="col-md-12" >
-						<p class="featured lead pull-left">
-							<BOUCLE_article1(ARTICLES spip_mots_liens spip_mots){id_rubrique}{titre_mot=Donate}{doublons}>
-							   #TEXTE
-							</BOUCLE_article1>
-						</p>
-					</div>
+				<div class="row clearfix">
+				<div class="col-md-1 topbottommargin"></div>
+				<div class="col-md-10 topbottommargin">
+					#DESCRIPTIF
 				</div>
+				<div class="col-md-1 topbottommargin"></div>
+			</div>
 			</div>
 			<div class="container bgcol">
-				<div class="row ">
-					<BOUCLE_article(ARTICLES spip_mots_liens spip_mots){id_rubrique}{doublons}>
-					<ul class="donate-list">
 
-						<li class="col-md-6 col-sm-6 col-xs-12">
+					<BOUCLE_article(ARTICLES spip_mots_liens spip_mots){id_rubrique}{doublons}>
+					[(#COMPTEUR_BOUCLE|alterner{<div class="clearfix"><ul class="donate-list">, ''})]
+						<li class="col-md-6 col-sm-6 col-xs-12">							
 							
-							<h2><strong>#TITRE</strong></h2>
 							<div class="donate-item thumbnail">
+								<H2><strong>#TITRE</strong></H2>
 								<div class="thumb-info team">
 									
 									<span class="thumb-info-title ctact-title">
@@ -41,15 +39,13 @@
 											#TEXTE
 										</span>
 									</span>
-								</div>
-								
-							</div>
-							
+								</div>							
+							</div>							
 						</li>
-						
-					</ul>
+					[(#COMPTEUR_BOUCLE|alterner{ '', </ul></div>})]	
 					</BOUCLE_article>
-				</div>
+
 			</div>
  
 		</section><!-- #content end -->
+</BOUCLE_content>

@@ -18,13 +18,13 @@
 								============================================= -->
 								<BOUCLE_content(ARTICLES){id_article}{lang=#LANG}>
 								<div class="entry-title">
-									<h2>#TITRE</h2>
+									<h2 class="#EDIT{titre}">#TITRE</h2>
 								</div><!-- .entry-title end -->
  
 								<!-- Entry Meta
 								============================================= -->
 								<ul class="entry-meta clearfix">
-									<li><i class="icon-calendar3"></i>#DATE</li>
+									<li class="#EDIT{date}"><i class="icon-calendar3"></i>#DATE</li>
 								</ul><!-- .entry-meta end -->
  
 								<!-- Entry Content
@@ -33,10 +33,13 @@
  
 									<!-- Entry Image
 									============================================= -->
-									<div class="entry-image alignleft">
+									<div class="entry-image alignleft #EDIT{logo}">
 										<img src="[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]" alt="">
 									</div><!-- .entry-image end -->
-									<p>#TEXTE</p>
+									<blockquote class="#EDIT{chapo}">
+										#CHAPO
+									</blockquote>
+									<div class="#EDIT{texte}">#TEXTE</div>
 									<!-- Post Single - Content End -->
 								</div>
 								</BOUCLE_content>

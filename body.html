@@ -7,7 +7,15 @@
 			<div >
 				<div class="content span8 " id="content">
 					<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
-					<INCLURE{fond=content/#ENV{type-page},env} />
+					0
+					[(#SESSION{id_auteur}|oui)1
+					<a href="[(#SELF|parametre_url{creer,article}|parametre_url{id_rubrique})]" class="ajax" ><:music_fund:creer_article:></a>]
+					[(#ENV{creer}|non)
+						<INCLURE{fond=content/#ENV{type-page},env} />
+					]
+					[(#ENV{creer}|oui)1
+						<INCLURE{fond=inclure/creer_#ENV{creer},env} />
+					]
 				</div>
 				
 			</div>

@@ -1,99 +1,77 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
 <!-- Page Title
 		============================================= data-stellar-background-ratio="0.8"-->
-<section id="page-title" class="page-title-parallax page-title-dark full-screen clearfix" style="padding: 0 0; max-height:600px;background-image: url('IMG/hp.jpg'); background-size: cover; background-position: center center;" >
+<section id="page-title" class="page-title-parallax page-title-dark full-screen clearfix" style="padding: 0 0; max-height:600px;background-image: url('[(#LOGO_RUBRIQUE|image_reduire{2000}|extraire_attribut{src})]'); background-size: cover; background-position: center center;" >
 			<div class="container clearfix ">
-				<h1 class="ptbot" data-caption-animate="fadeInUp" data-caption-delay="200"><a href="donation.html">Donate</a></h1>
+				<h1 class="ptbot" data-caption-animate="fadeInUp" data-caption-delay="200"><a href="donation.html"><:music_fund:donate:></a></h1>
 			</div>
 		</section><!-- #page-title end -->
 		<section id="content">
 			<div class="row clearfix">
 				<div class="col-md-1 topbottommargin"></div>
 				<div class="col-md-10 topbottommargin">
-					
-
-		                <BOUCLE_article(ARTICLES){id_rubrique}{0,1}>
-                           <h3>
-                             #TEXTE
-                             
-                           </h3>
-                        </BOUCLE_article>
-                    
-                </div>
+					#DESCRIPTIF
+				</div>
 				<div class="col-md-1 topbottommargin"></div>
 			</div>
 		</section>
 
-<section id="content">
+	<section id="content">
+		<BOUCLE_image1(ARTICLES) {id_rubrique IN 4, 11, 16 } {lang=#LANG} {par date}{inverse}{0,2}>
 			<div class="row clearfix">
-				<div class="col-md-1 topbottommargin"></div>
-				
-					<BOUCLE_image1(ARTICLES) {id_rubrique IN 4, 11, 16 } {lang=#LANG} {par date}{inverse}{0,1}>
-                      <div class="col-md-2 topbottommargin">
-					   <div class="news-image">
-
-					   	  <img src="[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]">
-
-                       </div>
-                      </div>
-                      <div class="col-md-8 topbottommargin">
-					    <div class="news clearfix">
-						
-							<div class="news-desc">
-								
-								<div class="news-content">
-					               <a href="#URL_ARTICLE">
-		                              <div class="news-title"><h4>#TITRE</h4></div>
-		                             </a>
-		                              <div class="news-content">
-                                          <blockquote>
-                                          	<p>
-		                                       
-		                                       #CHAPO
-		                              
-		                                   </p>
-                                         </blockquote>
-		                              </div>
-		                        </div>
-		                    </div>
-		                </div>
-		              </div>
-					</BOUCLE_image1>
-			   <div class="col-md-1 topbottommargin"></div>
-			</div>
-		    <div class="row clearfix">
-			    <div class="col-md-1 topbottommargin"></div>
-			    <div class="col-md-8 topbottommargin">
-					<div class="news clearfix">
-						
-							<div class="news-desc">
-								
-								<div class="news-content">
-									 <BOUCLE_articles2(ARTICLES) {id_rubrique IN 4, 11, 16 } {lang=#LANG} {par date}{inverse}{1,1}>
-		                             <a href="#URL_ARTICLE">
-		                              <div class="news-title"><h4>#TITRE</h4></div>
-		                             </a>
-		                              <div class="news-content">
-                                          <blockquote>
-                                          	<p>
-		                                       
-		                                       #CHAPO
-		                              
-		                                   </p>
-                                         </blockquote>
-		                              </div>
-		                        </div>
-		                    </div>
-		            </div>
-		        </div>
-		        <div class="col-md-2 topbottommargin">
-					<div class="news-image">
-						<img src="[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]">
+				<div class="col-md-1 topbottommargin"></div>					
+				[(#COMPTEUR_BOUCLE|alterner{ 
+				<div class="col-md-3 topbottommargin">
+				   <div class="news-image">
+					 [(#LOGO_ARTICLE|image_reduire{400})]
 					</div>
 				</div>
-				</BOUCLE_articles2>
-				<div class="col-md-1 topbottommargin"></div>
+				<div class="col-md-7 topbottommargin">
+					<div class="news clearfix">				
+						<div class="news-desc">						
+							<div class="news-content">
+							   <a href="#URL_ARTICLE">
+								  <div class="news-title"><h4>#TITRE</h4></div>
+								 </a>
+								  <div class="news-content">
+									  <blockquote>
+										<p>									   
+										   #CHAPO						  
+									   </p>
+									 </blockquote>
+								  </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				, 
+			    <div class="col-md-7 topbottommargin">
+					<div class="news clearfix">
+						<div class="news-desc">
+							<div class="news-content">								
+								 <a href="#URL_ARTICLE">
+								  <div class="news-title"><h4>#TITRE</h4></div>
+								 </a>
+								  <div class="news-content">
+									  <blockquote>
+										<p>										   
+										   #CHAPO							  
+									   </p>
+									 </blockquote>
+								  </div>
+							</div>
+						</div>
+		            </div>
+		        </div>
+		        <div class="col-md-3 topbottommargin">
+					<div class="news-image">
+						[(#LOGO_ARTICLE|image_reduire{400})]
+					</div>
+				</div>	
+				})]	
+			<div class="col-md-1 topbottommargin"></div>
 		</div>
+			</BOUCLE_image1>		    
 	</section>
 		<!-- Content -->
 		<section id="content">
@@ -101,12 +79,7 @@
 				<div class="section parallax full-screen dark nomargin noborder" style="background-image: url('IMG/hp2.jpg');opacity:1;" data-stellar-background-ratio="0.4">
 					<div class="vertical-middle">
 						<div class="container clearfix" style="background-color: #555;opacity:0.8;">
-							 <BOUCLE_article2(ARTICLES){id_rubrique}{1,1}>
-                                 <h3>
                                    #TEXTE
-                             
-                                 </h3>
-                             </BOUCLE_article2>
 						</div>
 					</div>
 				</div>
@@ -114,7 +87,8 @@
 				<div class="section parallax  nomargin noborder" style="padding: 150px 0; background-color:#eee; " data-stellar-background-ratio="0.4">
 					<div class="container center clearfix">
 						<div class="emphasis-title">
-							<h2>#SLOGAN_SITE_SPIP</h2>
+							<h2><:music_fund:get_in_touch:></h2>
+							<br/>
 							<div class="col-md-12">
                                
 								<ul class="list-unstyled">
@@ -122,7 +96,7 @@
 									<li><i class="icon-map-marker"></i> #VOIE #CODE_POSTAL #VILLE, #PAYS</li>
 									</BOUCLE_adresse1>
 									<BOUCLE_email(EMAILS spip_mots_liens spip_mots){titre_mot=MFaccueil}>
-									<li><i class="icon-line-mail"></i> <strong>Email:</strong> <a href="mailto:#EMAIL">#EMAIL</a></li>
+									<li><i class="icon-line-mail"></i> <a href="mailto:#EMAIL">#EMAIL</a></li>
 									</BOUCLE_email>
 								</ul>
 							
