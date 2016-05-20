@@ -7,9 +7,7 @@
 						<div class="row">
 							<h3><:music_fund:footer_title:></h3>
 						</div>
-						<div class="row">
-							
-					
+						<div class="row">												
 							<div class="col-md-1">
 								<a href="http://www.flanders.be/en" class="logo">
 									<img alt="Vlaanderen" class="img-responsive test" src="IMG/logo-vl.png">
@@ -45,7 +43,15 @@
 									<img alt="Baillet-latour" class="img-responsive test" src="IMG/baillet-latour.png">
 								</a>
 							</div>							
-							<div class="col-md-5">
+							<div class="col-md-4">
+								
+							</div>
+						
+							<div class="col-md-1">
+								[(#SESSION{id_auteur}|non)
+								  <a href="[(#URL_PAGE{login}|parametre_url{url,#SELF})]" rel="nofollow" target="_blank"  onclick="if (jQuery.modalbox) {jQuery.modalbox('[(#URL_PAGE{login}|parametre_url{url,#SELF}|parametre_url{var_zajax,content})]');return false;}" ><i class="fa fa-sign-in" aria-hidden="true"></i></a>
+								]
+								[(#SESSION{id_auteur}|oui)<a href="#URL_LOGOUT" rel="nofollow"><i class="fa fa-sign-out" aria-hidden="true"></i></a>]
 							</div>
 						</div>
 						<div class="row">
