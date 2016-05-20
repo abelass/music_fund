@@ -1,0 +1,16 @@
+[(#SESSION{id_auteur}|oui)
+<aside>
+	<ul class="menu items edition">
+		<li class="item">
+			<a href="[(#URL_PAGE{editer}|parametre_url{objet,article}|parametre_url{id_rubrique,#ID_RUBRIQUE})]" rel="nofollow" target="_blank"  onclick="if (jQuery.modalbox) {jQuery.modalbox('[(#URL_PAGE{editer}|parametre_url{objet,article}|parametre_url{id_rubrique,#ID_RUBRIQUE}|parametre_url{var_zajax,content})]');return false;}" >
+				<:music_fund:creer_article:>
+			</a>
+		</li>
+		<li class="item">
+			<a href="[(#URL_PAGE{editer}|parametre_url{objet,contact})]" rel="nofollow" target="_blank"  onclick="if (jQuery.modalbox) {jQuery.modalbox('[(#URL_PAGE{editer}|parametre_url{objet,article}|parametre_url{id_rubrique,#ID_RUBRIQUE}|parametre_url{var_zajax,content})]');return false;}" >
+				<:music_fund:creer_contact:>
+			</a>
+		</li>
+	</ul>
+</aside>
+]

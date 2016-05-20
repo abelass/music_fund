@@ -1,16 +1,24 @@
-<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
-<section id="creation_article" class="page-title-parallax page-title-dark full-screen clearfix" style="padding: 0 0; max-height:600px;background-image: url('[(#LOGO_RUBRIQUE|image_reduire{2000}|extraire_attribut{src})]'); background-size: cover; background-position: center center;" >
-			<div class="container clearfix ">
-				<h1 class="ptbot" data-caption-animate="fadeInUp" data-caption-delay="200"><:music_fund:creer_article:></h1>
-			</div>
-		</section><!-- #page-title end -->
-		<section id="content">
+<BOUCLE_article(ARTICLES)
+	{id_article}
+	{tout}
+	{si #AUTORISER{modifier,article,#ID_ARTICLE}}
+	>
+	
+	<div class="ajax">
+		[(#FORMULAIRE_INSTITUER_OBJET{article,#ID_ARTICLE})]
+	</div>
+	#FORMULAIRE_ETIQUETTES{aide=auto}
 
-[(#SESSION{id_auteur}|oui)
-[(#FORMULAIRE_EDITER_ARTICLE{[(#ENV{id_article,new})],[(#ENV{id_rubrique})]})]
-]
-[(#SESSION{id_auteur}|non)
-[(#FORMULAIRE_LOGIN)]
-]
-</section>
-</BOUCLE_content>
+	<div class="ajax">
+		#FORMULAIRE_EDITER_LOGO{article,#ID_ARTICLE}
+	</div>
+	#PIPELINE{afficher_complement_objet,#ARRAY{args,#ARRAY{type,article,id,#ID_ARTICLE},data,'<div class="nettoyeur"></div>'}
+</BOUCLE_article>
+
+
+
+<div class="ajax">
+	#FORMULAIRE_EDITER_ARTICLE{#ENV{id_article,new},#ENV{id_rubrique},#SELF}
+</div>
+
+

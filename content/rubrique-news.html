@@ -2,18 +2,18 @@
 <!-- Page Title
 		============================================= data-stellar-background-ratio="0.8"-->
 		<section id="page-title" class="page-title-parallax page-title-dark full-screen clearfix" style="padding: 0 0; max-height:600px;background-image: url('[(#LOGO_RUBRIQUE|image_reduire{2000}|extraire_attribut{src})]'); background-size: cover; background-position: center center;height:300px;" >
-		</section><!-- #page-title end -->
+		</section><!-- #page-title end -->		
 		<section id="content">
 			<div class="row clearfix">
 				<div class="col-md-1 topbottommargin"></div>
-				<div class="col-md-10 topbottommargin #EDIT{descriptif}">
-					#DESCRIPTIF
+				<div class="col-md-10 topbottommargin #EDIT{descriptif}">
+					#DESCRIPTIF
 				</div>
 				<div class="col-md-1 topbottommargin"></div>
 			</div>
 		</section>
 
-	<section id="content">
+	<section id="content">		[(#REM) Menu édition]		<INCLURE{fond=inclure/menu_edition,env} />
 		<BOUCLE_image1(ARTICLES) {id_rubrique IN 4, 11, 16 } {lang=#LANG} {par date}{inverse}{0,10}>
 			<div class="row clearfix">
 				<div class="col-md-1 topbottommargin"></div>					

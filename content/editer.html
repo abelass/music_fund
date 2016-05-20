@@ -1,0 +1,34 @@
+<section id="content">
+	<div class="content-wrap">
+		<div class="container clearfix">
+			<!-- Post Content
+			============================================= -->
+			<div class="postcontent nobottommargin clearfix">
+				<div class="single-post nobottommargin">
+					<!-- Single Post
+					============================================= -->
+					<div class="entry clearfix">
+						<!-- Entry Title
+						============================================= -->
+						<div class="entry-title">
+							<h2>[(#VAL{music_fund:editer_[(#ENV{objet})]}|_T)]</h2>
+						</div><!-- .entry-title end -->
+						<!-- Entry Content
+						============================================= -->
+						<div class="entry-content notopmargin">
+						[(#SESSION{id_auteur}|oui)
+							#INCLURE{fond=inclure/creer_#ENV{objet},env}
+						]
+						[(#SESSION{id_auteur}|non)
+							#FORMULAIRE_LOGIN
+						]
+							
+							<!-- Post Single - Content End -->
+						</div>
+					</div><!-- .entry end -->
+				</div>
+			</div><!-- .postcontent end -->
+		</div>
+	</div>
+	</section>
+	<!-- #content end -->
