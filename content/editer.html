@@ -1,3 +1,4 @@
+#CACHE{0}
 <section id="content">
 	<div class="content-wrap">
 		<div class="container clearfix">
@@ -15,15 +16,18 @@
 						</div><!-- .entry-title end -->
 						<!-- Entry Content
 						============================================= -->
-						<div class="entry-content notopmargin">
+						<div class="col-md-4 topbottommargin">
+						[(#SESSION{id_auteur}|oui)
+							<INCLURE{fond=inclure/creer_#ENV{objet}_side,env,ajax}/>
+						]
+						</div>
+						<div class="col-md-8 topbottommargin">
 						[(#SESSION{id_auteur}|oui)
 							#INCLURE{fond=inclure/creer_#ENV{objet},env}
 						]
 						[(#SESSION{id_auteur}|non)
 							#FORMULAIRE_LOGIN
 						]
-							
-							<!-- Post Single - Content End -->
 						</div>
 					</div><!-- .entry end -->
 				</div>
@@ -32,3 +36,18 @@
 	</div>
 	</section>
 	<!-- #content end -->
+[(#REM) Script pour le formulaire upload]
+<script type='text/javascript'>/*<![CDATA[*/
+if (window.jQuery){
+function change_methode(domid,methode){
+	var id = "#joindre_"+methode+domid;
+	if (jQuery(id).is(':hidden')) {
+		jQuery('div.joindre_mode'+domid+':visible').slideUp('fast');
+		jQuery(id).slideDown('fast');
+	}
+	// placer en haut du formulaire les boutons submit par defaut correspondant a la methode active
+	jQuery("#defaultsubmit"+domid).html('').append(jQuery(id).find('.boutons').eq(-1).find('input').clone(true));
+}
+jQuery(function(){change_methode('__new','upload');});
+}
+/*]]>*/</script>
