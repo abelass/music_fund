@@ -9,5 +9,5 @@
 		<div class="ajax">
 			#FORMULAIRE_EDITER_LOGO{article,#ID_ARTICLE}
 		</div>
-		#PIPELINE{afficher_complement_objet,#ARRAY{args,#ARRAY{type,article,id,#ID_ARTICLE},data,'<div class="nettoyeur"></div>'}}
+		<INCLURE{fond=prive/objets/editer/colonne_document, objet=article, id_objet=#ID_ARTICLE}/>
 </BOUCLE_article>
