@@ -17,6 +17,7 @@
 
 	<licence>GNU/GPL</licence>
 
+	<necessite nom="wsps_html5" compatibilite="[1.2.1;]" />
 	<necessite nom="wsp_ml" compatibilite="[0.2.6;]" />
 	<necessite nom="mf_gestion_instruments" compatibilite="[1.0.0;]" />
 	<necessite nom="accesrestreint" compatibilite="[3.14.2;]" />
