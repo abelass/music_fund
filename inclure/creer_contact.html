@@ -1,4 +1,11 @@
 <div class="ajax">
 	#FORMULAIRE_EDITER_CONTACT{#ENV{id_contact},'',#SELF}
 </div>
+
+<BOUCLE_contact(CONTACTS){id_contact}{tout}>
+	<INCLURE{fond=prive/squelettes/contenu/coordonnees_fiche_objet,
+		objet=contact,
+		id_objet=#ID_CONTACT,
+		ajax=>coordonnees}/>
+</BOUCLE_contact>
 #PIPELINE{afficher_complement_objet,#ARRAY{args,#ARRAY{type,contact,id,#ID_CONTACT},data,'<div class="nettoyeur"></div>'}
