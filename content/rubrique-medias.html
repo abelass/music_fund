@@ -26,7 +26,7 @@
 			<BOUCLE_rub_origine(RUBRIQUES)  {id_parent = #GET{ruborigine}} >
 				<li>
 					<a href="#URL_RUBRIQUE" >
-						#TITRE [#LANG]
+						#TITRE[(#LANG|!={#ENV{lang}}|oui)[ &#91;(#LANG)&#93;]]
 					</a>
 				</li>
 			</BOUCLE_rub_origine>					
