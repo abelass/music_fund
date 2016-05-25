@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 1800px){
 .container {
-    width: 1600px;
+    width: 95%;
 }
 }
 /*.container {
@@ -362,6 +362,7 @@ ul.donate-list .donate-item {
 }
 .ptbot{
 	margin-bottom: 2% !important;
+	text-align: center;
 }
 .taille{
 	width :25px;

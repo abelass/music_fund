@@ -21,7 +21,13 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	
 	// G
 	'get_in_touch' => 'N\'hésitez pas à prendre contact',
+	//H
+	'highdef' => 'A high definition version of each picture is available on simple click. Use "right click" on the HD version and choose "Save" to download the picture.',
 
 	// M
 	'music_fund_titre' => 'Music Fund',
+	// U
+	'userightclick' => 'Pour télécharger un fichier, utilisez le "click droit" et choisissez "Enregistrez le lien sous...".',
+	// V
+	'video' => 'Videos',
 );
