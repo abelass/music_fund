@@ -7,9 +7,9 @@
 					<BOUCLE_cpteurlc (LIFECYCLES) {id_instrument} {statut IN (#LISTE{LENT,GIVEN AWAY})}>
 					</BOUCLE_cpteurlc>#SET{nbrins,#TOTAL_BOUCLE }
 				</BOUCLE_cpteurinstrpge>
+				<B_gctact>
 				[(#GET{nbrins}|?{#GET{nbrins} instrument(s) given/lent to,nothing given/lent to})]
-				
-				<BOUCLE_gctact(CONTACTS) {id_contact=#ENV{benef}}>
+				<BOUCLE_gctact(CONTACTS) {id_contact}>
 					" #NOM "
 				</BOUCLE_gctact>
 			</h1>
