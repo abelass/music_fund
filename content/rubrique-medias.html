@@ -22,15 +22,21 @@
 	<section id="content">
 		#SET{ruborigine,#ID_TRAD}
 		#SET{rubr,#ID_RUBRIQUE}
-		<ul class="list-unstyled">
-			<BOUCLE_rub_origine(RUBRIQUES)  {id_parent = #GET{ruborigine}} >
-				<li>
-					<a href="#URL_RUBRIQUE" >
-						#TITRE[(#LANG|!={#ENV{lang}}|oui)[ &#91;(#LANG)&#93;]]
-					</a>
-				</li>
-			</BOUCLE_rub_origine>					
-		</ul>
+		<div class="row clearfix">
+				<div class="col-md-1 topbottommargin"></div>
+				<div class="col-md-10 topbottommargin">
+					<ul class="list-unstyled">
+						<BOUCLE_rub_origine(RUBRIQUES)  {id_parent = #GET{ruborigine}} >
+							<li>
+								<a href="#URL_RUBRIQUE" >
+									#TITRE[(#LANG|!={#ENV{lang}}|oui)[ &#91;(#LANG)&#93;]]
+								</a>
+							</li>
+						</BOUCLE_rub_origine>					
+					</ul>
+				</div>
+			<div class="col-md-1 topbottommargin"></div>
+		</div>
 		
 
 	</section>

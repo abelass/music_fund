@@ -26,6 +26,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'userightclick' => 'Use "right click" on the links and choose "Save" to download the movies.',
 	// V
 	'video' => 'Videos',
+	// W
+	'wip' => 'Work In Progress',
 );
 
 ?>

@@ -356,6 +356,8 @@ ul.donate-list .donate-item {
 }
 #footer {
     background-color: #fff;
+	border-top: 1px solid rgba(0,0,0,0.2);
+	padding-top: 0;
 }
 .footerlarge {
 	min-height: 100px;

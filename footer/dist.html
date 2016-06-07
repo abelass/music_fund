@@ -7,44 +7,17 @@
 						<div class="row">
 							<h3><:music_fund:footer_title:></h3>
 						</div>
-						<div class="row">												
-							<div class="col-md-1">
-								<a href="http://www.flanders.be/en" class="logo">
-									<img alt="Vlaanderen" class="img-responsive test" src="IMG/logo-vl.png">
-								</a>
-							</div>
-							<div class="col-md-1">
-								<a href="http://www.federation-wallonie-bruxelles.be/" class="logo">
-									<img alt="FWB" class="img-responsive test" src="IMG/logo-fwb.png">
-								</a>
-							</div>
-							<div class="col-md-1">
-								<a href="http://www.marche.be/" class="logo">
-									<img alt="Marche" class="img-responsive test" src="IMG/logo-marche.png">
-								</a>
-							</div>
-							<div class="col-md-1">
-								<a href="http://www.agoragroup.com/" class="logo">
-									<img alt="Agora" class="img-responsive test" src="IMG/logo-agora.png">
-								</a>
-							</div>
-							<div class="col-md-1">
-								<a href="http://www.loterie-nationale.be/" class="logo">
-									<img alt="Lotterie" class="img-responsive test" src="IMG/logo-lotterie.png">
-								</a>
-							</div>
-							<div class="col-md-1">
-								<a href="http://www.milanomusica.org/en/sezione-attivita/music-fund.html" class="logo">
-									<img alt="Milano Musica" class="img-responsive test" src="IMG/logo-milano-musica.png">
-								</a>
-							</div>
-							<div class="col-md-1">
-								<a href="http://www.fondsbailletlatour.com/index.cfm?lang=FRA&pageID=39" class="logo">
-									<img alt="Baillet-latour" class="img-responsive test" src="IMG/baillet-latour.png">
-								</a>
-							</div>							
-							<div class="col-md-4">
-								
+						<div class="row">	
+							<BOUCLE_sponsors(CONTACTS spip_mots_liens spip_mots) {titre_mot=Footer} >
+								#SET{tot,#TOTAL_BOUCLE}
+								<div class="col-md-1">
+									<a href="#FONCTION" class="logo">
+										<img alt="#NOM" class="img-responsive" src="[#URL_SITE_SPIP/IMG/(#LOGO_CONTACT|fichier)]">
+									</a>
+								</div>
+							</BOUCLE_sponsors>
+							<div class="col-md[(#GET{tot}|<{10}|?{[(#GET{tot}|moins{11})],'1'})]">
+								<p>&nbsp;</p>
 							</div>
 						
 							<div class="col-md-1">
