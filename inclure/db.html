@@ -8,7 +8,10 @@
 					</BOUCLE_cpteurlc>#SET{nbrins,#TOTAL_BOUCLE }
 				</BOUCLE_cpteurinstrpge>
 				<B_gctact>
-				[(#GET{nbrins}|?{#GET{nbrins} instrument(s) given/lent to,nothing given/lent to})]
+				[(#GET{nbrins}|?{
+					[(#GET{nbrins}|singulier_ou_pluriel{#GET{nbrins} instrument given/lent to,#GET{nbrins} instruments given/lent to})],
+					nothing given/lent to}
+					)]
 				<BOUCLE_gctact(CONTACTS) {id_contact}>
 					" #NOM "
 				</BOUCLE_gctact>
