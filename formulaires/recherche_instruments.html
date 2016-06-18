@@ -1,0 +1,69 @@
+<div class="formulaire_spip formulaire_recherche[ (#ENV{class})]" id="formulaire_recherche_instruments">
+<form action="[(#ENV{action})]" method="post"><div>
+<div class="editer-groupe">
+	#ACTION_FORMULAIRE{#ENV{action}}
+	[<input type="hidden" name="lang" value="(#ENV{lang})" />]
+	[(#SAISIE{input,mf_id,
+		label=<:instrument:champ_mf_id_label:>})]
+	[(#SAISIE{mot,_type_instrument,
+		label=#INFO_TITRE{groupes_mots, 4},
+		id_groupe=4,
+		forcer_select=oui,
+		multiple=oui,
+		class=chosen
+		})]
+	[(#SAISIE{input,contact,
+		label=<:contacts:contact:>
+		})]
+	[(#SAISIE{mot,_type_contact,
+		label=#INFO_TITRE{groupes_mots, 1},
+		id_groupe=1,
+		forcer_select=oui,
+		class=chosen,
+		multiple=oui
+		})]
+	[(#SAISIE{selection_multiple,_lifecycles_statut,
+		label=<:music_fund:label_lifecycles_statut:>,
+		datas=#ENV{_lifecycles_statuts},
+		class=chosen,
+		})]
+		<div class="lifecycles_date">
+			[(#SAISIE{selection,lifecycles_date_debut,
+				label=<:music_fund:label_lifecycles_date_debut:>,
+				datas=#ENV{_lifecycles_annees},
+				})]
+			[(#SAISIE{selection,lifecycles_date_fin,
+				label=<:music_fund:label_lifecycles_date_fin:>,
+				datas=#ENV{_lifecycles_annees},
+				})]
+		</div>
+		
+	<input type="submit" class="submit" value="&gt;&gt;" title="<:info_rechercher:>" />
+	
+
+	#SET{id_instrument,#ARRAY}
+	<BOUCLE_mots_instruments(mots_liens){objet=instrument}{id_mot IN #ENV{_type_instrument}}>
+		#SET{id_instrument,#GET{id_instrument}|push{#ID_OBJET}}
+	</BOUCLE_mots_instruments>
+	
+	#SET{contact,#ARRAY}
+	<BOUCLE_mots_contacts(mots_liens){objet=contact}{id_mot IN #ENV{_type_contact}}>
+		#SET{contact,#GET{contact}|push{#ID_OBJET}}
+	</BOUCLE_mots_contacts>
+		#SET{id_contact,#ARRAY}
+	<BOUCLE_contacts(CONTACTS){id_contact ?IN #GET{contact}}{nom LIKE %#ENV{contact,54ert}%}>
+		#SET{id_contact,#GET{id_contact}|push{#ID_CONTACT}}
+	</BOUCLE_contacts>
+	
+	<BOUCLE_lifecycles(LIFECYCLES){statut IN #ENV{_lifecycles_statut,'nada'}}
+		{date_relativ ?<= #ENV{lifecycles_date_debut}}
+
+		{id_contact ?IN #GET{id_contact}}>
+		#SET{id_instrument,#GET{id_instrument}|push{#ID_INSTRUMENT}}
+	</BOUCLE_lifecycles>
+	
+	<INCLURE{fond=inclure/db,env,id_instrument=#GET{id_instrument},ajax}/>
+	</div>
+</div></form>
+
+</div>

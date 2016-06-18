@@ -23,6 +23,7 @@
 	<necessite nom="accesrestreint" compatibilite="[3.14.2;]" />
 	<necessite nom="etiquettes" compatibilite="[2.2.2;]" />
 	<necessite nom="selecteurgenerique" compatibilite="[1.1.4;]" />
+	<necessite nom="chosen" compatibilite="[1.6.3;]" />
 
 	<!--
 		Exemple de commandes

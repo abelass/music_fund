@@ -2,20 +2,7 @@
 	<div class="row clearfix">
 		<div class="col-md-1 topbottommargin"></div>
 		<div class="col-md-10 topbottommargin ">
-			<h1>
-				<BOUCLE_cpteurinstrpge(INSTRUMENTS lifecycles) {id_contact?} {tout} >
-					<BOUCLE_cpteurlc (LIFECYCLES) {id_instrument} {statut IN (#LISTE{LENT,GIVEN AWAY})}>
-					</BOUCLE_cpteurlc>#SET{nbrins,#TOTAL_BOUCLE }
-				</BOUCLE_cpteurinstrpge>
-				<B_gctact>
-				[(#GET{nbrins}|?{
-					[(#GET{nbrins}|singulier_ou_pluriel{#GET{nbrins} instrument given/lent to,#GET{nbrins} instruments given/lent to})],
-					nothing given/lent to}
-					)]
-				<BOUCLE_gctact(CONTACTS) {id_contact}>
-					" #NOM "
-				</BOUCLE_gctact>
-			</h1>
+
 		</div>
 		<div class="col-md-1 topbottommargin"></div>
 	</div>	
@@ -33,7 +20,7 @@
 			<div class="col-md-1 topbottommargin"></div>
 			<div class="col-md-10 topbottommargin">
 				<div class="accordion accordion-bg clearfix">
-					<BOUCLE_instrpg(INSTRUMENTS lifecycles) {id_contact?} {par date_creation} {inverse}  {tout} {pagination 20}>
+					<BOUCLE_instrpg(INSTRUMENTS) {id_instrument ?IN #ENV{id_instrument}} {mf_id ?LIKE %#ENV{mf_id}%} {par date_creation} {inverse}  {tout} {pagination 20}>
 						<B_lifeccle>
 							<div class="acctitle">
 								<i class="acc-closed icon-ok-circle"></i>

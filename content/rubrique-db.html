@@ -20,19 +20,11 @@
 			<div class="row clearfix">
 				<div class="col-md-1 topbottommargin"></div>
 				<div class="col-md-10 topbottommargin">
-					<form action="#SELF" name="srch" class="bouton_action_post ajax">Bénéficiaire:
-					[(#ENV{srch}|form_hidden)]
-						<select name="benef"> 
-							<optgroup label="benef">
-							<BOUCLE_srch_contacts(CONTACTS spip_mots_liens spip_mots){titre_mot=Beneficiary}{par nom}>
-								<option value="#ID_CONTACT" >#NOM</option>
-							</BOUCLE_srch_contacts>
-						</select>
-							<button type"submit">OK</button>
-					</form>
+					<div class="">
+						#FORMULAIRE_RECHERCHE_INSTRUMENTS{#SELF}
+					</div>
 				</div>
 				<div class="col-md-1 topbottommargin"></div>
 			</div>
 		</section>
-	<INCLURE{fond=inclure/db,env,ajax,id_contact=#ENV{benef}}/>
 </BOUCLE_content>
