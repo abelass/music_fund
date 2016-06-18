@@ -1,0 +1,51 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
+<!-- Page Title
+		============================================= data-stellar-background-ratio="0.8"-->
+
+		<section id="content">
+			<div class="row clearfix">
+				<div class="col-md-1 topbottommargin"></div>
+				<div class="col-md-10 topbottommargin">
+					<h1 class="ptbot" data-caption-animate="fadeInUp" data-caption-delay="200">#TITRE</h1>
+				</div>
+				<div class="col-md-1 topbottommargin"></div>
+			</div>
+			<div class="row clearfix">
+				<div class="col-md-1 topbottommargin"></div>
+				<div class="col-md-10 topbottommargin">
+					#DESCRIPTIF
+				</div>
+				<div class="col-md-1 topbottommargin"></div>
+			</div>
+		</section>
+
+	<section id="content">
+		<div class="ctact-info">
+			<:music_fund:userightclick:>
+		</div>
+		
+		<BOUCLE_video(ARTICLES) {id_rubrique = 27 } {lang=#LANG} {par date}>
+			[(#COMPTEUR_BOUCLE|alterner{<ul class="promo-list">, '', ''})] 
+			<li class="col-md-4 col-sm-6 col-xs-12">
+				<div class="promo-item thumbnail">
+					<div class="thumb-info team">
+						#LOGO_ARTICLE
+						<span class="thumb-info-title ctact-title">
+							<span class="thumb-info-inner">#TITRE</span>
+							<span class="thumb-info-type ctact-info-type">
+							</span>
+						</span>
+					</div>
+					<span class="thumb-info-caption">
+						<ul class="list-unstyled">
+							<BOUCLE_docs(DOCUMENTS){id_article}{mode=document}>
+								<li><i class="fa fa-download"></i><span class="ctact-info"><a href="#URL_DOCUMENT" target="_blank">#TITRE</a></span></li>
+							</BOUCLE_docs>
+						</ul>
+					</span>
+				</div>
+			</li>
+			[(#COMPTEUR_BOUCLE|alterner{'', '', </ul>})]
+		</BOUCLE_video>		    
+	</section>
+</BOUCLE_content>

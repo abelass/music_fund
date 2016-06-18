@@ -18,32 +18,40 @@
 				</div>
 				<div class="row clearfix">
 				<div class="col-md-1 topbottommargin"></div>
-				<div class="col-md-10 topbottommargin">
+				<div class="col-md-10 topbottommargin #EDIT{descriptif}">
 					#DESCRIPTIF
 				</div>
 				<div class="col-md-1 topbottommargin"></div>
 			</div>
 			</div>
 			<div class="container bgcol">
-
-					<BOUCLE_article(ARTICLES spip_mots_liens spip_mots){id_rubrique}{doublons}>
-					[(#COMPTEUR_BOUCLE|alterner{<div class="clearfix"><ul class="donate-list">, ''})]
-						<li class="col-md-6 col-sm-6 col-xs-12">							
-							
-							<div class="donate-item thumbnail">
-								<H2><strong>#TITRE</strong></H2>
-								<div class="thumb-info team">
-									
-									<span class="thumb-info-title ctact-title">
-										<span class="thumb-info-inner">
-											#TEXTE
+					<BOUCLE_pays(PAYS) {par multi code_alpha3}>	
+						<BOUCLE_donate(CONTACTS spip_mots_liens spip_mots) {titre_mot=Donate} {pays=#_pays:ID_PAYS} {par ordre}>
+							[(#COMPTEUR_BOUCLE|=={1}|?{
+								'<H2><strong>'
+									#_pays:NOM
+								</strong></H2>
+								<div class="clearfix"><ul class="donate-list">
+							,''})]
+							<li class="col-md-6 col-sm-6 col-xs-12">							
+								
+								<div class="donate-item thumbnail">
+									[(#LOGO_CONTACT)<br />]
+									<div class="thumb-info team">
+										<span class="thumb-info-title ctact-title">
+											<span class="thumb-info-inner #EDIT{descriptif}">
+												#DESCRIPTIF
+											</span>
 										</span>
-									</span>
+									</div>							
 								</div>							
-							</div>							
-						</li>
-					[(#COMPTEUR_BOUCLE|alterner{ '', </ul></div>})]	
-					</BOUCLE_article>
+							</li>
+							[(#COMPTEUR_BOUCLE|=={#TOTAL_BOUCLE}|?{
+								'</ul></div>'
+							,''})]
+						</BOUCLE_donate>
+						
+					</BOUCLE_pays>
 
 			</div>
  

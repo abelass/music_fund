@@ -1,53 +1,51 @@
 <section id="content">
- 
-			<div class="content-wrap">
- 
-				<div class="container clearfix">
- 
-					<!-- Post Content
+	<div class="content-wrap">
+
+		<div class="container clearfix">
+
+			<!-- Post Content
+			============================================= -->
+			<div class="postcontent nobottommargin clearfix">
+
+				<div class="single-post nobottommargin">
+
+					<!-- Single Post
 					============================================= -->
-					<div class="postcontent nobottommargin clearfix">
- 
-						<div class="single-post nobottommargin">
- 
-							<!-- Single Post
+					<div class="entry clearfix">
+
+						<!-- Entry Title
+						============================================= -->
+						<BOUCLE_content(ARTICLES){id_article}{lang=#LANG}>
+						<div class="entry-title">
+							<h2 class="#EDIT{titre}">#TITRE</h2>
+						</div><!-- .entry-title end -->
+
+						<!-- Entry Meta
+						============================================= -->
+						<ul class="entry-meta clearfix">
+							<li class="#EDIT{date}"><i class="icon-calendar3"></i>#DATE</li>
+						</ul><!-- .entry-meta end -->
+
+						<!-- Entry Content
+						============================================= -->
+						<div class="entry-content notopmargin">
+							<!-- Entry Image
 							============================================= -->
-							<div class="entry clearfix">
- 
-								<!-- Entry Title
-								============================================= -->
-								<BOUCLE_content(ARTICLES){id_article}{lang=#LANG}>
-								<div class="entry-title">
-									<h2 class="#EDIT{titre}">#TITRE</h2>
-								</div><!-- .entry-title end -->
- 
-								<!-- Entry Meta
-								============================================= -->
-								<ul class="entry-meta clearfix">
-									<li class="#EDIT{date}"><i class="icon-calendar3"></i>#DATE</li>
-								</ul><!-- .entry-meta end -->
- 
-								<!-- Entry Content
-								============================================= -->
-								<div class="entry-content notopmargin">
- 
-									<!-- Entry Image
-									============================================= -->
-									<div class="entry-image alignleft #EDIT{logo}">
-										<img src="[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]" alt="">
-									</div><!-- .entry-image end -->
-									<blockquote class="#EDIT{chapo}">
-										#CHAPO
-									</blockquote>
-									<div class="#EDIT{texte}">#TEXTE</div>
-									<!-- Post Single - Content End -->
-								</div>
-								</BOUCLE_content>
-							</div><!-- .entry end -->
+							<div class="entry-image alignleft #EDIT{logo}">
+								<img src="[(#LOGO_ARTICLE|extraire_attribut{src}|url_absolue)]" alt="">
+							</div><!-- .entry-image end -->
+							<blockquote class="#EDIT{chapo}">
+								#CHAPO
+							</blockquote>
+							<div class="#EDIT{texte}">#TEXTE</div>
+							<!-- Post Single - Content End -->
 						</div>
- 
-					</div><!-- .postcontent end -->
+						</BOUCLE_content>
+					</div><!-- .entry end -->
 				</div>
-			</div>
-		</section>
-		<!-- #content end -->
+
+			</div><!-- .postcontent end -->
+		</div>
+	</div>
+</section>
+<!-- #content end -->
