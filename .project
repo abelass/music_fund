@@ -8,4 +8,10 @@
 	</buildSpec>
 	<natures>
 	</natures>
+	<variableList>
+		<variable>
+			<name>spip31</name>
+			<value>file:/home/abelass/www/spip31</value>
+		</variable>
+	</variableList>
 </projectDescription>
