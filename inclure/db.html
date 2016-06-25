@@ -20,7 +20,7 @@
 			<div class="col-md-1 topbottommargin"></div>
 			<div class="col-md-10 topbottommargin">
 				<div class="accordion accordion-bg clearfix">
-					<BOUCLE_instrpg(INSTRUMENTS) {id_instrument ?IN #ENV{id_instrument}} {mf_id ?LIKE %#ENV{mf_id}%} {par date_creation} {inverse}  {tout} {pagination 20}>
+					<BOUCLE_instrpg(DATA) {source table, #ENV{_instruments}} {mf_id ?LIKE %#ENV{mf_id}%} {par date_creation} {inverse}  {tout} {pagination 20}>
 						<B_lifeccle>
 							<div class="acctitle">
 								<i class="acc-closed icon-ok-circle"></i>

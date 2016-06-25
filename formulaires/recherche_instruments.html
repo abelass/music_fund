@@ -42,29 +42,7 @@
 		
 	<input type="submit" class="submit" value="&gt;&gt;" title="<:info_rechercher:>" />
 	
-
-	#SET{id_instrument,#ARRAY}
-	<BOUCLE_mots_instruments(mots_liens){objet=instrument}{id_mot IN #ENV{_type_instrument}}>
-		#SET{id_instrument,#GET{id_instrument}|push{#ID_OBJET}}
-	</BOUCLE_mots_instruments>
-	
-	#SET{contact,#ARRAY}
-	<BOUCLE_mots_contacts(mots_liens){objet=contact}{id_mot IN #ENV{_type_contact}}>
-		#SET{contact,#GET{contact}|push{#ID_OBJET}}
-	</BOUCLE_mots_contacts>
-		#SET{id_contact,#ARRAY}
-	<BOUCLE_contacts(CONTACTS){id_contact ?IN #GET{contact}}{nom LIKE %#ENV{contact,54ert}%}>
-		#SET{id_contact,#GET{id_contact}|push{#ID_CONTACT}}
-	</BOUCLE_contacts>
-	
-	<BOUCLE_lifecycles(LIFECYCLES){statut IN #ENV{_lifecycles_statut,'nada'}}
-		{date_relativ ?<= #ENV{lifecycles_date_debut}}
-
-		{id_contact ?IN #GET{id_contact}}>
-		#SET{id_instrument,#GET{id_instrument}|push{#ID_INSTRUMENT}}
-	</BOUCLE_lifecycles>
-	
-	<INCLURE{fond=inclure/db,env,id_instrument=#GET{id_instrument},ajax}/>
+	<INCLURE{fond=inclure/db,env,ajax}/>
 	</div>
 </div></form>
 
