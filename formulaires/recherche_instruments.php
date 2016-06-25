@@ -41,13 +41,13 @@ function formulaires_recherche_instruments_charger_dist() {
 	}
 	
 	// les années de lifecycles
-	$lifecycles_annees;
+	/*$lifecycles_annees;
 	$sql = sql_select('date', 'spip_lifecycles', '', 'YEAR(date)');
 	
 	while ($data = sql_fetch($sql)) {
 		$annee = date('Y', strtotime($data['date']));
 		$lifecycles_annees[$annee] = $annee;
-	}
+	}*/
 	
 	return
 		array(
@@ -59,8 +59,8 @@ function formulaires_recherche_instruments_charger_dist() {
 			'_type_contact' => _request('_type_contact'),
 			'_lifecycles_statuts' => $lifecycles_statuts,
 			'_lifecycles_statut' => _request('_lifecycles_statut'),
-			'_lifecycles_annees' => $lifecycles_annees,
+			/*'_lifecycles_annees' => $lifecycles_annees,
 			'lifecycles_date_debut' => _request('lifecycles_date_debut'),
-			'lifecycles_date_fin' => _request('lifecycles_date_fin'),
+			'lifecycles_date_fin' => _request('lifecycles_date_fin'),*/
 		);
 }

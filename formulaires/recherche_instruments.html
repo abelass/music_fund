@@ -27,6 +27,7 @@
 		datas=#ENV{_lifecycles_statuts},
 		class=chosen,
 		})]
+		[(#REM) Désactivé
 		<div class="lifecycles_date">
 			[(#SAISIE{selection,lifecycles_date_debut,
 				label=<:music_fund:label_lifecycles_date_debut:>,
@@ -36,6 +37,7 @@
 				label=<:music_fund:label_lifecycles_date_fin:>,
 				datas=#ENV{_lifecycles_annees},
 				})]
+		]
 		</div>
 		
 	<input type="submit" class="submit" value="&gt;&gt;" title="<:info_rechercher:>" />
