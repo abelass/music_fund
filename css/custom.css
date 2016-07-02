@@ -1,4 +1,8 @@
-
+/* formulaire */
+.editer-groupe  { display: table;      }
+.editer  { display: table-row;      }
+label { display: table-cell; }
+input { display: table-cell; }
 /* no mobile*/
 @media (max-width: 500px){
 	.nomobile {display:none;}
