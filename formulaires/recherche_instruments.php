@@ -52,7 +52,7 @@ function formulaires_recherche_instruments_charger_dist() {
 	// La requête de la recherche
 	$from = array('spip_instruments AS inst');
 	$where = array();
-	
+
 	
 	if ($mf_id = _request('mf_id')) {
 		$where[] = 'mf_id LIKE ' .sql_quote('%' . $mf_id . '%');
@@ -126,7 +126,7 @@ function formulaires_recherche_instruments_charger_dist() {
 		$where[] = 'lcycles.statut IN (' . implode(',', $statuts) . ')';
 	}
 
-	$sql = sql_select('*', $from, $where);
+	$sql = sql_select('*', $from, $where, 'inst.id_instrument');
 	
 	$instruments =array();
 	while ($row = sql_fetch($sql)) {
