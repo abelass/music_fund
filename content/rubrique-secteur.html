@@ -1,0 +1,13 @@
+<section class="[(#COMPOSITION|sinon{rubrique})]" id="rubrique-#ID_RUBRIQUE">
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}>
+	#SET{id_rubrique,#ID_RUBRIQUE}
+	<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
+	<BOUCLE_enfant(RUBRIQUES){id_parent}{id_parent!=#ID_SECTEUR}>
+		#SET{id_rubrique,#ID_RUBRIQUE}
+		<BOUCLE_recursif(BOUCLE_enfant)> </BOUCLE_recursif>
+	</BOUCLE_enfant>
+</BOUCLE_content>
+<BOUCLE_branche(RUBRIQUES){id_parent = #GET{id_rubrique}}{tout}{par num titre}>
+	<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
+</BOUCLE_branche>
+</section>
