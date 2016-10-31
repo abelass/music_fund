@@ -8,7 +8,7 @@
 				(#INCLURE{fond=inclure/nav,env}|navbar_responsive)
 			</div>]
 			<div class="row">
-				<div class="content span8 " id="content">
+				<div class="content span12 " id="content">
 					<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 					[(#ENV{type-page}|=={rubrique}|oui)
 						<INCLURE{fond=content/rubrique-secteur,env} />
@@ -16,10 +16,6 @@
 					[(#ENV{type-page}|=={rubrique}|non)
 						<INCLURE{fond=content/#ENV{type-page},env} />
 					]
-				</div>
-				<div class="aside secondary col span3 offset1" id="aside">
-					<INCLURE{fond=aside/#ENV{type-page},env} />
-					<INCLURE{fond=extra/#ENV{type-page},env} />
 				</div>
 			</div>
 
