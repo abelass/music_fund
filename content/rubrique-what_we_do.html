@@ -1,23 +1,24 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
 	<header class="cartouche">
-		[(#LOGO_RUBRIQUE|image_reduire{200,200})]
 		<h1 class="#EDIT{titre}">#TITRE</h1>
+		[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
 	</header>
 
 	<div class="main">
 	
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		<B_articles>
-		<br class="nettoyeur"/>
-		<BOUCLE_articles(ARTICLES){id_rubrique}>
-			<INCLURE{fond=content/article, id_article, composition, env} />
-		</BOUCLE_articles>
+		<B_boutons>
+		<div class="boutons">
+		<BOUCLE_boutons(RUBRIQUES){id_trad IN 39,37,32} {tout} {lang}>
+			<BOUCLE_article(ARTICLES){id_rubrique}>
+				<a class="btn btn-success" href="#URL_ARTICLE">#TITRE</a>
+			</BOUCLE_article>
+				<a class="btn btn-success" href="#URL_RUBRIQUE">#TITRE</a>
+			<//B_article>
+		</BOUCLE_boutons>
+		</B_boutons>
 	</div>
 	
-	<aside>
-		[(#REM) Gestion du portfolio et des documents ]
-		[(#INCLURE{fond=inclure/documents,id_rubrique})]
-	</aside>
 	
 	<footer>
 	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]

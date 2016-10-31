@@ -7,7 +7,7 @@
 	</BOUCLE_parent>
 </BOUCLE_content>
 <BOUCLE_principal(RUBRIQUES){id_rubrique = #GET{id_rubrique}}{tout}{par num titre}>
-<section class="[(#COMPOSITION|sinon{rubrique})]" id="rubrique-#ID_RUBRIQUE">
+<section class="clearfix [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#ID_RUBRIQUE">
 	<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
 </section>
 	<B_sous_menu>
@@ -18,7 +18,7 @@
 	</ul>
 	</B_sous_menu>
 	<BOUCLE_enfant(RUBRIQUES){id_parent}{tout}{par num titre}>
-		<section class="[(#COMPOSITION|sinon{rubrique})]" id="rubrique-#ID_RUBRIQUE">
+		<section class="clearfix  [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#ID_RUBRIQUE">
 			<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
 		</section>
 		<BOUCLE_sousrubriques(BOUCLE_enfant)> </BOUCLE_sousrubriques>
