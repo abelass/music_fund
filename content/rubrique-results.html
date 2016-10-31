@@ -6,10 +6,38 @@
 
 	<div class="main">
 	
-		[<div class="#EDIT{collected_instruments} collected_instruments">(#COLLECTED_INSTRUMENTS)</div>]
-		[<div class="#EDIT{repaired_given_instruments} repaired_given_instruments">(#REPAIRED_GIVEN_INSTRUMENTS)</div>]
-		[<div class="#EDIT{permanenet_workshops_created} permanenet_workshops_created">(#PERMANENT_WORKSHOPS_CREATED)</div>]
-		[<div class="#EDIT{permanenet_collection_points} permanenet_collection_points">(#PERMANENT_COLLECTION_POINTS)</div>]
+		[<div class="collected_instruments">
+			<div class="#EDIT{collected_instruments} nombre">
+				(#COLLECTED_INSTRUMENTS)
+			</div>
+			[<div class="label">
+				(#CHAMP_EXTRA{collected_instruments,label}|extraire_multi)
+			</div>]
+		</div>]
+		[<div class="repaired_given_instruments">
+			<div class="#EDIT{repaired_given_instruments}">
+				(#REPAIRED_GIVEN_INSTRUMENTS)
+			</div>
+			[<div class="label">
+				(#CHAMP_EXTRA{repaired_given_instruments,label}|extraire_multi)
+			</div>]
+		</div>]
+		[<div class="permanent_workshops_created">
+			<div class="#EDIT{permanent_workshops_created}">
+			(#PERMANENT_WORKSHOPS_CREATED)
+			</div>
+			[<div class="label">
+				(#CHAMP_EXTRA{permanent_workshops_created,label}|extraire_multi)
+			</div>]
+		</div>]
+		[<div class="permanent_collection_points">
+			<div class="#EDIT{permanent_collection_points}">
+				(#PERMANENT_COLLECTION_POINTS)
+			</div>
+			[<div class="label">
+				(#CHAMP_EXTRA{permanent_collection_points,label}|extraire_multi)
+			</div>]
+		</div>]
 	</div>
 	
 
