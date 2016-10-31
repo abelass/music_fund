@@ -7,21 +7,21 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	//C
 	'creer_article' => 'Créer un article...',
 	'creer_contact' => 'Créer un contact..',
-		
+
 	// D
 	'donation_taxe' => 'Pour faire un don avec déduction fiscale, voir ci-après.<br />Merci pour votre aide!',
 	'donate' => 'Faire un don',
-		
+
 	// E
 	'editer_article' => 'Edition article',
 	'editer_contact' => 'Edition contact',
 
 	//F
 	'footer_title' => 'Sous le Haut Patronage de Sa Majesté la Reine Mathilde',
-	
+
 	// G
 	'get_in_touch' => 'N\'hésitez pas à prendre contact',
-		
+
 	//H
 	'highdef' => 'A high definition version of each picture is available on simple click. Use "right click" on the HD version and choose "Save" to download the picture.',
 
@@ -29,11 +29,11 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_lifecycles_date_debut' => 'Début Lifecycle',
 	'label_lifecycles_date_fin' => 'Fin Lifecycle',
 	'lifecycles_statut' => 'Statut Lifecycle',
-	
+
 
 	// M
 	'music_fund_titre' => 'Music Fund',
-		
+
 	// U
 	'userightclick' => 'Pour télécharger un fichier, utilisez le "click droit" et choisissez "Enregistrez le lien sous...".',
 	// V

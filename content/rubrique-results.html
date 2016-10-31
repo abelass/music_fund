@@ -1,0 +1,16 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
+	<header class="cartouche">
+		[(#LOGO_RUBRIQUE|image_reduire{200,200})]
+		<h1 class="#EDIT{titre}">#TITRE</h1>
+	</header>
+
+	<div class="main">
+	
+		[<div class="#EDIT{collected_instruments} collected_instruments">(#COLLECTED_INSTRUMENTS)</div>]
+		[<div class="#EDIT{repaired_given_instruments} repaired_given_instruments">(#REPAIRED_GIVEN_INSTRUMENTS)</div>]
+		[<div class="#EDIT{permanenet_workshops_created} permanenet_workshops_created">(#PERMANENT_WORKSHOPS_CREATED)</div>]
+		[<div class="#EDIT{permanenet_collection_points} permanenet_collection_points">(#PERMANENT_COLLECTION_POINTS)</div>]
+	</div>
+	
+
+</BOUCLE_content>
