@@ -1,0 +1,6 @@
+<composition>
+	<nom>La rubrique "Ongoing Projects"</nom>
+	<description>Contenu de la rubrique "Ongoing Projects"</description>
+	<branche type="rubrique" composition="ongoing_projects_sousrubrique" /> 
+	<branche type="atelier" composition="project" /> 
+</composition>
