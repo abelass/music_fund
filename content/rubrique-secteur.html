@@ -6,17 +6,20 @@
 		<BOUCLE_recursif(BOUCLE_parent)> </BOUCLE_recursif>
 	</BOUCLE_parent>
 </BOUCLE_content>
+
 <BOUCLE_principal(RUBRIQUES){id_rubrique = #GET{id_rubrique}}{tout}{par num titre}>
 <section class="clearfix [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#ID_RUBRIQUE">
 	<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
-</section>
 	<B_sous_menu>
-	<ul id="nav-menu">
-	<BOUCLE_sous_menu(RUBRIQUES){id_parent}{tout}{par num titre}>
-		<li><a href="#rubrique-#ID_RUBRIQUE">#TITRE</a></li>
-	</BOUCLE_sous_menu>
-	</ul>
+	<nav>
+		<ul id="nav-menu">
+		<BOUCLE_sous_menu(RUBRIQUES){id_parent}{tout}{par num titre}>
+			<li><a href="#rubrique-#ID_RUBRIQUE">#TITRE</a></li>
+		</BOUCLE_sous_menu>
+		</ul>
+	</nav>
 	</B_sous_menu>
+</section>
 	<BOUCLE_enfant(RUBRIQUES){id_parent}{tout}{par num titre}>
 		<section class="clearfix  [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#ID_RUBRIQUE">
 			<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
