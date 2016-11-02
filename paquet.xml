@@ -24,4 +24,5 @@
 	<necessite nom="selecteurgenerique" compatibilite="[1.1.4;]" />
 	<necessite nom="chosen" compatibilite="[1.6.3;]" />
 	<necessite nom="iextras" compatibilite="[3.5.1;]"/>
+	<necessite nom="agenda" compatibilite="[3.17.2;]"/>
 </paquet>
