@@ -1,0 +1,25 @@
+<B_events>
+	<BOUCLE_events(EVENEMENTS){id_article}{par date_debut,date_fin}>
+	<article>
+		<div class="span6">
+			[(#LOGO_EVENEMENT
+				|image_passe_partout{#ENV{width,277},#ENV{height,175.5}}
+				|image_recadre{#ENV{width,277},#ENV{height,175.5}})]
+		</div>
+		<div class="span6">
+			<h3 class="#EDIT{titre}"><a href="#URL_EVENEMENT">#TITRE</a></h3>
+			<div>
+			<time pubdate="pubdate" datetime="[(#DATE_DEBUT|date_iso)]">
+				[(#DATE|nom_jour) ][(#DATE|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
+					[ - (#DATE_FIN|affdate)]
+				]
+			</time>
+				<span class="place">
+					[, (#LIEU)]
+				</span>
+			</div>
+			[<div class="#EDIT{descriptif} texte surlignable">(#DESCRIPTIF)</div>]
+		</div>
+	</article>
+	</BOUCLE_events>
+</B_events>

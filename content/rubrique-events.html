@@ -1,12 +1,11 @@
 <BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>
 	<header class="cartouche">
-		[(#LOGO_RUBRIQUE||image_reduire{200,200})]
 		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
 	</header>
-    <div class="main">      	
-	[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-    <BOUCLE_auteur(AUTEURS){statut=0minirezo}{tout}{1,1}>
-    	#FORMULAIRE_ECRIRE_AUTEUR
-    </BOUCLE_auteur>
+	<div class="main">
+		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+		<BOUCLE_art_evenement(ARTICLES){id_rubrique=#ID_TRAD}{lang_select=non}>
+			<INCLURE{fond=inclure/evenements,id_article,env}/>
+		</BOUCLE_art_evenement>
 	</div>
 </BOUCLE_contenu_rubrique>
