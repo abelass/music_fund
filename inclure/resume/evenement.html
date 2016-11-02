@@ -1,25 +1,82 @@
-<BOUCLE_vevent(EVENEMENTS){id_evenement=#ENV{id,#ENV{id_evenement}}}{tout}>
-[(#SET{annee,#DATE_DEBUT|annee})][(#SET{mois,#DATE_DEBUT|nom_mois})][(#SET{jour,#DATE_DEBUT|jour})]
-<article class="entry evenement vevent id_#ID_EVENEMENT" id="evenement_#ID_EVENEMENT" itemscope itemtype="http://schema.org/Event">
-	<strong class="h3-like summary entry-title #EDIT{titre}"><a itemprop="url" class="url" href="[(#URL_EVENEMENT)]">[(#LOGO_EVENEMENT|image_reduire{150,100}|inserer_attribut{itemprop,image})]<span itemprop="name">#TITRE</span><span
-			class="lire-la-suite hide"><i class="icon-chevron-right" title="<:zpip:lire_la_suite|attribut_html:><:zpip:lire_la_suite_de|attribut_html:>&laquo;[(#TITRE|attribut_html)]&raquo;"></i></span></a></strong>
-	<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
-	<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
-	[<p class="info-publi"><time><i class="icon-calendar"></i> (#DATE_DEBUT|agenda_affdate_debut_fin{#DATE_FIN,#HORAIRE*,'hcal'})</time></p>]
-	#SET{intro,''}<BOUCLE_art(ARTICLES){si #ENV{sinon_intro_article,oui}|=={non}|ou{#ENV{intro}|=={non}}|non}{id_article}>#SET{intro,#INTRODUCTION{#ENV{coupe,300}}</BOUCLE_art>
-	[(#ENV{intro,oui}|=={non}|non|et{#DESCRIPTIF}|oui)[(#SET{intro,[<div class="introduction #EDIT{descriptif}" itemprop="description">(#DESCRIPTIF|sinon{#GET{intro}})</div>]})]]
-	[(#GET{intro}|ou{#LIEU}|ou{#ADRESSE}|oui)
-	<div class="entry-content">
-		#GET{intro}
-		[<p class="location" itemprop="location"><span class="lieu #EDIT{lieu}">(#LIEU)</span>[<br /><span class="adresse #EDIT{adresse}">(#ADRESSE|PtoBR)</span>]</p>]
-	</div>]
-	<B_mots>
-	<p class="meta-publi">
-	[(#INSCRIPTION|?{' ',''})<span class="inscrits"><span class="sep">|</span> <i class="icon-user" title="#NB_INSCRITS[/#PLACES(#PLACES|>{0}|oui)] <:agenda:inscrits|attribut_html:>"></i> #NB_INSCRITS[/#PLACES(#PLACES|>{0}|oui)]</span>]
-	<span class="sep">|</span> <BOUCLE_mots(MOTS){id_evenement}{par num titre,titre}{', '}><span class="category"><i class="icon-tag"></i> #TITRE</span></BOUCLE_mots>
-	</p>
-	</B_mots>
-	[(#INSCRIPTION|?{' ',''})<p class="meta-publi"><span class="inscrits"><span class="sep">|</span> <i class="icon-user" title="#NB_INSCRITS[/#PLACES(#PLACES|>{0}|oui)] <:agenda:inscrits|attribut_html:>"></i> #NB_INSCRITS[/#PLACES(#PLACES|>{0}|oui)]</span></p>]
-	<//B_mots>
-</article>
+<BOUCLE_vevent(EVENEMENTS){gis}{id_evenement=#ENV{id,#ENV{id_evenement}}}{tout}>
+	<header class="cartouche page-header">
+			<h1 class="#EDIT{titre}">#TITRE</h1>
+			<div class="short-description #EDIT{chapo}">#CHAPO</div>
+			<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
+			<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
+				<p class="info-publi">
+					<time>[(#DATE|nom_jour) ][(#DATE|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
+					[ - (#DATE_FIN|affdate)]
+				]</time>
+				</p>
+		[<p class="location" itemprop="location">
+			<span class="lieu">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
+		</p>]
+		<nav>
+			<a class="btn" href="#descriptif"><:music_fund:titre_descriptif:></a>
+			<a class="btn" href="#details_pratique"><:music_fund:titre_details_pratique:></a>
+		</nav>
+	</header>
+	<section id="descriptif">
+		<header class="cartouche">
+			<h2><:music_fund:titre_descriptif:></h2>
+		</header>
+		[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
+	</section>
+		<section id="details_pratique">
+		<header class="cartouche">
+			<h2><:music_fund:titre_details_pratique:></h2>
+		</header>
+		<div class="content span6 left">
+			<div class="date">
+				<h3><:music_fund:titre_quand:></h3>
+				<time>
+					[(#DATE_DEBUT|nom_jour), ][(#DATE_DEBUT|affdate{d})].[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]
+					[(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|?{
+						[ - (#DATE_FIN|nom_jour), ][(#DATE_FIN|affdate{d})].[ (#DATE_FIN|nom_mois)][ (#DATE_FIN|affdate{Y})]
+						[(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|?{
+							[: (#DATE_DEBUT|affdate{G:i})][ - (#DATE_FIN|affdate{G:i})]
+							,
+							[(#DATE_DEBUT|affdate{G:i}|!={0:00}|oui)[: (#DATE_DEBUT|affdate{G:i})]]
+						})]
+						,
+						[(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|?{
+							[: (#DATE_DEBUT|affdate{G:i})][ - (#DATE_FIN|affdate{G:i})]
+							,
+							[(#DATE_DEBUT|affdate{G:i}|!={0:00}|oui)[: (#DATE_DEBUT|affdate{G:i})]]
+						})]
+					})]
+				</time>
+			</div>
+			[<div class="lieu">
+				<h3><:music_fund:titre_lieu:></h3>
+				[<span class="adresse">(#ADRESSE_GIS)</span><span class="seperateur">, </span>]<span class="ville">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
+			</div>]
+			[<div class="prix">
+				<h3>[(#CHAMP_EXTRA{prix,label}|extraire_multi)]</h3>
+				(#PRIX)
+			</div>]
+			[<div class="bring">
+				<h3>[(#CHAMP_EXTRA{bring,label}|extraire_multi)]</h3>
+				(#BRING|propre)
+			</div>]
+		</div>
+		<div class="carte span6 left">
+			<INCLURE{fond=modeles/carte_gis,
+				autocenterandzoom=oui,
+				zoom=14,
+				id_evenement,
+				objets=evenements}/>
+		</div>
+	</section>
+	
+	<aside>
+		[(#REM) Gestion du portfolio et des documents ]
+		[(#INCLURE{fond=inclure/documents,id_rubrique})]
+	</aside>
+	
+	<footer>
+	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+	</footer>
+
 </BOUCLE_vevent>

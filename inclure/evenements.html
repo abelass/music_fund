@@ -1,5 +1,5 @@
 <B_events>
-	<BOUCLE_events(EVENEMENTS){id_article}{par date_debut,date_fin}>
+	<BOUCLE_events(EVENEMENTS){gis}{id_article}{par date_debut,date_fin}>
 	<article>
 		<div class="span6">
 			[(#LOGO_EVENEMENT
@@ -14,9 +14,11 @@
 					[ - (#DATE_FIN|affdate)]
 				]
 			</time>
-				<span class="place">
-					[, (#LIEU)]
-				</span>
+			<B_lieu>
+			<span class="seperateur">|</span> <span class="lieu">
+					#VILLE[, (#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})]
+			</span>
+			<B_lieu>
 			</div>
 			[<div class="#EDIT{descriptif} texte surlignable">(#DESCRIPTIF)</div>]
 		</div>
