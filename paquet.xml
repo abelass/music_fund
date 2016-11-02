@@ -25,4 +25,5 @@
 	<necessite nom="chosen" compatibilite="[1.6.3;]" />
 	<necessite nom="iextras" compatibilite="[3.5.1;]"/>
 	<necessite nom="agenda" compatibilite="[3.17.2;]"/>
+	<necessite nom="gis" compatibilite="[4.42.3;]"/>
 </paquet>
