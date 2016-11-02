@@ -34,6 +34,14 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// M
 	'music_fund_titre' => 'Music Fund',
 
+	// T
+	'titre_descriptif' => 'Descriptif',
+	'titre_details_pratique' => 'Détails Pratiques',
+	'titre_lieu' => 'Où',
+	'titre_plus_workshops' => 'Autre workshops',
+	'titre_quand' => 'Quand',
+	'titre_photos_videos' => 'Photos et videos',
+
 	// U
 	'userightclick' => 'Pour télécharger un fichier, utilisez le "click droit" et choisissez "Enregistrez le lien sous...".',
 	// V

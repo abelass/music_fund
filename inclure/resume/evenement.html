@@ -15,6 +15,7 @@
 		<nav>
 			<a class="btn" href="#descriptif"><:music_fund:titre_descriptif:></a>
 			<a class="btn" href="#details_pratique"><:music_fund:titre_details_pratique:></a>
+			<a class="btn" href="#photos_videos"><:music_fund:titre_photos_videos:></a>
 		</nav>
 	</header>
 	<section id="descriptif">
@@ -23,7 +24,7 @@
 		</header>
 		[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
 	</section>
-		<section id="details_pratique">
+	<section id="details_pratique" class="clearfix">
 		<header class="cartouche">
 			<h2><:music_fund:titre_details_pratique:></h2>
 		</header>
@@ -64,16 +65,21 @@
 		<div class="carte span6 left">
 			<INCLURE{fond=modeles/carte_gis,
 				autocenterandzoom=oui,
-				zoom=14,
+				zoom=16,
 				id_evenement,
 				objets=evenements}/>
 		</div>
 	</section>
-	
-	<aside>
+	[<section id="photos_videos">
 		[(#REM) Gestion du portfolio et des documents ]
-		[(#INCLURE{fond=inclure/documents,id_rubrique})]
-	</aside>
+		(#INCLURE{fond=inclure/documents,id_rubrique})
+	</section>]
+	<section class="more clearfix">
+		<header class="cartouche">
+			<h2><:music_fund:titre_plus_workshops:></h2>
+		</header>
+		<INCLURE{fond=inclure/evenements,id_article,env}/>
+	</section>
 	
 	<footer>
 	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
