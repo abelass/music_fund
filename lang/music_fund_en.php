@@ -23,6 +23,14 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// M
 	'music_fund_titre' => 'Music Fund',
 
+	// T
+	'titre_descriptif' => 'Descriptif',
+	'titre_details_pratique' => 'Practical Details',
+	'titre_lieu' => 'Where',
+	'titre_plus_workshops' => 'Other Workshops',
+	'titre_quand' => 'When',
+	'titre_photos_videos' => 'Photos and videos',
+
 	// U
 	'userightclick' => 'Use "right click" on the links and choose "Save" to download the movies.',
 	// V
