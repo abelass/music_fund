@@ -1,14 +1,15 @@
-<B_events>
+#ENV
+<B_organisations>
 	<div class="liste-detail">
-	<BOUCLE_events(EVENEMENTS){gis}{id_article}{par date_debut,date_fin}>
+	<BOUCLE_organisations(ORGANISATIONS spip_mots_liens){gis}{id_mot ?} {id_groupe ?}{par num nom, nom}>
 	<article>
 		<div class="span6">
-			[(#LOGO_EVENEMENT
+			[(#LOGO_ORGANISATION
 				|image_passe_partout{#ENV{width,277},#ENV{height,175.5}}
 				|image_recadre{#ENV{width,277},#ENV{height,175.5}})]
 		</div>
 		<div class="span6">
-			<h3 class="#EDIT{titre}"><a href="#URL_EVENEMENT">#TITRE</a></h3>
+			<h3 class="#EDIT{nom}"><a href="#URL_ORGANISATION">#NOM</a></h3>
 			<div>
 			<time pubdate="pubdate" datetime="[(#DATE_DEBUT|date_iso)]">
 				[(#DATE|nom_jour) ][(#DATE|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
@@ -24,6 +25,6 @@
 			[<div class="#EDIT{descriptif} texte surlignable">(#DESCRIPTIF)</div>]
 		</div>
 	</article>
-	</BOUCLE_events>
+	</BOUCLE_organisations>
 	</div>
-</B_events>
+</B_organisations>
