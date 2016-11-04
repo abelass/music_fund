@@ -24,7 +24,7 @@
 	<necessite nom="etiquettes" compatibilite="[2.2.2;]" />
 	<necessite nom="selecteurgenerique" compatibilite="[1.1.4;]" />
 	<necessite nom="chosen" compatibilite="[1.6.3;]" />
-	<necessite nom="iextras" compatibilite="[3.5.1;]"/>
+	<necessite nom="cextras" compatibilite="[3.8.0;]"/>
 	<necessite nom="agenda" compatibilite="[3.17.2;]"/>
 	<necessite nom="gis" compatibilite="[4.42.3;]"/>
 	

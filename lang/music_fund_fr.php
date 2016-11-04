@@ -30,7 +30,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_lifecycles_date_fin' => 'Fin Lifecycle',
 	'lifecycles_statut' => 'Statut Lifecycle',
 
-
 	// M
 	'music_fund_titre' => 'Music Fund',
 
