@@ -26,8 +26,17 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'highdef' => 'A high definition version of each picture is available on simple click. Use "right click" on the HD version and choose "Save" to download the picture.',
 
 	// L
+	'label_approche' => 'Approche',
+	'label_bring' => 'What to bring',
+	'label_collected_instruments' => 'collected instruments over the year',
+	'label_permanent_collection_points' => 'permanent collection points in 6 countries',
+	'label_permanent_workshops_created' => 'permanent repair workshops created',
+	'label_prix' => 'Prix',
+	'label_repaired_given_instruments' => 'repaired & given instruments',
+	'label_resultats' => 'Resultats',
 	'label_lifecycles_date_debut' => 'Début Lifecycle',
 	'label_lifecycles_date_fin' => 'Fin Lifecycle',
+	'label_titre_secondaire' => 'Titre secondaire',
 	'lifecycles_statut' => 'Statut Lifecycle',
 
 	// M
@@ -38,6 +47,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'projets_finis' => 'finished projects',
 
 	// T
+	'titre_approche_resultats' => 'Approche et resultats',
 	'titre_descriptif' => 'Descriptif',
 	'titre_details_pratique' => 'Détails Pratiques',
 	'titre_lieu' => 'Où',
@@ -45,6 +55,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_plus_workshops' => 'Autre workshops',
 	'titre_quand' => 'Quand',
 	'titre_photos_videos' => 'Photos et videos',
+	'titre_sujet_projet' => 'Au sujet du projet',
+	'titre_support_projet' => 'Soutenez ce projet',
 
 	// U
 	'userightclick' => 'Pour télécharger un fichier, utilisez le "click droit" et choisissez "Enregistrez le lien sous...".',
