@@ -1,12 +1,14 @@
 <B_projects_actives>
-	<p>
-	<span class="ongoing-projects">#TOTAL_BOUCLE</span> <:music_fund:projets_cours:>
-	<B_projects_finis>
-		<span class="separateur"> - </span><span class="finished-projects">#TOTAL_BOUCLE</span> <:music_fund:projets_finis:>
-	<BOUCLE_projects_finis(ORGANISATIONS spip_mots_liens){id_mot=4000016}> </BOUCLE_projects_finis>
-	</p>
+	<BOUCLE_test(CONDITION){si #ENV{compteur}|oui}>
+		<p>
+		<span class="ongoing-projects">#TOTAL_BOUCLE</span> <:music_fund:projets_cours:>
+		<B_projects_finis>
+			<span class="separateur"> - </span><span class="finished-projects">#TOTAL_BOUCLE</span> <:music_fund:projets_finis:>
+		<BOUCLE_projects_finis(ORGANISATIONS spip_mots_liens){id_mot=4000016}> </BOUCLE_projects_finis>
+		</p>
+	</BOUCLE_test>
 	<div class="liste-detail">
-	<BOUCLE_projects_actives(ORGANISATIONS spip_mots_liens){gis}{id_mot=4000015}{par num nom, nom}>
+	<BOUCLE_projects_actives(ORGANISATIONS spip_mots_liens){gis}{id_mot=4000015}{par num nom, nom}{id_organisation!=#ENV{exclu,0}}>
 	<article>
 		<div class="span6">
 			[(#LOGO_ORGANISATION

@@ -1,5 +1,5 @@
 <BOUCLE_vevent(EVENEMENTS){gis}{id_evenement=#ENV{id,#ENV{id_evenement}}}{tout}>
-	<header class="cartouche page-header">
+	<header class="cartouche">
 			<h1 class="#EDIT{titre}">#TITRE</h1>
 			<div class="short-description #EDIT{chapo}">#CHAPO</div>
 			<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
@@ -71,6 +71,9 @@
 		</div>
 	</section>
 	[<section id="photos_videos" class="clearfix">
+		<header class="cartouche">
+			<h2><:music_fund:titre_photos_videos:></h2>
+		</header>
 		[(#REM) Gestion du portfolio et des documents ]
 		(#INCLURE{fond=inclure/documents,id_rubrique})
 	</section>]
@@ -78,7 +81,7 @@
 		<header class="cartouche">
 			<h2><:music_fund:titre_plus_workshops:></h2>
 		</header>
-		<INCLURE{fond=inclure/evenements,id_article,env}/>
+		<INCLURE{fond=inclure/evenements,id_article,exclu=#ID_EVENEMENT,env}/>
 	</section>
 	
 	<footer>

@@ -31,7 +31,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_descriptif' => 'Descriptif',
 	'titre_details_pratique' => 'Practical Details',
 	'titre_lieu' => 'Where',
-	'titre_plus_workshops' => 'Other Workshops',
+	'titre_plus_projets' => 'Other projects',
+	'titre_plus_workshops' => 'Other workshops',
 	'titre_quand' => 'When',
 	'titre_photos_videos' => 'Photos and videos',
 

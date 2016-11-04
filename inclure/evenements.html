@@ -1,6 +1,6 @@
 <B_events>
 	<div class="liste-detail">
-	<BOUCLE_events(EVENEMENTS){gis}{id_article}{par date_debut,date_fin}>
+	<BOUCLE_events(EVENEMENTS){gis}{id_article}{par date_debut,date_fin}{id_evenement!=#ENV{exclu,0}>
 	<article>
 		<div class="span6">
 			[(#LOGO_EVENEMENT
