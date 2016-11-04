@@ -1,0 +1,98 @@
+<BOUCLE_vevent(ORGANISATIONS){gis}{id_organisation=#ENV{id,#ENV{id_organisation}}}{tout}>
+	<header class="cartouche">
+			<h1 class="#EDIT{titre}">#TITRE</h1>
+			<div class="short-description #EDIT{chapo}">#CHAPO</div>
+			<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
+			<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
+				<p class="info-publi">
+					<time>[(#DATE|nom_jour) ][(#DATE|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
+					[ - (#DATE_FIN|affdate)]
+				]</time>
+				</p>
+		[<p class="location" itemprop="location">
+			<span class="lieu">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
+		</p>]
+		<nav>
+			<a class="btn" href="#sujet_projet"><:music_fund:titre_sujet_projet:></a>
+			<a class="btn" href="#approche_resultats"><:music_fund:titre_approche_resultats:></a>
+			<a class="btn" href="#photos_videos"><:music_fund:titre_photos_videos:></a>
+			<a class="btn" href="#support_projet"><:music_fund:titre_support_projet:></a>
+		</nav>
+	</header>
+	<section id="sujet_projet" class="clearfix">
+		<header class="cartouche">
+			<h2><:music_fund:titre_sujet_projet:></h2>
+		</header>
+		[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
+	</section>
+	<section id="approche_resultats" class="clearfix">
+		<header class="cartouche">
+			<h2><:music_fund:titre_approche_resultats:></h2>
+		</header>
+		<div class="content span6 left">
+			<div class="date">
+				<h3><:music_fund:titre_quand:></h3>
+				<time>
+					[(#DATE_DEBUT|nom_jour), ][(#DATE_DEBUT|affdate{d})].[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]
+					[(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|?{
+						[ - (#DATE_FIN|nom_jour), ][(#DATE_FIN|affdate{d})].[ (#DATE_FIN|nom_mois)][ (#DATE_FIN|affdate{Y})]
+						[(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|?{
+							[: (#DATE_DEBUT|affdate{G:i})][ - (#DATE_FIN|affdate{G:i})]
+							,
+							[(#DATE_DEBUT|affdate{G:i}|!={0:00}|oui)[: (#DATE_DEBUT|affdate{G:i})]]
+						})]
+						,
+						[(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|?{
+							[: (#DATE_DEBUT|affdate{G:i})][ - (#DATE_FIN|affdate{G:i})]
+							,
+							[(#DATE_DEBUT|affdate{G:i}|!={0:00}|oui)[: (#DATE_DEBUT|affdate{G:i})]]
+						})]
+					})]
+				</time>
+			</div>
+			[<div class="lieu">
+				<h3><:music_fund:titre_lieu:></h3>
+				[<span class="adresse">(#ADRESSE_GIS)</span><span class="seperateur">, </span>]<span class="ville">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
+			</div>]
+			[<div class="prix">
+				<h3>[(#CHAMP_EXTRA{prix,label}|extraire_multi)]</h3>
+				(#PRIX|propre)
+			</div>]
+			[<div class="bring">
+				<h3>[(#CHAMP_EXTRA{bring,label}|extraire_multi)]</h3>
+				(#BRING|propre)
+			</div>]
+		</div>
+		<div class="carte span6 left">
+			<INCLURE{fond=modeles/carte_gis,
+				autocenterandzoom=oui,
+				zoom=16,
+				id_organisation,
+				objets=organisations}/>
+		</div>
+	</section>
+	[<section id="photos_videos" class="clearfix">
+		<header class="cartouche">
+			<h2><:music_fund:titre_photos_videos:></h2>
+		</header>
+		[(#REM) Gestion du portfolio et des documents ]
+		(#INCLURE{fond=inclure/documents,id_rubrique})
+	</section>]
+	<section id="support_projet" class="clearfix">
+		<header class="cartouche">
+			<h2><:music_fund:titre_support_projet:></h2>
+		</header>
+
+	</section>
+	<section class="more clearfix">
+		<header class="cartouche">
+			<h2><:music_fund:titre_plus_projets:></h2>
+		</header>
+		<INCLURE{fond=inclure/projets,exclu=#ID_ORGANISATION, resume='',env}/>
+	</section>
+	
+	<footer>
+	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+	</footer>
+
+</BOUCLE_vevent>
