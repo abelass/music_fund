@@ -1,0 +1,26 @@
+<B_projects_actives>
+	<p>
+	<span class="ongoing-projects">#TOTAL_BOUCLE</span> <:music_fund:projets_cours:>
+	<B_projects_finis>
+		<span class="separateur"> - </span><span class="finished-projects">#TOTAL_BOUCLE</span> <:music_fund:projets_finis:>
+	<BOUCLE_projects_finis(ORGANISATIONS spip_mots_liens){id_mot=4000016}> </BOUCLE_projects_finis>
+	</p>
+	<div class="liste-detail">
+	<BOUCLE_projects_actives(ORGANISATIONS spip_mots_liens){gis}{id_mot=4000015}{par num nom, nom}>
+	<article>
+		<div class="span6">
+			[(#LOGO_ORGANISATION
+				|image_passe_partout{#ENV{width,277},#ENV{height,175.5}}
+				|image_recadre{#ENV{width,277},#ENV{height,175.5}})]
+		</div>
+		<div class="span6">
+			<h3 class="#EDIT{nom}"><a href="#URL_ORGANISATION">#NOM</a></h3>
+			<span class="lieu">
+					#VILLE[, (#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})]
+			</span>
+			[<div class="#EDIT{descriptif} texte surlignable">(#DESCRIPTIF)</div>]
+		</div>
+	</article>
+	</BOUCLE_projects_actives>
+	</div>
+</B_projects_actives>
