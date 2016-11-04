@@ -32,7 +32,6 @@ function music_fund_declarer_champs_extras($champs = array()) {
 			'autocomplete' => 'defaut',
 			'sql' => 'text DEFAULT \'\' NOT NULL',
 			'rechercher_ponderation' => '2',
-			'traitements' => '_TRAITEMENT_RACCOURCIS',
 			'versionner' => 'on',
 		),
 	);

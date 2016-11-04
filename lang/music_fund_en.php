@@ -21,14 +21,14 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'highdef' => 'A high definition version of each picture is available on simple click. Use "right click" on the HD version and choose "Save" to download the picture.',
 
 	// L
-	'label_approche' => 'Approche',
+	'label_approche' => 'Approach',
 	'label_bring' => 'What to bring',
 	'label_collected_instruments' => 'collected instruments over the year',
 	'label_permanent_collection_points' => 'permanent collection points in 6 countries',
 	'label_permanent_workshops_created' => 'permanent repair workshops created',
-	'label_prix' => 'Prix',
+	'label_prix' => 'Price',
 	'label_repaired_given_instruments' => 'repaired & given instruments',
-	'label_resultats' => 'Resultats',
+	'label_resultats' => 'Results',
 	'label_lifecycles_date_debut' => 'Début Lifecycle',
 	'label_lifecycles_date_fin' => 'Fin Lifecycle',
 	'label_titre_secondaire' => 'Additional title',
