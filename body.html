@@ -1,12 +1,17 @@
 <body>
 	<div class="page[ (#ENV{home}|oui)home]">
 		<div class="container">
-			<div class="header" id="header">
-				<INCLURE{fond=header/#ENV{type-page},env} />
+			<div class="row">
+				<div class="header clearfix span2" id="header">
+					<INCLURE{fond=header/#ENV{type-page},env} />
+				</div>
+				[<div class="navbar navbar-inverse navbar-responsive span8" id="nav">
+					(#INCLURE{fond=inclure/nav,env}|navbar_responsive)
+				</div>]
+				<div class="span2">
+					<INCLURE{fond=inclure/menu_langues#GET{select},env}/>
+				</div>
 			</div>
-			[<div class="navbar navbar-inverse navbar-responsive" id="nav">
-				(#INCLURE{fond=inclure/nav,env}|navbar_responsive)
-			</div>]
 			<div class="row">
 				<div class="content span12 " id="content">
 					[(#ENV{type-page}|=={rubrique}|oui)
@@ -25,7 +30,7 @@
 				</div>
 			</div>
 			<div class="footer" id="footer">
-				<INCLURE{fond=footer/#ENV{type-page},env} />
+				<INCLURE{fond=footer/#ENV{type-page},breadcrumb=oui,env} />
 			</div>
 		</div>
 	</div>
