@@ -1,0 +1,5 @@
+<composition>
+	<nom>Article Evénément</nom>
+	<description>Article Evénément</description>
+	<branche type="evenement" composition="events" />
+</composition>

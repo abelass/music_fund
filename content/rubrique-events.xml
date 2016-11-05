@@ -1,4 +1,6 @@
 <composition>
 	<nom>Rubrique Events</nom>
 	<description>Rubrique Events</description>
+	<branche type="article" composition="events" />
+	<branche type="evenement" composition="events" />
 </composition>
