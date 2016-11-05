@@ -9,9 +9,15 @@
 			</div>]
 			<div class="row">
 				<div class="content span12 " id="content">
-					<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 					[(#ENV{type-page}|=={rubrique}|oui)
-						<INCLURE{fond=content/rubrique-secteur,env} />
+						#SET{affichage_page,#LISTE{donation}}
+						[(#COMPOSITION|in_array{#GET{affichage_page}}|non)
+							<INCLURE{fond=content/rubrique-secteur,env} />
+						]
+						[(#COMPOSITION|in_array{#GET{affichage_page}}|oui)
+							<INCLURE{fond=content/#ENV{type-page},header=oui,env} />
+						]
+						
 					]
 					[(#ENV{type-page}|=={rubrique}|non)
 						<INCLURE{fond=content/#ENV{type-page},env} />

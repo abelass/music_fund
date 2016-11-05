@@ -1,5 +1,8 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
 	<header class="cartouche">
+		[(#ENV{header}|oui)
+			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+		]
 		[(#LOGO_RUBRIQUE|image_reduire{200,200})]
 		<h1 class="#EDIT{titre}">#TITRE</h1>
 	</header>

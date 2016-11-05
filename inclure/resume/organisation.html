@@ -1,7 +1,8 @@
 <BOUCLE_vevent(ORGANISATIONS){gis}{id_organisation=#ENV{id,#ENV{id_organisation}}}{tout}>
 	<header class="cartouche">
-			<h1 class="#EDIT{titre}">#TITRE</h1>
-			<div class="short-description #EDIT{chapo}">#CHAPO</div>
+		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+		<h1 class="#EDIT{titre}">#TITRE</h1>
+		<div class="short-description #EDIT{chapo}">#CHAPO</div>
 		[<p class="location" itemprop="location">
 			<span class="lieu">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
 		</p>]

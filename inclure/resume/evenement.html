@@ -1,14 +1,15 @@
 <BOUCLE_vevent(EVENEMENTS){gis}{id_evenement=#ENV{id,#ENV{id_evenement}}}{tout}>
 	<header class="cartouche">
-			<h1 class="#EDIT{titre}">#TITRE</h1>
-			<div class="short-description #EDIT{chapo}">#CHAPO</div>
-			<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
-			<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
-				<p class="info-publi">
-					<time>[(#DATE|nom_jour) ][(#DATE|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
-					[ - (#DATE_FIN|affdate)]
-				]</time>
-				</p>
+		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+		<h1 class="#EDIT{titre}">#TITRE</h1>
+		<div class="short-description #EDIT{chapo}">#CHAPO</div>
+		<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
+		<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
+			<p class="info-publi">
+				<time>[(#DATE|nom_jour) ][(#DATE|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
+				[ - (#DATE_FIN|affdate)]
+			]</time>
+			</p>
 		[<p class="location" itemprop="location">
 			<span class="lieu">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
 		</p>]
