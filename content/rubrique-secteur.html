@@ -8,20 +8,11 @@
 
 <BOUCLE_principal(RUBRIQUES){id_rubrique = #GET{id_rubrique}}{tout}{par num titre}>
 <section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head" id="rubrique-#ID_RUBRIQUE">
-	<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
-	<B_sous_menu>
-	<nav>
-		<ul id="nav-menu">
-		<BOUCLE_sous_menu(RUBRIQUES){id_parent}{tout}{par num titre}>
-			<li><a class="btn" href="#rubrique-#ID_RUBRIQUE">#TITRE</a></li>
-		</BOUCLE_sous_menu>
-		</ul>
-	</nav>
-	</B_sous_menu>
+	<INCLURE{fond=content/rubrique, id_rubrique, composition, env, header=oui} />
 </section>
 	<BOUCLE_enfant(RUBRIQUES){id_parent}{tout}{par num titre}>
 		<section class="clearfix  [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#ID_RUBRIQUE">
-			<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
+			<INCLURE{fond=content/rubrique, id_rubrique, composition, env, header=''} />
 		</section>
 		<BOUCLE_sousrubriques(BOUCLE_enfant)> </BOUCLE_sousrubriques>
 	</BOUCLE_enfant>

@@ -15,12 +15,12 @@
 							<INCLURE{fond=content/rubrique-secteur,env} />
 						]
 						[(#COMPOSITION|in_array{#GET{affichage_page}}|oui)
-							<INCLURE{fond=content/#ENV{type-page},header=oui,env} />
+							<INCLURE{fond=content/#ENV{type-page},header=oui,breadcrumb=oui,env} />
 						]
 						
 					]
 					[(#ENV{type-page}|=={rubrique}|non)
-						<INCLURE{fond=content/#ENV{type-page},env} />
+						<INCLURE{fond=content/#ENV{type-page},breadcrumb=oui,env} />
 					]
 				</div>
 			</div>

@@ -1,7 +1,18 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
-	<header class="cartouche">
-		[(#LOGO_RUBRIQUE|image_reduire{200,200})]
+	<header class="cartouche"[(#ENV{header}|oui) 
+		[ style="background-image: url((#LOGO_RUBRIQUE
+			|image_passe_partout{640,240.5}
+			|image_recadre{640,240.5}
+			|extraire_attribut{src}))"]
+		]>
+		[(#ENV{breadcrumb}|oui)
+			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+		]
 		<h1 class="#EDIT{titre}">#TITRE</h1>
+		[(#ENV{header}|oui)
+			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
+			<INCLURE{fond=inclure/menu_sousrubriques,env} />
+		]
 	</header>
 
 	<div class="main">

@@ -1,17 +1,22 @@
 <BOUCLE_content(ARTICLES){id_article}>
 <article>
-	<header class="cartouche">
+	<header class="cartouche"[ style="background-image: url((#LOGO_ARTICLE
+		|image_passe_partout{640,240.5}
+		|image_recadre{640,240.5}
+		|extraire_attribut{src}))"]>
+		[(#ENV{breadcrumb}|oui)
+			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+		]
 		[(#LOGO_ARTICLE|image_reduire{200,200})]
 		[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
 		<h2><span class="#EDIT{titre}">#TITRE</span>[
 			<small class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</small>
 		]</h2>
-
+		[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
 </header>
 	[(#REM) Boite à outils]
 	[(#INCLURE{fond=inclure/outils,env,titre,introduction=[(#INTRODUCTION|textebrut)],url=#URL_ARTICLE})]
 	<div class="main">
-		[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
 		[<div class="#EDIT{texte} texte surlignable">(#TEXTE|image_reduire{500,0})</div>]
 		[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
 	</div>

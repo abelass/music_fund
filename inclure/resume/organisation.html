@@ -1,5 +1,8 @@
 <BOUCLE_vevent(ORGANISATIONS){gis}{id_organisation=#ENV{id,#ENV{id_organisation}}}{tout}>
-	<header class="cartouche">
+	<header class="cartouche"	[ style="background-image: url((#LOGO_ORGANISATION
+		|image_passe_partout{640,240.5}
+		|image_recadre{640,240.5}
+		|extraire_attribut{src}))"]>
 		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		<h1 class="#EDIT{titre}">#TITRE</h1>
 		<div class="short-description #EDIT{chapo}">#CHAPO</div>
