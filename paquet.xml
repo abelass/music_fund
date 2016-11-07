@@ -27,6 +27,7 @@
 	<necessite nom="cextras" compatibilite="[3.8.0;]"/>
 	<necessite nom="agenda" compatibilite="[3.17.2;]"/>
 	<necessite nom="gis" compatibilite="[4.42.3;]"/>
+	<necessite nom="newsletters" compatibilite="[1.3.30;]"/>
 	
 	<pipeline nom="declarer_champs_extras" inclure="base/music_fund.php" />
 </paquet>

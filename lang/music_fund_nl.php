@@ -41,6 +41,11 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'projets_cours' => 'ongoing projects',
 	'projets_finis' => 'finished projects',
 
+	// R
+	'restez_informe' => 'Bliijf op the hoogte',
+	'restez_informe_texte' => 'Inscrivez vous à la newsletter de Music fund et restez informé',
+
+
 	// T
 	'titre_approche_resultats' => 'Approach & results',
 	'titre_descriptif' => 'Descriptif',
