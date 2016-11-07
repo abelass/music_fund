@@ -1,7 +1,7 @@
 <B_events>
 	<div class="liste-detail">
 	<BOUCLE_events(EVENEMENTS){gis}{id_article}{par date_debut,date_fin}{id_evenement!=#ENV{exclu,0}}>
-	<article>
+	<article class="row">
 		<div class="span6">
 			[(#LOGO_EVENEMENT
 				|image_passe_partout{#ENV{width,277},#ENV{height,175.5}}
