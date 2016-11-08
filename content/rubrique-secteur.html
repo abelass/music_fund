@@ -12,7 +12,7 @@
 </section>
 	<BOUCLE_enfant(RUBRIQUES){id_parent}{tout}{par num titre}>
 		<section class="clearfix  [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#ID_RUBRIQUE">
-			<INCLURE{fond=content/rubrique, id_rubrique, composition, env, header=''} />
+			<INCLURE{fond=content/rubrique, id_rubrique, composition, env} />
 		</section>
 		<BOUCLE_sousrubriques(BOUCLE_enfant)> </BOUCLE_sousrubriques>
 	</BOUCLE_enfant>

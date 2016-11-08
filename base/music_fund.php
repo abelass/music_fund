@@ -243,6 +243,19 @@ function music_fund_declarer_champs_extras($champs = array()) {
 		),
 	);
 
+	$champs['spip_contacts']['url'] = array(
+		'saisie' => 'input',
+		'options' => array(
+			'nom' => 'url',
+			'label' => _T('contacts:label_url_site'),
+			'type' => 'text',
+			'size' => '40',
+			'autocomplete' => 'defaut',
+			'sql' => 'varchar(255)',
+			'rechercher_ponderation' => '2',
+		),
+	);
+
 	return $champs;
 }
 ?>

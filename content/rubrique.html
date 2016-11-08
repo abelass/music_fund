@@ -16,8 +16,11 @@
 	</header>
 
 	<div class="main">
-	
-		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+		[(#ENV{header}|?{
+			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+		,
+			[<div class="introduction introduction">(#INTRODUCTION)</div>]
+		})]
 		<B_articles>
 		<br class="nettoyeur"/>
 		<BOUCLE_articles(ARTICLES){id_rubrique}>

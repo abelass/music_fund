@@ -36,6 +36,8 @@ function music_fund_upgrade($nom_meta_base_version, $version_cible) {
 	$maj = array();
 	cextras_api_upgrade(music_fund_declarer_champs_extras(), $maj['create']);
 
+	cextras_api_upgrade(music_fund_declarer_champs_extras(), $maj['1.0.1']);
+
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
 }
