@@ -1,6 +1,11 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
+[(#LOGO_RUBRIQUE_SURVOL|?{1
+	#SET{logo_header,#LOGO_RUBRIQUE_SURVOL}
+	,2
+	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
+})]
 	<header class="cartouche"[(#ENV{header}|oui) 
-		[ style="background-image: url((#LOGO_RUBRIQUE
+		[ style="background-image: url((#GET{logo_header}
 			|image_passe_partout{640,240.5}
 			|image_recadre{640,240.5}
 			|extraire_attribut{src}))"]

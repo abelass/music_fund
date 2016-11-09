@@ -6,7 +6,7 @@
  * @copyright  2016
  * @author     Rainer Müller
  * @licence    GNU/GPL
- * @package    SPIP\Music_fund\Installation
+ * @package    SPIP\Music_fund\Options
  */
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
