@@ -10,10 +10,8 @@
 
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
-
-
 /**
-    Champs extras
+ * Champs extras
  */
 function music_fund_declarer_champs_extras($champs = array()) {
 
