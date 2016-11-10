@@ -4,12 +4,10 @@
 	,
 	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
 })]
-	<header class="cartouche"[(#ENV{header}|oui) 
-		[ style="background-image: url((#GET{logo_header}
-			|image_passe_partout{1170,441}
-			|image_recadre{1170,441}
-			|extraire_attribut{src}))"]
-		]>
+<div class="wrapper" [style="background-image: url((#GET{logo_header}
+			|image_reduire{1170}
+			|extraire_attribut{src}))"]>
+	<header class="cartouche">
 		[(#ENV{breadcrumb}|oui)
 			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		]
@@ -21,17 +19,9 @@
 	</header>
 
 	<div class="main">
-		[(#ENV{header}|?{
 			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		,
-			[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{255,255}|image_recadre{255,255})]
-			[<div class="#EDIT{introduction} introduction">(#INTRODUCTION)</div>]
-		})]
-		<B_articles>
-		<br class="nettoyeur"/>
-		<BOUCLE_articles(ARTICLES){id_rubrique}>
-			<INCLURE{fond=content/article, id_article, composition, env} />
-		</BOUCLE_articles>
+			<BOUCLE_team(CONTACTS spip_adresses){id_mot=4000020}>
+			</BOUCLE_team>
 	</div>
 	
 	<aside>
@@ -42,4 +32,5 @@
 	<footer>
 	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
 	</footer>
+</div> 
 </BOUCLE_content>
