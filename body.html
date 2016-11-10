@@ -22,7 +22,7 @@
 						]
 						
 						[(#COMPOSITION|in_array{#GET{affichage_page}}|oui|et{#ID_PARENT|in_array{#GET{id_parent}}|non})
-						<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head" id="rubrique-#GET{id_trad}">
+						<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">
 							<INCLURE{fond=content/#ENV{type-page},header=oui,breadcrumb=oui,env} />
 						</section>
 						]
