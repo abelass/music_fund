@@ -1,4 +1,5 @@
 <composition>
 	<nom>La rubrique "Support us"</nom>
 	<description>Contenu de la rubrique "Support us"</description>
+	<branche type="rubrique" composition="support_us" />
 </composition>

@@ -6,8 +6,8 @@
 })]
 	<header class="cartouche"[(#ENV{header}|oui) 
 		[ style="background-image: url((#GET{logo_header}
-			|image_passe_partout{640,240.5}
-			|image_recadre{640,240.5}
+			|image_passe_partout{1170,441}
+			|image_recadre{1170,441}
 			|extraire_attribut{src}))"]
 		]>
 		[(#ENV{breadcrumb}|oui)
@@ -21,13 +21,12 @@
 	</header>
 
 	<div class="main">
-	
-		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		<B_articles>
-		<br class="nettoyeur"/>
-		<BOUCLE_articles(ARTICLES){id_rubrique}>
-			<INCLURE{fond=content/article, id_article, composition, env} />
-		</BOUCLE_articles>
+		[(#ENV{header}|?{
+			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+		,
+			[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{255,255}|image_recadre{255,255})]
+			[<div class="#EDIT{introduction} introduction">(#INTRODUCTION)</div>]
+		})]
 	</div>
 	
 	<aside>
