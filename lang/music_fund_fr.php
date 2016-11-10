@@ -65,6 +65,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// U
 	'userightclick' => 'Pour télécharger un fichier, utilisez le "click droit" et choisissez "Enregistrez le lien sous...".',
+
 	// V
 	'video' => 'Videos',
+	'vous_cherchez' =>'Vous cherchez...',
 );

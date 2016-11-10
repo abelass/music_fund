@@ -63,4 +63,5 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// V
 	'video' => 'Videos',
+	'vous_cherchez' =>'Are you looking for...',
 );

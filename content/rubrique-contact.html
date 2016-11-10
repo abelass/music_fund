@@ -1,0 +1,49 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
+[(#LOGO_RUBRIQUE_SURVOL|?{
+	#SET{logo_header,#LOGO_RUBRIQUE_SURVOL}
+	,
+	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
+})]
+	<header class="cartouche"[ style="background-image: url((#GET{logo_header}
+		|image_passe_partout{1170,441}
+		|image_recadre{1170,441}
+		|extraire_attribut{src}))"]>
+
+		<h1 class="#EDIT{titre}">#TITRE</h1>
+			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
+	</header>
+
+	<div class="main">
+		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+		<div class="lieux">
+		<BOUCLE_lieux(GIS){id_rubrique}>
+			<div class="lieu">
+				<p class="titre">#TITRE</p>
+				[<span class="adresse">(#ADRESSE**|extraire_multi)</span><span class="seperateur">, </span>][<span class="ville">(#VILLE)</span>]
+				[<p class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</p>]
+			</div>
+		</BOUCLE_lieux>
+		
+		</div>
+		
+		
+		<INCLURE{fond=modeles/carte_gis,
+					autocenterandzoom=oui,
+					zoom=16,
+					id_rubrique=#ID_RUBRIQUE,
+					objets=rubriques}/>
+		</section>
+	</div>
+	
+	<aside>
+		<h2><:music_fund:vous_cherchez:></h2>
+		
+		
+		[(#REM) Gestion du portfolio et des documents ]
+		[(#INCLURE{fond=inclure/documents,id_rubrique})]
+	</aside>
+	
+	<footer>
+	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+	</footer>
+</BOUCLE_content>
