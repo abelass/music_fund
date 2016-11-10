@@ -5,21 +5,23 @@
 	</header>
 
 	<div class="main">
-	
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		<B_articles>
-		<br class="nettoyeur"/>
-		<BOUCLE_articles(ARTICLES){id_rubrique}>
-			<INCLURE{fond=content/article, id_article, composition, env} />
-		</BOUCLE_articles>
+		<div class="famous_fans">
+		<BOUCLE_famous(CONTACTS spip_mots_liens){id_mot= 	4000019}>
+			<div class="fan">
+				[(#LOGO_CONTACT|image_passe_partout{160,160}
+			|image_recadre{160,160})]
+				<p class="prenom_nom">
+					[<span class="#EDIT{prenom} prenom">(#PRENOM)</span>] [<span class="#EDIT{nom} nom">(#NOM)</span>]
+				</p>
+				[<p class="#EDIT{fonction} fonction">(#FONCTION)</p>]
+				[<p class="#EDIT{url} url">(#URL)</p>]
+			<div class="fan">
+		</BOUCLE_famous>
+		</div>
 	</div>
-	
-	<aside>
-		[(#REM) Gestion du portfolio et des documents ]
-		[(#INCLURE{fond=inclure/documents,id_rubrique})]
-	</aside>
-	
-	<footer>
-	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
-	</footer>
+
+	[<footer>
+	<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>
+	</footer>]
 </BOUCLE_content>
