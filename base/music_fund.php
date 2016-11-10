@@ -34,6 +34,26 @@ function music_fund_declarer_champs_extras($champs = array()) {
 		),
 	);
 
+	$champs['spip_rubriques']['chapo'] = array(
+		'saisie' => 'textarea',
+		'options' => array(
+			'nom' => 'chapo',
+			'label' => _T('ecrire:info_chapeau'),
+			'class' => 'multilang',
+			'rows' => '3',
+			'sql' => 'text DEFAULT \'\' NOT NULL',
+			'rechercher_ponderation' => '2',
+			'traitements' => '_TRAITEMENT_RACCOURCIS',
+			'versionner' => 'on',
+		),
+		'verifier' => array(
+			'type' => 'taille',
+			'options' => array(
+				'max' => '150',
+			),
+		),
+	);
+
 	$champs['spip_rubriques']['collected_instruments'] = array(
 		'saisie' => 'input',
 		'options' => array(
