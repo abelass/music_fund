@@ -1,4 +1,8 @@
 <BOUCLE_content(ARTICLES){id_article}>
+[(#ID_TRAD|>{0}|?{
+	#SET{id_trad,#ID_TRAD},
+	#SET{id_trad,#ID_ARTICLE}
+})]
 <article>
 	<header class="cartouche"[ style="background-image: url((#LOGO_ARTICLE
 		|image_passe_partout{640,240.5}
@@ -26,9 +30,9 @@
 	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
 	</footer>
 
-<aside>
-	[(#REM) Gestion du portfolio et des documents ]
-	[(#INCLURE{fond=inclure/documents,id_article})]
+	<aside>
+		[(#REM) Gestion du portfolio et des documents ]
+		[(#INCLURE{fond=inclure/documents,id_article}|sinon{#INCLURE{fond=inclure/documents,id_article=#ID_TRAD}})]
 	</aside>
 
 </article>

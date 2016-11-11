@@ -4,6 +4,7 @@
 	,
 	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
 })]
+[(#ID_TRAD|>{0}|?{#SET{id_trad,#ID_TRAD},#SET{id_trad,#ID_RUBRIQUE}})]
 	<header class="cartouche"[(#ENV{header}|oui) 
 		[ style="background-image: url((#GET{logo_header}
 			|image_passe_partout{1170,441}
@@ -36,7 +37,7 @@
 	
 	<aside>
 		[(#REM) Gestion du portfolio et des documents ]
-		[(#INCLURE{fond=inclure/documents,id_rubrique})]
+		[(#INCLURE{fond=inclure/documents,id_rubrique}|sinon{#INCLURE{fond=inclure/documents,id_rubrique=#ID_TRAD}})]
 	</aside>
 	
 	<footer>

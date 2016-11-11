@@ -1,0 +1,25 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
+	<header class="cartouche">
+		<h1 class="#EDIT{titre}">#TITRE</h1>
+	</header>
+
+	<div class="main">
+		[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{255,255}|image_recadre{255,255})]
+		[<div class="#EDIT{introduction} introduction">(#INTRODUCTION)</div>]
+	</div>
+	
+	<aside>
+		[(#REM) Gestion du portfolio et des documents ]
+		<BOUCLE_articles(ARTICLES){id_rubrique}>
+			[(#ID_TRAD|>{0}|?{
+				#SET{id_trad,#ID_TRAD},
+				#SET{id_trad,#ID_ARTICLE}
+			})]
+			[(#INCLURE{fond=inclure/documents,id_article}|sinon{#INCLURE{fond=inclure/documents,id_article=#ID_TRAD}})]
+		</BOUCLE_articles>
+	</aside>
+	
+	<footer>
+	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+	</footer>
+</BOUCLE_content>

@@ -30,17 +30,22 @@
 		<INCLURE{fond=modeles/carte_gis,
 					autocenterandzoom=oui,
 					zoom=16,
-					id_rubrique=#ID_RUBRIQUE,
+					id_trad,
 					objets=rubriques}/>
 		</section>
 	</div>
 	
 	<aside>
+		<B_articles>
 		<h2><:music_fund:vous_cherchez:></h2>
-		
-		
-		[(#REM) Gestion du portfolio et des documents ]
-		[(#INCLURE{fond=inclure/documents,id_rubrique})]
+		<nav>
+			<ul class="liste-items">
+			<BOUCLE_articles(ARTICLES){id_rubrique}{par num titre}>
+				<li class="item hentry"><a href="#URL_RUBRIQUE" title="#TITRE">#TITRE</a></li>
+			</BOUCLE_articles>
+			</ul>
+		</nav>
+		</B_articles>
 	</aside>
 	
 	<footer>
