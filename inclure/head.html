@@ -42,6 +42,8 @@
 #INCLURE{fond=inc-theme-head,env}
 ]
 
+#INSERT_HEAD
+
 [(#REM) Feuille de style personnalisee pour surcharger les precedentes
 	A noter par defaut cette css n'existe pas
 ]
@@ -52,7 +54,7 @@
 	Et appeler a la fin compacte_head pour agreger et compacter tout le head dans des fichiers statiques
 	si l'option est cochee dans Configuration
 ]
-#INSERT_HEAD
+
 [<script type="text/javascript" src="(#CHEMIN{js/bootstrap-collapse.js})"></script>]
 [<script type="text/javascript" src="(#CHEMIN{lib/jquery.OnePageNav/jquery.nav.js})"></script>]
 

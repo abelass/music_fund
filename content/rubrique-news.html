@@ -1,7 +1,7 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
-[(#LOGO_RUBRIQUE_SURVOL|?{1
+[(#LOGO_RUBRIQUE_SURVOL|?{
 	#SET{logo_header,#LOGO_RUBRIQUE_SURVOL}
-	,2
+	,
 	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
 })]
 	<header class="cartouche"[(#ENV{header}|oui) 
