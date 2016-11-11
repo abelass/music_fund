@@ -1,0 +1,25 @@
+<div class="formulaire_spip formulaire_recherche[ (#ENV{class})]" id="formulaire_recherche_instruments">
+<form action="[(#ENV{action})]" method="post"><div>
+<div class="editer-groupe">
+	#ACTION_FORMULAIRE{#ENV{action}}
+	[<input type="hidden" name="lang" value="(#ENV{lang})" />]
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="WSLS7M6N4NETE">
+<table>
+<tr><td><input type="hidden" name="on0" value=""></td></tr><tr><td><select name="os0">
+	<option value="10 €">10 € : €10,00 EUR - mensuel</option>
+	<option value="20 €">20 € : €20,00 EUR - mensuel</option>
+	<option value="30 €">30 € : €30,00 EUR - mensuel</option>
+</select> </td></tr>
+</table>
+<input type="hidden" name="currency_code" value="EUR">
+<input type="image" src="https://www.paypalobjects.com/fr_FR/BE/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+</form>
+
+	<input type="submit" class="submit" value="&gt;&gt;" title="<:info_rechercher:>" />
+	</div>
+</div></form>
+
+</div>

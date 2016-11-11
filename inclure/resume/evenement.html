@@ -1,7 +1,7 @@
 <BOUCLE_vevent(EVENEMENTS){gis}{id_evenement=#ENV{id,#ENV{id_evenement}}}{tout}>
 	<header class="cartouche"	[ style="background-image: url((#LOGO_EVENEMENT
-		|image_passe_partout{640,240.5}
-		|image_recadre{640,240.5}
+		|image_passe_partout{1170,441}
+		|image_recadre{1170,441}
 		|extraire_attribut{src}))"]>
 		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		<h1 class="#EDIT{titre}">#TITRE</h1>
@@ -9,7 +9,7 @@
 		<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
 		<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
 			<p class="info-publi">
-				<time>[(#DATE|nom_jour) ][(#DATE|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
+				<time>[(#DATE_DEBUT|nom_jour) ][(#DATE_DEBUT|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
 				[ - (#DATE_FIN|affdate)]
 			]</time>
 			</p>
