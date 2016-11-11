@@ -1,0 +1,22 @@
+#SET{id_trads,#LISTE{34, 36, 4, 49, 1}}
+
+<BOUCLE_principal(RUBRIQUES){id_rubrique}{tout}>
+[(#ID_TRAD|>{0}|?{
+	#SET{id_trad,#ID_TRAD}
+	,
+	#SET{id_trad,#ID_RUBRIQUE}
+})]
+<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head" id="rubrique-#GET{id_trad}">
+	<INCLURE{fond=content/#ENV{type-page}, id_rubrique, composition=#COMPOSITION, env, header=oui} />
+</section>
+	<BOUCLE_enfant(RUBRIQUES){id_trad IN #GET{id_trads}}{tout}>
+	[(#ID_TRAD|>{0}|?{
+		#SET{id_trad,#ID_TRAD}
+		,
+		#SET{id_trad,#ID_RUBRIQUE}
+	})]
+		<section class="clearfix  [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#GET{id_trad}">
+			<INCLURE{fond=content/#ENV{type-page}, id_rubrique, composition=#COMPOSITION, env} />
+		</section>
+	</BOUCLE_enfant>
+</BOUCLE_principal>

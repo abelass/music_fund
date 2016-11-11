@@ -5,13 +5,14 @@
 	<section class="liste documents documents_joints">
 	<ul class="liste-items">
 		<BOUCLE_documents_joints(DOCUMENTS)
-			{id_article?}
-			{id_rubrique?}
-			{id_produit?}
-			{id_evenement?}
-			{id_organisation?}
+			{id_article ?}
+			{id_rubrique ?}
+			{id_produit ?}
+			{id_evenement ?}
+			{id_organisation ?}
 			{extension !IN gif,jpg,png,mp4}
-			{vu=non}{par num titre, date}>[
+			{vu=non}
+			{par num titre, date}>[
 		<li class="item">
 			<strong><a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:info_document:>})]</a></strong>
 			<span class="small">(<span>#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)]</span>)</span>
@@ -24,13 +25,14 @@
 <B_mp4>
 	<section class="liste documents videos">
 	<BOUCLE_mp4(DOCUMENTS)
-		{id_article?}
-		{id_rubrique?}
-		{id_produit?}
-		{id_evenement?}
-		{id_organisation?}
+		{id_article ?}
+		{id_rubrique ?}
+		{id_produit ?}
+		{id_evenement ?}
+		{id_organisation ?}
 		{extension = mp4}
-		{vu=non}{par num titre, date}>
+		{vu=non}
+		{par num titre, date}>
 		<INCLURE{fond=modeles/emb,env,id_document}/>
 	</BOUCLE_mp4>
 	</section>
@@ -42,14 +44,15 @@
 <B_documents_portfolio>
 <section class="documents documents_portfolio" id="documents_portfolio">
 	<BOUCLE_documents_portfolio(DOCUMENTS)
-	{id_article?}
-	{id_rubrique?}
-	{id_produit?}
-	{id_evenement?}
-	{id_organisation?}
+	{id_article ?}
+	{id_rubrique ?}
+	{id_produit ?}
+	{id_evenement ?}
+	{id_organisation ?}
 	{tout}
 	{extension IN png,jpg,gif}
-	{par num titre, date}{vu=non}>[
+	{par num titre, date}
+	{vu=non}>[
 	<a href="(#FICHIER|image_reduire{1500,*}|extraire_attribut{src})"
 		 type="#MIME_TYPE"
 		 rel="documents_portfolio[-a(#ID_ARTICLE)][-r(#ID_RUBRIQUE)]"

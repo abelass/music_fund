@@ -18,8 +18,7 @@
 		]</h2>
 		[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
 </header>
-	[(#REM) Boite à outils]
-	[(#INCLURE{fond=inclure/outils,env,titre,introduction=[(#INTRODUCTION|textebrut)],url=#URL_ARTICLE})]
+
 	<div class="main">
 		[<div class="#EDIT{texte} texte surlignable">(#TEXTE|image_reduire{500,0})</div>]
 		[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
@@ -32,7 +31,7 @@
 
 	<aside>
 		[(#REM) Gestion du portfolio et des documents ]
-		[(#INCLURE{fond=inclure/documents,id_article}|sinon{#INCLURE{fond=inclure/documents,id_article=#ID_TRAD}})]
+		[(#INCLURE{fond=inclure/documents,id_article}|sinon{#INCLURE{fond=inclure/documents,id_article=#GET{id_trad}}})]
 	</aside>
 
 </article>
