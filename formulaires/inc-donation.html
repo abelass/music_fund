@@ -1,0 +1,36 @@
+[(#SAISIE{oui_non,
+	certificat,
+	label=<:music_fund:label_certificat:>,
+	valeur_non=off
+	})]
+
+
+#SET{pays,#ARRAY}
+[(#CERTIFICAT|=={on}|oui)
+	[(#SAISIE{selection_articles,
+		pays,
+		label=<:music_fund:label_pays:>,
+		id_rubrique=#ENV{id_rubrique}
+		})]
+]
+[(#CERTIFICAT|=={off}|oui)
+	[(#SAISIE{oui_non,
+		recurrent,
+		label=<:music_fund:label_recurrent:>,
+		valeur_non=off
+		})]
+
+]
+
+<B_pays_choisi>
+<div class="resultat">
+<BOUCLE_pays_choisi(ARTICLES){id_article=#ENV{pays}}{si #CERTIFICAT|=={on}|oui}>
+	<h2>#TITRE</h2>
+	<div class="texte">
+		#TEXTE
+	</div>
+</BOUCLE_pays_choisi>
+</div>
+</B_pays_choisi>
+
+

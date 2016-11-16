@@ -14,14 +14,12 @@
 	<auteur>Rainer</auteur>
 
 	<licence>GNU/GPL</licence>
-	
+
 	<lib nom="jquery.OnePageNav" lien="https://github.com/davist11/jQuery-One-Page-Nav/archive/master.zip"/>
 
 	<necessite nom="wsps_html5" compatibilite="[1.2.1;]" />
 	<necessite nom="wsp_ml" compatibilite="[0.2.6;]" />
 	<necessite nom="mf_gestion_instruments" compatibilite="[1.0.0;]" />
-	<necessite nom="accesrestreint" compatibilite="[3.14.2;]" />
-	<necessite nom="etiquettes" compatibilite="[2.2.2;]" />
 	<necessite nom="selecteurgenerique" compatibilite="[1.1.4;]" />
 	<necessite nom="chosen" compatibilite="[1.6.3;]" />
 	<necessite nom="cextras" compatibilite="[3.8.0;]"/>
@@ -29,8 +27,9 @@
 	<necessite nom="gis" compatibilite="[4.42.3;]"/>
 	<necessite nom="newsletters" compatibilite="[1.3.30;]"/>
 	<necessite nom="spip_hop" compatibilite="[0.4.11;]"/>
-	
+	<necessite nom="saisies" compatibilite="[2.8.1;]"/>
+
 	<utilise nom="multilingue" compatibilite="[1.0.6;]" />
-	
+
 	<pipeline nom="declarer_champs_extras" inclure="base/music_fund.php" />
 </paquet>

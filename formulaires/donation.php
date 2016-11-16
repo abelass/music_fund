@@ -24,6 +24,20 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * @param string $class Une class différenciant le formulaire
  * @return array
  */
-function formulaires_donation_charger_dist() {
+function formulaires_donation_charger_dist($id_rubrique) {
+	if ($GLOBALS['spip_lang'] != $GLOBALS['meta']['langue_site']) {
+		$lang = $GLOBALS['spip_lang'];
+	} else {
+		$lang = '';
+	}
 
+	$valeurs = array(
+		'certificat' => '',
+		'pays' => '',
+		'recurrent' => '',
+		'id_rubrique' => $id_rubrique,
+		'lang' => $lang,
+	);
+
+	return $valeurs;
 }

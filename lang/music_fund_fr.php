@@ -29,6 +29,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_approche' => 'Approche',
 	'label_bring' => 'What to bring',
 	'label_collected_instruments' => 'collected instruments over the year',
+	'label_paypal_options_mensuel' => '@montant@ € - mensuel',
 	'label_permanent_collection_points' => 'permanent collection points in 6 countries',
 	'label_permanent_workshops_created' => 'permanent repair workshops created',
 	'label_prix' => 'Prix',

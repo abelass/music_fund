@@ -4,7 +4,7 @@
 	,
 	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
 })]
-	<header class="cartouche"[(#ENV{header}|oui) 
+	<header class="cartouche"[(#ENV{header}|oui)
 		[ style="background-image: url((#GET{logo_header}
 			|image_passe_partout{1170,441}
 			|image_recadre{1170,441}
@@ -20,33 +20,23 @@
 	</header>
 
 	<div class="main">
-		[(#ENV{header}|?{
+		[(#ENV{header}|oui)
 			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-			<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-				<input type="hidden" name="cmd" value="_s-xclick">
-				<input type="hidden" name="hosted_button_id" value="WSLS7M6N4NETE">
-				<table>
-				<tr><td><input type="hidden" name="on0" value=""></td></tr><tr><td><select name="os0">
-					<option value="10 €">10 € : €10,00 EUR - mensuel</option>
-					<option value="20 €">20 € : €20,00 EUR - mensuel</option>
-					<option value="30 €">30 € : €30,00 EUR - mensuel</option>
-				</select> </td></tr>
-				</table>
-				<input type="hidden" name="currency_code" value="EUR">
-				<input type="image" src="https://www.paypalobjects.com/fr_FR/BE/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-				<img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-			</form>
-		,
+			<div class="ajax">
+				#FORMULAIRE_DONATION{#ID_RUBRIQUE}
+			</div>
+		]
+		[(#ENV{header}|non)
 			[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{255,255}|image_recadre{255,255})]
 			[<div class="#EDIT{introduction} introduction">(#INTRODUCTION)</div>]
-		})]
+		]
 	</div>
-	
+
 	<aside>
 		[(#REM) Gestion du portfolio et des documents ]
 		[(#INCLURE{fond=inclure/documents,id_rubrique})]
 	</aside>
-	
+
 	<footer>
 	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
 	</footer>
