@@ -1,7 +1,7 @@
 [(#SAISIE{oui_non,
 	certificat,
 	label=<:music_fund:label_certificat:>,
-	valeur_non=off
+	valeur_non=off,
 	})]
 
 
@@ -33,4 +33,56 @@
 </div>
 </B_pays_choisi>
 
+<script type="text/javascript">
+	// Changement certificat.
+	$(".editer_certificat input").change(function(event) {
 
+		var champChange = $(this).attr('name');
+		var valeurChange = $(this).attr('value');
+
+		// Obtain the search vars.
+		var $set = jQuery('#formulaire_donation').find('input, select');
+		var searchVars = {};
+		$set.each(function (index, element) {
+			searchVars[this.name] = this.value;
+		});
+		searchVars[champChange] = valeurChange;
+		ajaxReload('donation', {
+			args : searchVars
+		});
+		if(valeurChange == 'on') {
+			$('#formulaire_paypal').remove();
+		}
+	});
+
+	// Changement certificat.
+	$("#champ_pays").change(function(event) {
+
+		var valeurChange = $('#champ_pays option:selected').attr('value');
+
+		var searchVars = {
+			id_rubrique : #ENV{id_rubrique},
+			pays : valeurChange,
+			certificat : 'on'
+		};
+
+		ajaxReload('donation', {
+			args : searchVars
+		});
+	});
+
+	// Changement recurrent.
+	$(".editer_recurrent input").change(function(event) {
+
+		var champChange = $(this).attr('name');
+		var valeurChange = $(this).attr('value');
+
+		// Obtain the search vars.
+		var $set = jQuery('#formulaire_donation').find('input, select');
+		var searchVars = {};
+		searchVars[champChange] = valeurChange;
+		ajaxReload('donation_paypal', {
+			args : searchVars
+		});
+	});
+</script>

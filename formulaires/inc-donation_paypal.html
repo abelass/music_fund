@@ -1,0 +1,57 @@
+#SET{codes_langues,#ARRAY{
+	fr,fr_FR,
+	en,en_US,
+	nl,nl_NL
+	}
+}
+[(#RECURRENT|oui)
+<div class="formulaire_spip formulaire_paypal" id="formulaire_paypal">
+[(#RECURRENT|=={on}|oui)
+#SET{options, #ARRAY{
+	option_1, #ARRAY{
+		montant,10.00,
+		label,music_fund:label_paypal_options_mensuel{montant=10}},
+
+}}
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+		<input type="hidden" name="cmd" value="_xclick-subscriptions">
+		<input type="hidden" name="business" value="WRJHFCMQ5R8XU">
+		<input type="hidden" name="lc" value="BE">
+		<input type="hidden" name="item_name" value="Music Fund">
+		<input type="hidden" name="item_number" value="1">
+		<input type="hidden" name="no_note" value="1">
+		<input type="hidden" name="no_shipping" value="2">
+		<input type="hidden" name="src" value="1">
+		<input type="hidden" name="p3" value="1">
+		<input type="hidden" name="currency_code" value="EUR">
+		<input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHosted">
+		[(#SAISIE{selection,t3,
+			label=<:music_fund:label_paypal_recurence:>,
+			datas=#ARRAY{
+				D,<:music_fund:label_paypal_journalier:>,
+				M,<:music_fund:label_paypal_mensuel:>,
+				Y,<:music_fund:label_paypal_annuel:>
+			}
+		})]
+		[(#SAISIE{input,a3,
+			label=<:music_fund:label_montant:>,
+		})]
+		<input type="image" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/BE/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+		<img alt="Paypal" border="0" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/i/scr/pixel.gif" width="1" height="1">
+	</form>
+</div>
+]
+
+[(#RECURRENT|=={off}|oui)
+	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+		<input type="hidden" name="cmd" value="_donations">
+		<input type="hidden" name="business"
+        value="auction@musicfund.eu">
+
+		<input type="image" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/BE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+		<img alt="" border="0" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/i/scr/pixel.gif" width="1" height="1">
+		<input type="hidden" name="currency_code" value="EUR">
+		<input type="hidden" name="item_name" value="Friends of the Park">
+	</form>]
+</div>
+]

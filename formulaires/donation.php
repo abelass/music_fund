@@ -32,9 +32,9 @@ function formulaires_donation_charger_dist($id_rubrique) {
 	}
 
 	$valeurs = array(
-		'certificat' => '',
+		'certificat' => 'rien',
 		'pays' => '',
-		'recurrent' => '',
+		'recurrent' => 'rien',
 		'id_rubrique' => $id_rubrique,
 		'lang' => $lang,
 	);
