@@ -1,15 +1,16 @@
-<div class="formulaire_spip formulaire_recherche[ (#ENV{class})]" id="formulaire_recherche_instruments">
-	<form action="[(#ENV{action})]" method="post">
-	<div>
-		<div class="editer-groupe">
-			#ACTION_FORMULAIRE{#ENV{action}}
-
-			<INCLURE{fond=formulaires/inc-donation,env, ajax=donation}/>
-
-			<input type="submit" class="submit" value="&gt;&gt;" title="ok" />
+<div class="ajax">
+	<div class="formulaire_spip formulaire_recherche[ (#ENV{class})]" id="formulaire_recherche_instruments">
+		<form action="[(#ENV{action})]" method="post">
+		<div>
+			<div class="editer-groupe">
+				#ACTION_FORMULAIRE{#ENV{action}}
+				<INCLURE{fond=formulaires/inc-donation,env, ajax=donation}/>
+				<input type="submit" class="submit" value="&gt;&gt;" title="ok" />
+			</div>
 		</div>
+		</form>
 	</div>
-	</form>
+</div>
 #SET{codes_langues,#ARRAY{
 	fr,fr_FR,
 	en,en_US,
@@ -17,7 +18,7 @@
 	}
 }
 
-<BOUCLE_test(CONDITION){si #RECURRENT|=={on}|oui}>
+[(#RECURRENT|=={on}|oui)
 #SET{options, #ARRAY{
 	option_1, #ARRAY{
 		montant,10.00,
@@ -26,38 +27,39 @@
 }}
 <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 	<input type="hidden" name="cmd" value="_xclick-subscriptions">
-	<input type="hidden" name="business" value="auction@musicfund.eu">
+	<input type="hidden" name="business" value="WRJHFCMQ5R8XU">
+	<input type="hidden" name="lc" value="BE">
+	<input type="hidden" name="item_name" value="Music Fund">
+	<input type="hidden" name="item_number" value="1">
 	<input type="hidden" name="no_note" value="1">
+	<input type="hidden" name="no_shipping" value="2">
 	<input type="hidden" name="src" value="1">
-	<table>
-	<tr><td><input type="hidden" name="on0" value=""></td></tr><tr><td><select name="os0">
-	<BOUCLE_options(DATA){source tableau, #GET{options}}>
-		<option value="#CLE">#VALEUR{label}</option>
-	</BOUCLE_options>
-	</select> </td></tr>
-	</table>
-			<input type="hidden" name="currency_code" value="EUR">
-	<BOUCLE_options_inputs(DATA){source tableau, #GET{options}}>
-		#SET{compteur,#COMPTEUR_BOUCLE|moins{1}}
-		<input type="hidden" name="option_select#GET{compteur}" value="#CLE">
-		<input type="hidden" name="option_amount#GET{compteur}" value="#VALEUR{montant}">
-		<input type="hidden" name="option_period#GET{compteur}" value="M">
-		<input type="hidden" name="option_frequency#GET{compteur}" value="1">
-	</BOUCLE_options_inputs>
-		<input type="image" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/BE/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
-		<img alt="" border="0" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-</BOUCLE_test>
-
-
+	<input type="hidden" name="p3" value="1">
+	<input type="hidden" name="currency_code" value="EUR">
+	<input type="hidden" name="bn" value="PP-SubscriptionsBF:btn_subscribeCC_LG.gif:NonHosted">
+	[(#SAISIE{selection,t3,
+		label=<:music_fund:label_paypal_recurence:>,
+		datas=#ARRAY{
+			D,<:music_fund:label_paypal_journalier:>,
+			M,<:music_fund:label_paypal_mensuel:>,
+			Y,<:music_fund:label_paypal_annuel:>
+		}
+	})]
+	[(#SAISIE{input,a3,
+		label=<:music_fund:label_montant:>,
+	})]
+	<input type="image" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/BE/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
+	<img alt="Paypal" border="0" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/i/scr/pixel.gif" width="1" height="1">
+</form>]
 
 [(#RECURRENT|=={off}|oui)
 	<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-		<input type="hidden" name="cmd" value="_s-xclick">
-		<input type="hidden" name="hosted_button_id" value="EGTMMF6L4GQR2">
+		<input type="hidden" name="cmd" value="_donations">
+		<input type="hidden" name="business"
+        value="auction@musicfund.eu">
+
 		<input type="image" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/BE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
 		<img alt="" border="0" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/i/scr/pixel.gif" width="1" height="1">
-	</form>
-	]
-</div>
+		<input type="hidden" name="currency_code" value="EUR">
+		<input type="hidden" name="item_name" value="Friends of the Park">
+	</form>]

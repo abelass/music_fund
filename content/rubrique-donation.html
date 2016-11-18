@@ -22,9 +22,7 @@
 	<div class="main">
 		[(#ENV{header}|oui)
 			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-			<div class="ajax">
 				#FORMULAIRE_DONATION{#ID_RUBRIQUE}
-			</div>
 		]
 		[(#ENV{header}|non)
 			[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{255,255}|image_recadre{255,255})]
