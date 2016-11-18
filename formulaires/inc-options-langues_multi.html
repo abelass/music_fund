@@ -11,12 +11,12 @@
 			[ (#LANG|=={#ENV{lang}}|oui)selected="selected"]
 			dir="[(#LANG|lang_dir{ltr,rtl})]">
 			[(#LANG)]
-		</option>	
+		</option>
 	</BOUCLE_traductions>
 </BOUCLE_article>
 [(#REM) Sinon, si on est dans le contexte d'une rubrique, on affiche les langues des rubriques]
-	<BOUCLE_rubrique(RUBRIQUES){id_rubrique}>
-		<BOUCLE_traductions_rub(RUBRIQUES) {traduction} {par lang} {tout}>
+	<BOUCLE_rubrique(RUBRIQUES){id_rubrique} {tout}>
+		<BOUCLE_traductions_rub(RUBRIQUES) {traduction} {tout} {par lang} {tout}>
 		<option
 			value='[(#URL_ACTION_AUTEUR{'converser',
 				'',
@@ -26,23 +26,23 @@
 			[ (#LANG|=={#ENV{lang}}|oui)selected="selected"]
 			dir="[(#LANG|lang_dir{ltr,rtl})]">
 				[(#LANG)]
-			</option>	
+			</option>
 		</BOUCLE_traductions_rub>
 	</BOUCLE_rubrique>
 		[(#REM) Sinon, si on on boucle sur les langues disponibles dans le public]
-		<BOUCLE_langue_possibles(RUBRIQUES){id_parent=0}{id_trad!=0}{0,1}>
-			<BOUCLE_langue_possibles_trad(RUBRIQUES) {traduction} {par lang}>
+		<BOUCLE_langue_possibles(RUBRIQUES){id_parent=0}{id_trad!=0}{0,1} {tout}>
+			<BOUCLE_langue_possibles_trad(RUBRIQUES) {traduction} {par lang} {tout}>
 				<option
 					value='[(#URL_ACTION_AUTEUR{'converser',
 						'',
 						[(#SELF|parametre_url{lang,'','&'})]}
 							|parametre_url{arg,''}
 							|parametre_url{var_lang,#LANG})]'
-					[ (#LANG|=={#ENV{lang}}|oui)selected="selected"] 
+					[ (#LANG|=={#ENV{lang}}|oui)selected="selected"]
 					dir="[(#LANG|lang_dir{ltr,rtl})]">
 					[(#LANG)]
 				</option>
 			</BOUCLE_langue_possibles_trad>
-		</BOUCLE_langue_possibles> 
+		</BOUCLE_langue_possibles>
 	<//B_rubrique>
 <//B_article>
