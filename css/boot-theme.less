@@ -1,0 +1,98 @@
+@grayDark:                               #443220;
+@orange:                                 #f0821a;
+
+@linkColor:                              @orange;
+
+@navbarInverseBackground:                @white;
+@navbarInverseBackgroundHighlight:       @white;
+@navbarInverseBorder:                    @white;
+
+@navbarLinkColorHover:                   @grayDark;
+
+@navbarInverseText:                      @grayDark;
+@navbarInverseLinkColor:                 @grayDark;
+@navbarInverseLinkColorHover:            @orange;
+
+.bouton (@backgroundColor: #14b67e) {
+	background-color: @backgroundColor;
+	-moz-border-radius: 15;
+	-webkit-border-radius: 15;
+	border-radius: 50px;
+	border: none;
+	box-shadow: none;
+	background-image: none;
+	padding: 0.7em 1em;
+}
+/*
+ * Fonts
+ */
+@font-face {
+		font-family: 'montserratregular';
+		src: url('fonts/montserrat/montserrat-regular-webfont.woff2') format('woff2'),
+				url('fonts/montserrat/montserrat-regular-webfont.woff') format('woff');
+		font-weight: normal;
+		font-style: normal;
+}
+
+@serifFontFamily: montserratregular;
+/*
+ * General.
+ */
+.home #content .cartouche {
+		display: block;
+}
+
+// Boutons
+.btn {
+	.bouton;
+}
+
+.btn.facebook, .formulaire_menu_lang {
+	.bouton(#e4e4e4);
+}
+/*
+ * Menus
+ */
+
+// navbar
+
+.navbar-inner {
+	border:none;
+	border-radius: none;
+	box-shadow: none;
+	.on {
+		font-weight:normal;
+	}
+}
+
+.navbar-inverse {
+	.nav > li > a {
+		text-shadow: none;
+	}
+	.nav > li.on > a{
+		color: @orange;
+	}
+}
+/*
+ * Section Our Work.
+ */
+
+/*Rubrique What we do */
+.what_we_do {
+	.main{
+		p {
+			float:left;
+			width: 33%;
+		}
+	}
+	.boutons {
+		float:left;
+		width: 33%;
+		a {
+			display:block;
+		}
+	}
+}
+
+
+
