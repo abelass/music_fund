@@ -34,7 +34,7 @@ function formulaires_donation_charger_dist($id_rubrique) {
 	$valeurs = array(
 		'certificat' => 'rien',
 		'pays' => '',
-		'recurrent' => 'rien',
+		'recurrent' => '',
 		'id_rubrique' => $id_rubrique,
 		'lang' => $lang,
 	);
