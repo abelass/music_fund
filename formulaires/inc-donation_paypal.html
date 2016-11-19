@@ -1,9 +1,3 @@
-#SET{codes_langues,#ARRAY{
-	fr,fr_FR,
-	en,en_US,
-	nl,nl_NL
-	}
-}
 [(#RECURRENT|oui)
 <div class="formulaire_spip formulaire_paypal" id="formulaire_paypal">
 [(#RECURRENT|=={on}|oui)
@@ -36,8 +30,7 @@
 		[(#SAISIE{input,a3,
 			label=<:music_fund:label_montant:>,
 		})]
-		<input type="image" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/BE/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
-		<img alt="Paypal" border="0" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/i/scr/pixel.gif" width="1" height="1">
+		<input type="image" src="[(#CHEMIN{images/btn_donateCC_LG_#LANG.gif})]" border="0" name="submit" alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !">
 	</form>
 </div>
 ]
@@ -48,8 +41,7 @@
 		<input type="hidden" name="business"
         value="auction@musicfund.eu">
 
-		<input type="image" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/BE/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-		<img alt="" border="0" src="https://www.paypalobjects.com/[(#GET{codes_langues}|table_valeur{#LANG})]/i/scr/pixel.gif" width="1" height="1">
+		<input type="image" src="[(#CHEMIN{images/btn_subscribeCC_LG_#LANG.gif})]" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
 		<input type="hidden" name="currency_code" value="EUR">
 		<input type="hidden" name="item_name" value="Friends of the Park">
 	</form>]
