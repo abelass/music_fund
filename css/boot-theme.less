@@ -20,8 +20,10 @@
 	border-radius: 50px;
 	border: none;
 	box-shadow: none;
+	text-shadow: none;
 	background-image: none;
-	padding: 0.7em 1em;
+	padding: 0.7em 1.2em;
+	display:inline-block;
 }
 /*
  * Fonts
@@ -42,12 +44,38 @@
 		display: block;
 }
 
+// Header.
+#header {
+	margin: 1em 1em 0;
+
+	.logo {
+		padding-top: 0.1em;
+		margin-left: 1em;
+	}
+	.spip_logos{
+		float:right;
+	}
+}
+
 // Boutons
 .btn {
 	.bouton;
 }
 
-.btn.facebook, .formulaire_menu_lang {
+.navbar .action-buttons {
+	.btn{
+		float: left;
+		margin-top: 0;
+		margin-right: 0.4em;
+	}
+	> div {
+		margin-right: 0.4em;
+	}
+}
+.btn.facebook{
+	.bouton(#e4e4e4);
+}
+.formulaire_menu_lang {
 	.bouton(#e4e4e4);
 }
 /*
@@ -60,6 +88,7 @@
 	border:none;
 	border-radius: none;
 	box-shadow: none;
+	padding: 0;
 	.on {
 		font-weight:normal;
 	}
@@ -68,9 +97,17 @@
 .navbar-inverse {
 	.nav > li > a {
 		text-shadow: none;
+		padding: 0.7em 0.5em;
 	}
 	.nav > li.on > a{
 		color: @orange;
+	}
+}
+
+.navbar {
+	margin-top: 0.5em;
+	.nav{
+		float:right;
 	}
 }
 /*

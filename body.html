@@ -1,13 +1,15 @@
 <body class="[(#COMPOSITION|sinon{rubrique})]">
 	<div class="page[ (#ENV{home}|oui)home]">
 		<div class="container">
-			<div class="row">
-				<div class="header clearfix span3" id="header">
-					<INCLURE{fond=header/#ENV{type-page},env} />
+			<div class="header clearfix"  id="header">
+				<div class="row-fluid">
+					<div class="logo span3">
+						<INCLURE{fond=header/#ENV{type-page},env} />
+					</div>
+					[<div class="navbar navbar-inverse navbar-responsive span9" id="nav">
+						(#INCLURE{fond=inclure/nav,env}|navbar_responsive)
+					</div>]
 				</div>
-				[<div class="navbar navbar-inverse navbar-responsive span9" id="nav">
-					(#INCLURE{fond=inclure/nav,env}|navbar_responsive)
-				</div>]
 			</div>
 				<div class="content" id="content">
 					[(#ENV{type-page}|=={rubrique}|oui)
@@ -20,13 +22,13 @@
 						[(#COMPOSITION|in_array{#GET{affichage_page}}|non|ou{#ID_PARENT|in_array{#GET{id_parent}}|oui})
 							<INCLURE{fond=content/rubrique-secteur,env} />
 						]
-						
+
 						[(#COMPOSITION|in_array{#GET{affichage_page}}|oui|et{#ID_PARENT|in_array{#GET{id_parent}}|non})
 						<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">
 							<INCLURE{fond=content/#ENV{type-page},header=oui,breadcrumb=oui,env} />
 						</section>
 						]
-						
+
 					]
 					[(#ENV{type-page}|=={rubrique}|non)
 						<INCLURE{fond=content/#ENV{type-page},breadcrumb=oui,env} />

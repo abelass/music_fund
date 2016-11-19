@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="27px" height="35px" viewBox="0 0 27 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>Fill 1 Copy 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M398.038,155.518 C398.038,150.26 393.776,146 388.518,146 C383.263,146 379,150.26 379,155.518 C379,159.231 381.128,162.445 384.228,164.014 L388.518,171.214 L392.809,164.014 C395.911,162.445 398.038,159.231 398.038,155.518" id="path-1"></path>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="6" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.409873188 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+    </defs>
+    <g id="Music-Fund-website---Visual-design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MF---Contact---Desktop" transform="translate(-425.000000, -1142.000000)">
+            <g id="Group-2" transform="translate(50.000000, 996.000000)">
+                <g id="Fill-1-Copy-3">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#F0821A" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
