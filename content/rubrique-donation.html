@@ -4,12 +4,12 @@
 	,
 	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
 })]
-	<header class="cartouche"[(#ENV{header}|oui)
-		[ style="background-image: url((#GET{logo_header}
+	<header class="cartouche">
+		[(#ENV{header}|oui)<div class="container"[ style="background-image: url((#GET{logo_header}
 			|image_passe_partout{1170,441}
 			|image_recadre{1170,441}
 			|extraire_attribut{src}))"]
-		]>
+		>]
 		[(#ENV{breadcrumb}|oui)
 			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		]
@@ -17,8 +17,10 @@
 		[(#ENV{header}|oui)
 			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
 		]
+		[(#ENV{header}|oui)</div>]
 	</header>
 
+	[(#ENV{header}|oui)<div class="container">]
 	<div class="main">
 		[(#ENV{header}|oui)
 			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
@@ -38,4 +40,5 @@
 	<footer>
 	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
 	</footer>
+	[(#ENV{header}|oui)</div>]
 </BOUCLE_content>

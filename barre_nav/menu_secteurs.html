@@ -13,12 +13,12 @@
 		</B_enfants>
 	</BOUCLE_nav>
 	<div class="action-buttons span4">
-		<BOUCLE_support(RUBRIQUES){id_trad=1}{tout}{lang}>
-		<a class="btn" href="#URL_RUBRIQUE" title="#TITRE">#TITRE</a>
-		</BOUCLE_support>
-		<INCLURE{fond=inclure/menu_langues_select,env}/>
 		<a class="btn facebook" href="#" title="Facebook">
 			<img src="#CHEMIN{images/icon-facebook.png}" alt="logo facebook" />
 		</a>
+		<INCLURE{fond=inclure/menu_langues_select,env}/>
+		<BOUCLE_support(RUBRIQUES){id_trad=1}{tout}{lang}>
+		<a class="btn" href="#URL_RUBRIQUE" title="#TITRE">#TITRE</a>
+		</BOUCLE_support>
 	</div>
 </div>

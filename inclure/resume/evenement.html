@@ -1,103 +1,106 @@
 <BOUCLE_vevent(EVENEMENTS){gis}{id_evenement=#ENV{id,#ENV{id_evenement}}}{tout}>
-	<header class="cartouche"	[ style="background-image: url((#LOGO_EVENEMENT
+	<header class="cartouche">
+		<div class="container" [ style="background-image: url((#LOGO_EVENEMENT
 		|image_passe_partout{1170,441}
 		|image_recadre{1170,441}
 		|extraire_attribut{src}))"]>
-		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
-		<h1 class="#EDIT{titre}">#TITRE</h1>
-		<div class="chapo #EDIT{chapo}">#CHAPO</div>
-		<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
-		<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
-			<p class="info-publi">
-				<time>[(#DATE_DEBUT|nom_jour) ][(#DATE_DEBUT|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
-				[ - (#DATE_FIN|affdate)]
-			]</time>
-			</p>
-		[<p class="location" itemprop="location">
-			<span class="lieu">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
-		</p>]
-		<nav>
-			<ul id="nav-menu">
-				<li class="current">
-					<a class="btn" href="#descriptif"><:music_fund:titre_descriptif:></a>
-				</li>
-				<li>
-					<a class="btn" href="#details_pratique"><:music_fund:titre_details_pratique:></a>
-				</li>
-				<li>
-					<a class="btn" href="#photos_videos"><:music_fund:titre_photos_videos:></a>
-				</li>
-			</ul>
-		</nav>
+			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+			<h1 class="#EDIT{titre}">#TITRE</h1>
+			<div class="chapo #EDIT{chapo}">#CHAPO</div>
+			<meta itemprop="startDate" content="[(#DATE_DEBUT|date_iso)]" />
+			<meta itemprop="endDate" content="[(#DATE_FIN|date_iso)]" />
+				<p class="info-publi">
+					<time>[(#DATE_DEBUT|nom_jour) ][(#DATE_DEBUT|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
+					[ - (#DATE_FIN|affdate)]
+				]</time>
+				</p>
+			[<p class="location" itemprop="location">
+				<span class="lieu">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
+			</p>]
+			<nav>
+				<ul id="nav-menu">
+					<li class="current">
+						<a class="btn" href="#descriptif"><:music_fund:titre_descriptif:></a>
+					</li>
+					<li>
+						<a class="btn" href="#details_pratique"><:music_fund:titre_details_pratique:></a>
+					</li>
+					<li>
+						<a class="btn" href="#photos_videos"><:music_fund:titre_photos_videos:></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</header>
-	<section id="descriptif" class="clearfix">
-		<header class="cartouche">
-			<h2><:music_fund:titre_descriptif:></h2>
-		</header>
-		[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
-	</section>
-	<section id="details_pratique" class="clearfix">
-		<header class="cartouche">
-			<h2><:music_fund:titre_details_pratique:></h2>
-		</header>
-		<div class="content span6 left">
-			<div class="date">
-				<h3><:music_fund:titre_quand:></h3>
-				<time>
-					[(#DATE_DEBUT|nom_jour), ][(#DATE_DEBUT|affdate{d})].[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]
-					[(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|?{
-						[ - (#DATE_FIN|nom_jour), ][(#DATE_FIN|affdate{d})].[ (#DATE_FIN|nom_mois)][ (#DATE_FIN|affdate{Y})]
-						[(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|?{
-							[: (#DATE_DEBUT|affdate{G:i})][ - (#DATE_FIN|affdate{G:i})]
+	<div class="container">
+		<section id="descriptif" class="clearfix">
+			<header class="cartouche">
+				<h2><:music_fund:titre_descriptif:></h2>
+			</header>
+			[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
+		</section>
+		<section id="details_pratique" class="clearfix">
+			<header class="cartouche">
+				<h2><:music_fund:titre_details_pratique:></h2>
+			</header>
+			<div class="content span6 left">
+				<div class="date">
+					<h3><:music_fund:titre_quand:></h3>
+					<time>
+						[(#DATE_DEBUT|nom_jour), ][(#DATE_DEBUT|affdate{d})].[ (#DATE_DEBUT|nom_mois)][ (#DATE_DEBUT|affdate{Y})]
+						[(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|?{
+							[ - (#DATE_FIN|nom_jour), ][(#DATE_FIN|affdate{d})].[ (#DATE_FIN|nom_mois)][ (#DATE_FIN|affdate{Y})]
+							[(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|?{
+								[: (#DATE_DEBUT|affdate{G:i})][ - (#DATE_FIN|affdate{G:i})]
+								,
+								[(#DATE_DEBUT|affdate{G:i}|!={0:00}|oui)[: (#DATE_DEBUT|affdate{G:i})]]
+							})]
 							,
-							[(#DATE_DEBUT|affdate{G:i}|!={0:00}|oui)[: (#DATE_DEBUT|affdate{G:i})]]
+							[(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|?{
+								[: (#DATE_DEBUT|affdate{G:i})][ - (#DATE_FIN|affdate{G:i})]
+								,
+								[(#DATE_DEBUT|affdate{G:i}|!={0:00}|oui)[: (#DATE_DEBUT|affdate{G:i})]]
+							})]
 						})]
-						,
-						[(#DATE_DEBUT|affdate{G:i}|!={[(#DATE_FIN|affdate{G:i})]}|?{
-							[: (#DATE_DEBUT|affdate{G:i})][ - (#DATE_FIN|affdate{G:i})]
-							,
-							[(#DATE_DEBUT|affdate{G:i}|!={0:00}|oui)[: (#DATE_DEBUT|affdate{G:i})]]
-						})]
-					})]
-				</time>
+					</time>
+				</div>
+				[<div class="lieu">
+					<h3><:music_fund:titre_lieu:></h3>
+					[<span class="adresse">(#ADRESSE_GIS)</span><span class="seperateur">, </span>]<span class="ville">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
+				</div>]
+				[<div class="prix">
+					<h3>[(#CHAMP_EXTRA{prix,label}|extraire_multi)]</h3>
+					(#PRIX|propre)
+				</div>]
+				[<div class="bring">
+					<h3>[(#CHAMP_EXTRA{bring,label}|extraire_multi)]</h3>
+					(#BRING|propre)
+				</div>]
 			</div>
-			[<div class="lieu">
-				<h3><:music_fund:titre_lieu:></h3>
-				[<span class="adresse">(#ADRESSE_GIS)</span><span class="seperateur">, </span>]<span class="ville">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
-			</div>]
-			[<div class="prix">
-				<h3>[(#CHAMP_EXTRA{prix,label}|extraire_multi)]</h3>
-				(#PRIX|propre)
-			</div>]
-			[<div class="bring">
-				<h3>[(#CHAMP_EXTRA{bring,label}|extraire_multi)]</h3>
-				(#BRING|propre)
-			</div>]
-		</div>
-		<div class="carte span6 left">
-			<INCLURE{fond=modeles/carte_gis,
-				autocenterandzoom=oui,
-				zoom=16,
-				id_evenement,
-				objets=evenements}/>
-		</div>
-	</section>
-	[<section id="photos_videos" class="clearfix">
-		<header class="cartouche">
-			<h2><:music_fund:titre_photos_videos:></h2>
-		</header>
-		[(#REM) Gestion du portfolio et des documents ]
-		(#INCLURE{fond=inclure/documents,id_rubrique})
-	</section>]
-	<section class="more clearfix">
-		<header class="cartouche">
-			<h2>[(#VAL{music_fund:titre_plus_#COMPOSITION}|_T)]</h2>
-		</header>
-		<INCLURE{fond=inclure/evenements,id_article,exclu=#ID_EVENEMENT,env}/>
-	</section>
-	
-	<footer>
-	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
-	</footer>
+			<div class="carte span6 left">
+				<INCLURE{fond=modeles/carte_gis,
+					autocenterandzoom=oui,
+					zoom=16,
+					id_evenement,
+					objets=evenements}/>
+			</div>
+		</section>
+		[<section id="photos_videos" class="clearfix">
+			<header class="cartouche">
+				<h2><:music_fund:titre_photos_videos:></h2>
+			</header>
+			[(#REM) Gestion du portfolio et des documents ]
+			(#INCLURE{fond=inclure/documents,id_rubrique})
+		</section>]
+		<section class="more clearfix">
+			<header class="cartouche">
+				<h2>[(#VAL{music_fund:titre_plus_#COMPOSITION}|_T)]</h2>
+			</header>
+			<INCLURE{fond=inclure/evenements,id_article,exclu=#ID_EVENEMENT,env}/>
+		</section>
 
+		<footer>
+		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+		</footer>
+	</div>
 </BOUCLE_vevent>

@@ -40,22 +40,31 @@
 /*
  * General.
  */
+	// Blocks
+	.page-head h1, .page-head .container > div, .page-head nav {
+		padding: 0 45px;
+	}
+
 .home #content .cartouche {
 		display: block;
 }
 
 // Header.
 #header {
-	margin: 1em 1em 0;
-
+	margin: 2em 0;
 	.logo {
 		padding-top: 0.1em;
-		margin-left: 1em;
-	}
-	.spip_logos{
-		float:right;
 	}
 }
+
+.page-head header{
+  min-height: 441px;
+  background-image: linear-gradient(to bottom, #f5b527, #d95609);
+  .container {
+  	background-color:transparent;
+  }
+}
+
 
 // Boutons
 .btn {
@@ -64,7 +73,7 @@
 
 .navbar .action-buttons {
 	.btn{
-		float: left;
+		float: right;
 		margin-top: 0;
 		margin-right: 0.4em;
 	}
@@ -131,5 +140,10 @@
 	}
 }
 
-
+@media (min-width: 1200px) {
+	// Blocks
+	.page-head h1, .page-head .container > div, .page-head nav {
+		padding: 0 90px;
+	}
+}
 

@@ -1,83 +1,86 @@
 <BOUCLE_vevent(ORGANISATIONS){gis}{id_organisation=#ENV{id,#ENV{id_organisation}}}{tout}>
-	<header class="cartouche"	[ style="background-image: url((#LOGO_ORGANISATION
-		|image_passe_partout{640,240.5}
-		|image_recadre{640,240.5}
+	<header class="cartouche">
+		<div class="container" [ style="background-image: url((#LOGO_ORGANISATION
+			|image_passe_partout{1170,441}
+			|image_recadre{1170,441}
 		|extraire_attribut{src}))"]>
-		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
-		<h1 class="#EDIT{titre}">#TITRE</h1>
-		<div class="short-description #EDIT{chapo}">#CHAPO</div>
-		[<p class="location" itemprop="location">
-			<span class="lieu">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
-		</p>]
-		<nav>
-			<ul id="nav-menu">
-				<li class="current">
-					<a class="btn" href="#sujet_projet"><:music_fund:titre_sujet_projet:></a>
-				</li>
-				<li>
-					<a class="btn" href="#approche_resultats"><:music_fund:titre_approche_resultats:></a>
-				</li>
-				<li>
-					<a class="btn" href="#photos_videos"><:music_fund:titre_photos_videos:></a>
-				</li>
-				<li>
-					<a class="btn" href="#support_projet"><:music_fund:titre_support_projet:></a>
-				</li>
-			</ul>
-		</nav>
+			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+			<h1 class="#EDIT{titre}">#TITRE</h1>
+			<div class="short-description #EDIT{chapo}">#CHAPO</div>
+			[<p class="location" itemprop="location">
+				<span class="lieu">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
+			</p>]
+			<nav>
+				<ul id="nav-menu">
+					<li class="current">
+						<a class="btn" href="#sujet_projet"><:music_fund:titre_sujet_projet:></a>
+					</li>
+					<li>
+						<a class="btn" href="#approche_resultats"><:music_fund:titre_approche_resultats:></a>
+					</li>
+					<li>
+						<a class="btn" href="#photos_videos"><:music_fund:titre_photos_videos:></a>
+					</li>
+					<li>
+						<a class="btn" href="#support_projet"><:music_fund:titre_support_projet:></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 	</header>
-	<section id="sujet_projet" class="clearfix">
-		<header class="cartouche">
-			<h2><:music_fund:titre_sujet_projet:></h2>
-		</header>
-		[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
-		<INCLURE{fond=modeles/carte_gis,
-				autocenterandzoom=oui,
-				zoom=16,
-				id_organisation,
-				objets=organisations}/>
-	</section>
-	<section id="approche_resultats" class="clearfix">
-		<header class="cartouche">
-			<h2><:music_fund:titre_approche_resultats:></h2>
-		</header>
-		<div class="content span6 left">
-			<h3><:music_fund:label_approche:></h3>
-			[<div class="#EDIT{approche} texte">(#APPROCHE)</div>]
-		</div>
-		
-		<div class="carte span6 left">
-			<h3><:music_fund:label_resultats:></h3>
-			[<div class="#EDIT{resultat} texte">(#RESULTATS)</div>]
-		</div>
+	<div class="container">
+		<section id="sujet_projet" class="clearfix">
+			<header class="cartouche">
+				<h2><:music_fund:titre_sujet_projet:></h2>
+			</header>
+			[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
+			<INCLURE{fond=modeles/carte_gis,
+					autocenterandzoom=oui,
+					zoom=16,
+					id_organisation,
+					objets=organisations}/>
+		</section>
+		<section id="approche_resultats" class="clearfix">
+			<header class="cartouche">
+				<h2><:music_fund:titre_approche_resultats:></h2>
+			</header>
+			<div class="content span6 left">
+				<h3><:music_fund:label_approche:></h3>
+				[<div class="#EDIT{approche} texte">(#APPROCHE)</div>]
+			</div>
 
-		<INCLURE{fond=inclure/sponsors}/>
+			<div class="carte span6 left">
+				<h3><:music_fund:label_resultats:></h3>
+				[<div class="#EDIT{resultat} texte">(#RESULTATS)</div>]
+			</div>
 
-	</section>
-	[<section id="photos_videos" class="clearfix">
-		<header class="cartouche">
-			<h2><:music_fund:titre_photos_videos:></h2>
-		</header>
-		[(#REM) Gestion du portfolio et des documents ]
-		(#INCLURE{fond=inclure/documents,id_organisation})
-	</section>]
-	<section id="support_projet" class="clearfix">
-		<header class="cartouche">
-			<h2><:music_fund:titre_support_projet:></h2>
-		</header>
-		<BOUCLE_rubriques(RUBRIQUES){id_trad IN 40, 39, 41}{tout}{lang}>
-			<a class="btn" href="#URL_RUBRIQUE">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</a>
-		</BOUCLE_rubriques>
-	</section>
-	<section class="more clearfix">
-		<header class="cartouche">
-			<h2><:music_fund:titre_plus_projets:></h2>
-		</header>
-		<INCLURE{fond=inclure/projets,exclu=#ID_ORGANISATION, resume='',env}/>
-	</section>
-	
-	<footer>
-	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
-	</footer>
+			<INCLURE{fond=inclure/sponsors}/>
 
+		</section>
+		[<section id="photos_videos" class="clearfix">
+			<header class="cartouche">
+				<h2><:music_fund:titre_photos_videos:></h2>
+			</header>
+			[(#REM) Gestion du portfolio et des documents ]
+			(#INCLURE{fond=inclure/documents,id_organisation})
+		</section>]
+		<section id="support_projet" class="clearfix">
+			<header class="cartouche">
+				<h2><:music_fund:titre_support_projet:></h2>
+			</header>
+			<BOUCLE_rubriques(RUBRIQUES){id_trad IN 40, 39, 41}{tout}{lang}>
+				<a class="btn" href="#URL_RUBRIQUE">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</a>
+			</BOUCLE_rubriques>
+		</section>
+		<section class="more clearfix">
+			<header class="cartouche">
+				<h2><:music_fund:titre_plus_projets:></h2>
+			</header>
+			<INCLURE{fond=inclure/projets,exclu=#ID_ORGANISATION, resume='',env}/>
+		</section>
+
+		<footer>
+		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+		</footer>
+	</div>
 </BOUCLE_vevent>

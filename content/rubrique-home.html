@@ -15,8 +15,10 @@
 		,
 		#SET{id_trad,#ID_RUBRIQUE}
 	})]
+	<div class="container">
 		<section class="clearfix  [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#GET{id_trad}">
 			<INCLURE{fond=content/#ENV{type-page}, id_rubrique, composition=#COMPOSITION, env,header='', breadcrumb=''} />
 		</section>
+	</div>
 	</BOUCLE_enfant>
 </BOUCLE_principal>

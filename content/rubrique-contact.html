@@ -4,51 +4,53 @@
 	,
 	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
 })]
-	<header class="cartouche"[ style="background-image: url((#GET{logo_header}
-		|image_passe_partout{1170,441}
-		|image_recadre{1170,441}
-		|extraire_attribut{src}))"]>
-
+	<header class="cartouche">
+		<div class="container" [style="background-image: url((#GET{logo_header}
+			|image_passe_partout{1170,441}
+			|image_recadre{1170,441}
+			|extraire_attribut{src}))"]
+		>
 		<h1 class="#EDIT{titre}">#TITRE</h1>
 			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
-	</header>
-
-	<div class="main">
-		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		<div class="lieux">
-		<BOUCLE_lieux(GIS){id_rubrique}>
-			<div class="lieu">
-				<p class="titre">#TITRE</p>
-				[<span class="adresse">(#ADRESSE**|extraire_multi)</span><span class="seperateur">, </span>][<span class="ville">(#VILLE)</span>]
-				[<p class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</p>]
-			</div>
-		</BOUCLE_lieux>
-		
 		</div>
-		
-		
-		<INCLURE{fond=modeles/carte_gis,
-					autocenterandzoom=oui,
-					zoom=16,
-					id_trad,
-					objets=rubriques}/>
-		</section>
-	</div>
-	
-	<aside>
-		<B_articles>
-		<h2><:music_fund:vous_cherchez:></h2>
-		<nav>
-			<ul class="liste-items">
-			<BOUCLE_articles(ARTICLES){id_rubrique}{par num titre}>
-				<li class="item hentry"><a href="#URL_RUBRIQUE" title="#TITRE">#TITRE</a></li>
-			</BOUCLE_articles>
-			</ul>
-		</nav>
-		</B_articles>
-	</aside>
-	
-	<footer>
-	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
-	</footer>
+	</header>
+	<div class="container">
+		<div class="main">
+			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+			<div class="lieux">
+			<BOUCLE_lieux(GIS){id_rubrique}>
+				<div class="lieu">
+					<p class="titre">#TITRE</p>
+					[<span class="adresse">(#ADRESSE**|extraire_multi)</span><span class="seperateur">, </span>][<span class="ville">(#VILLE)</span>]
+					[<p class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</p>]
+				</div>
+			</BOUCLE_lieux>
+
+			</div>
+
+
+			<INCLURE{fond=modeles/carte_gis,
+						autocenterandzoom=oui,
+						zoom=16,
+						id_trad,
+						objets=rubriques}/>
+		</div>
+
+		<aside>
+			<B_articles>
+			<h2><:music_fund:vous_cherchez:></h2>
+			<nav>
+				<ul class="liste-items">
+				<BOUCLE_articles(ARTICLES){id_rubrique}{par num titre}>
+					<li class="item hentry"><a href="#URL_RUBRIQUE" title="#TITRE">#TITRE</a></li>
+				</BOUCLE_articles>
+				</ul>
+			</nav>
+			</B_articles>
+		</aside>
+
+		<footer>
+		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+		</footer>
+
 </BOUCLE_content>

@@ -4,12 +4,13 @@
 	,
 	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
 })]
-	<header class="cartouche"[(#ENV{header}|oui) 
-		[ style="background-image: url((#GET{logo_header}
+	<header class="cartouche">
+		[(#ENV{header}|oui)<div class="container"[ style="background-image: url((#GET{logo_header}
 			|image_passe_partout{1170,441}
 			|image_recadre{1170,441}
 			|extraire_attribut{src}))"]
-		]>
+		>
+		]
 		[(#ENV{breadcrumb}|oui)
 			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		]
@@ -18,23 +19,25 @@
 			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
 			<INCLURE{fond=inclure/menu_sousrubriques,env} />
 		]
+		[(#ENV{header}|oui)</div>]
 	</header>
+	[(#ENV{header}|oui)<div class="container">]
+		<div class="main">
+			[(#ENV{header}|?{
+				[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+			,
+				[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{255,255}|image_recadre{255,255})]
+				[<div class="#EDIT{introduction} introduction">(#INTRODUCTION)</div>]
+			})]
+		</div>
 
-	<div class="main">
-		[(#ENV{header}|?{
-			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		,
-			[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{255,255}|image_recadre{255,255})]
-			[<div class="#EDIT{introduction} introduction">(#INTRODUCTION)</div>]
-		})]
-	</div>
-	
-	<aside>
-		[(#REM) Gestion du portfolio et des documents ]
-		[(#INCLURE{fond=inclure/documents,id_rubrique})]
-	</aside>
-	
-	<footer>
-	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
-	</footer>
+		<aside>
+			[(#REM) Gestion du portfolio et des documents ]
+			[(#INCLURE{fond=inclure/documents,id_rubrique})]
+		</aside>
+
+		<footer>
+		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+		</footer>
+	[(#ENV{header}|oui)<div class="container">]
 </BOUCLE_content>
