@@ -1,0 +1,22 @@
+#HTTP_HEADER{Content-Type: text/css;}
+<BOUCLE_article(ARTICLES){id_article}>
+[(#LOGO_ARTICLE_SURVOL|?{#SET{logo_header,#LOGO_ARTICLE_SURVOL},#SET{logo_header,#LOGO_ARTICLE_NORMAL}})]
+</BOUCLE_article>
+	<BOUCLE_rubrique(RUBRIQUES){id_rubrique}{tout}>
+	[(#LOGO_RUBRIQUE_SURVOL|?{#SET{logo_header,#LOGO_RUBRIQUE_SURVOL},#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}})]
+	</BOUCLE_rubrique>
+<//B_article>
+<BOUCLE_evenement(EVENEMENTS){id_evenement}>
+[(#LOGO_EVENEMENT_SURVOL|?{#SET{logo_header,#LOGO_EVENEMENT_SURVOL},#SET{logo_header,#LOGO_EVENEMENT_NORMAL}})]
+</BOUCLE_evenement>
+<BOUCLE_organisation(ORGANISATIONS){id_organisation}>
+[(#LOGO_ORGANISATION_SURVOL|?{#SET{logo_header,#LOGO_ORGANISATION_SURVOL},#SET{logo_header,#LOGO_ORGANISATION_NORMAL}})]
+</BOUCLE_organisation>
+.page-head header {
+	[background-image: url((#GET{logo_header}
+		|image_passe_partout{1220,380}
+		|image_recadre{1220,380,'center','transparent'}
+		|image_nb
+		|image_alpha{110}
+		|extraire_attribut{src})), linear-gradient(to bottom, #f5b527, #d95609);]
+	}

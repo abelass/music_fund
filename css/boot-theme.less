@@ -13,6 +13,10 @@
 @navbarInverseLinkColor:                 @grayDark;
 @navbarInverseLinkColorHover:            @orange;
 
+
+/*
+ * Mixins.
+ */
 .bouton (@backgroundColor: #14b67e) {
 	background-color: @backgroundColor;
 	-moz-border-radius: 15;
@@ -37,13 +41,15 @@
 }
 
 @serifFontFamily: montserratregular;
+
+
 /*
- * General.
+ * Blocks
  */
-	// Blocks
-	.page-head h1, .page-head .container > div, .page-head nav {
-		padding: 0 45px;
-	}
+
+.container > section {
+	padding: 0 45px;
+}
 
 .home #content .cartouche {
 		display: block;
@@ -51,20 +57,39 @@
 
 // Header.
 #header {
-	margin: 2em 0;
+	margin: 2em 1em;
 	.logo {
 		padding-top: 0.1em;
 	}
 }
 
-.page-head header{
-  min-height: 441px;
-  background-image: linear-gradient(to bottom, #f5b527, #d95609);
-  .container {
-  	background-color:transparent;
-  }
+.header {
+	.logo {
+			.spip_logos {
+			margin: 0;
+		}
+	}
 }
 
+.page-head {
+	text-align: center;
+	header{
+	  min-height: 380px;
+	  background-image: linear-gradient(to bottom, #f5b527, #d95609);
+	  .container {
+	  	background-color:transparent;
+	  }
+	}
+}
+
+// Footer
+#footer {
+	margin: 2em 1em;
+}
+
+/*
+ * General.
+ */
 
 // Boutons
 .btn {
@@ -115,6 +140,7 @@
 
 .navbar {
 	margin-top: 0.5em;
+	margin-bottom: 0;
 	.nav{
 		float:right;
 	}
@@ -141,8 +167,13 @@
 }
 
 @media (min-width: 1200px) {
+	.page {
+		max-width: 1220px;
+		margin: 0 auto;
+	}
+
 	// Blocks
-	.page-head h1, .page-head .container > div, .page-head nav {
+	.container > section {
 		padding: 0 90px;
 	}
 }

@@ -1,0 +1,7 @@
+[(#REM) Ce bloc permet l'insertion de CSS specifiques a une page]
+
+<link rel="stylesheet" href="[(#URL_PAGE{styles}
+	|parametre_url{id_rubrique,#ID_RUBRIQUE}
+	|parametre_url{id_article,#ID_ARTICLE}
+	|parametre_url{id_evenement,#ID_EVENEMENT}
+	|parametre_url{id_organisation,#ID_ORGANISATION})]" type="text/css" media="screen, projection" />

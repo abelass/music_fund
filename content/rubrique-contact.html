@@ -1,18 +1,7 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
-[(#LOGO_RUBRIQUE_SURVOL|?{
-	#SET{logo_header,#LOGO_RUBRIQUE_SURVOL}
-	,
-	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
-})]
 	<header class="cartouche">
-		<div class="container" [style="background-image: url((#GET{logo_header}
-			|image_passe_partout{1170,441}
-			|image_recadre{1170,441}
-			|extraire_attribut{src}))"]
-		>
 		<h1 class="#EDIT{titre}">#TITRE</h1>
 			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
-		</div>
 	</header>
 	<div class="container">
 		<div class="main">
@@ -25,17 +14,13 @@
 					[<p class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</p>]
 				</div>
 			</BOUCLE_lieux>
-
 			</div>
-
-
 			<INCLURE{fond=modeles/carte_gis,
 						autocenterandzoom=oui,
 						zoom=16,
 						id_trad,
 						objets=rubriques}/>
 		</div>
-
 		<aside>
 			<B_articles>
 			<h2><:music_fund:vous_cherchez:></h2>
@@ -48,9 +33,7 @@
 			</nav>
 			</B_articles>
 		</aside>
-
 		<footer>
 		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
 		</footer>
-
 </BOUCLE_content>

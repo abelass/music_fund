@@ -21,9 +21,11 @@
 		,
 		#SET{id_trad,#ID_RUBRIQUE}
 	})]
+	<div class="container">
 		<section class="clearfix  [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#GET{id_trad}">
 			<INCLURE{fond=content/#ENV{type-page}, id_rubrique, composition=#COMPOSITION, env} />
 		</section>
+	</div>
 		<BOUCLE_sousrubriques(BOUCLE_enfant)> </BOUCLE_sousrubriques>
 	</BOUCLE_enfant>
 </BOUCLE_principal>

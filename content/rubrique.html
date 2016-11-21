@@ -1,16 +1,6 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
-[(#LOGO_RUBRIQUE_SURVOL|?{
-	#SET{logo_header,#LOGO_RUBRIQUE_SURVOL}
-	,
-	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
-})]
 [(#ID_TRAD|>{0}|?{#SET{id_trad,#ID_TRAD},#SET{id_trad,#ID_RUBRIQUE}})]
 	<header class="cartouche">
-		[(#ENV{header}|oui)<div class="container" [style="background-image: url((#GET{logo_header}
-			|image_passe_partout{1170,441}
-			|image_recadre{1170,441}
-			|extraire_attribut{src}))"]
-		>]
 		[(#ENV{breadcrumb}|oui)
 			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		]
@@ -21,7 +11,6 @@
 			<INCLURE{fond=inclure/menu_sousrubriques,env} />
 			]
 		]
-		[(#ENV{header}|oui)</div>]
 	</header>
 	[(#ENV{header}|oui)<div class="container">]
 		<div class="main">

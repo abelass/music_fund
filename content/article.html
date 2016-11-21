@@ -5,25 +5,20 @@
 })]
 <article>
 	<header class="cartouche">
-		<div class="container"[ style="background-image: url((#LOGO_ARTICLE
-		|image_passe_partout{1170,441}
-		|image_recadre{1170,441}
-		|extraire_attribut{src}))"]>
-		[(#ENV{breadcrumb}|oui)
-			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
-		]
+	[(#ENV{breadcrumb}|oui)
+		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+	]
 
-		[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
-		<h1><span class="#EDIT{titre}">#TITRE</span>[
-			<small class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</small>
-		]</h1>
-		[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
-			<p class="info-publi">
-				<time pubdate="pubdate" datetime="[(#DATE|date_iso)]">
-					[(#DATE|nom_jour) ][(#DATE|affdate_court)]
-				</time>
-			</p>
-		</div>
+	[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
+	<h1><span class="#EDIT{titre}">#TITRE</span>[
+		<small class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</small>
+	]</h1>
+	[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
+		<p class="info-publi">
+			<time pubdate="pubdate" datetime="[(#DATE|date_iso)]">
+				[(#DATE|nom_jour) ][(#DATE|affdate_court)]
+			</time>
+		</p>
 	</header>
 	<div class="container">
 		<div class="main">
