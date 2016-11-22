@@ -1,22 +1,63 @@
 #HTTP_HEADER{Content-Type: text/css;}
 <BOUCLE_article(ARTICLES){id_article}>
-[(#LOGO_ARTICLE_SURVOL|?{#SET{logo_header,#LOGO_ARTICLE_SURVOL},#SET{logo_header,#LOGO_ARTICLE_NORMAL}})]
-</BOUCLE_article>
-	<BOUCLE_rubrique(RUBRIQUES){id_rubrique}{tout}>
-	[(#LOGO_RUBRIQUE_SURVOL|?{#SET{logo_header,#LOGO_RUBRIQUE_SURVOL},#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}})]
-	</BOUCLE_rubrique>
-<//B_article>
-<BOUCLE_evenement(EVENEMENTS){id_evenement}>
-[(#LOGO_EVENEMENT_SURVOL|?{#SET{logo_header,#LOGO_EVENEMENT_SURVOL},#SET{logo_header,#LOGO_EVENEMENT_NORMAL}})]
-</BOUCLE_evenement>
-<BOUCLE_organisation(ORGANISATIONS){id_organisation}>
-[(#LOGO_ORGANISATION_SURVOL|?{#SET{logo_header,#LOGO_ORGANISATION_SURVOL},#SET{logo_header,#LOGO_ORGANISATION_NORMAL}})]
-</BOUCLE_organisation>
-.page-head header {
-	[background-image: url((#GET{logo_header}
+	#SET{logo_url,(#LOGO_ARTICLE_SURVOL|sinon{#LOGO_ARTICLE_NORMAL}
 		|image_passe_partout{1220,380}
 		|image_recadre{1220,380,'center','transparent'}
 		|image_nb
 		|image_alpha{110}
-		|extraire_attribut{src})), linear-gradient(to bottom, #f5b527, #d95609);]
-	}
+		|extraire_attribut{src})}
+		#SET{background_2,linear-gradient(to bottom, #506f6d, #2e4140)}
+</BOUCLE_article>
+	<BOUCLE_rubrique(RUBRIQUES){id_rubrique}{tout}>
+	#SET{logo, #LOGO_RUBRIQUE_SURVOL|sinon{#LOGO_RUBRIQUE_NORMAL}}
+	[(#COMPOSITION|in_array{#LISTE{home,news,support_us,contact}}|?{
+			#SET{background_2,linear-gradient(to bottom, #f5b527, #d95609)}
+			[(#GET{logo}|?{
+				[(#SET{background_1,[(#GET{logo}
+				|image_passe_partout{1220,380}
+				|image_recadre{1220,380,'center','transparent'}
+				|image_nb
+				|image_alpha{110}
+				|extraire_attribut{src})]
+			})]
+			,
+				[(#SET{background_1,linear-gradient(to bottom, #f5b527, #d95609)})]
+			})]
+		,
+			[(#GET{logo}|?{
+				[(#SET{background_1,[(#GET{logo}
+					|image_passe_partout{1220,380}
+					|image_recadre{1220,380,'center','transparent'}
+					|image_alpha{110}
+					|extraire_attribut{src})]
+				})]
+			,
+				[(#SET{background_1,linear-gradient(to bottom, #506f6d, #2e4140)})]
+			})]
+
+		})]
+
+	</BOUCLE_rubrique>
+<//B_article>
+<BOUCLE_evenement(EVENEMENTS){id_evenement}>
+	#SET{background_1,(#LOGO_EVENEMENT
+		|image_passe_partout{1220,380}
+		|image_recadre{1220,380,'center','transparent'}
+		|image_nb
+		|image_alpha{110}
+		|extraire_attribut{src})}
+	#SET{background_2,linear-gradient(to bottom, #506f6d, #2e4140)}
+</BOUCLE_evenement>
+<BOUCLE_organisation(ORGANISATIONS){id_organisation}>
+	#SET{background_1,(#LOGO_ORGANISATION
+		|image_passe_partout{1220,380}
+		|image_recadre{1220,380,'center','transparent'}
+		|image_nb
+		|image_alpha{110}
+		|extraire_attribut{src})
+
+	#SET{background_2,linear-gradient(to bottom, #506f6d, #2e4140)}
+</BOUCLE_organisation>
+.page-head header {
+	background-image: url([(#GET{background_1}|trim))][, (#GET{background_2})];
+}

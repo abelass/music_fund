@@ -22,7 +22,7 @@
 		#SET{id_trad,#ID_RUBRIQUE}
 	})]
 	<div class="container">
-		<section class="clearfix  [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#GET{id_trad}">
+		<section class="clearfix  [(#COMPOSITION|sinon{rubrique})] page-body" id="rubrique-#GET{id_trad}">
 			<INCLURE{fond=content/#ENV{type-page}, id_rubrique, composition=#COMPOSITION, env} />
 		</section>
 	</div>
