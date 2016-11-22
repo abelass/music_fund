@@ -1,11 +1,11 @@
 #HTTP_HEADER{Content-Type: text/css;}
 <BOUCLE_article(ARTICLES){id_article}>
-	#SET{logo_url,(#LOGO_ARTICLE_SURVOL|sinon{#LOGO_ARTICLE_NORMAL}
+	#SET{logo_url,((#LOGO_ARTICLE_SURVOL|sinon{#LOGO_ARTICLE_NORMAL}
 		|image_passe_partout{1220,380}
 		|image_recadre{1220,380,'center','transparent'}
 		|image_nb
 		|image_alpha{110}
-		|extraire_attribut{src})}
+		|extraire_attribut{src}))}
 		#SET{background_2,linear-gradient(to bottom, #506f6d, #2e4140)}
 </BOUCLE_article>
 	<BOUCLE_rubrique(RUBRIQUES){id_rubrique}{tout}>
@@ -13,51 +13,51 @@
 	[(#COMPOSITION|in_array{#LISTE{home,news,support_us,contact}}|?{
 			#SET{background_2,linear-gradient(to bottom, #f5b527, #d95609)}
 			[(#GET{logo}|?{
-				[(#SET{background_1,[(#GET{logo}
+				[(#SET{background_1,[((#GET{logo}
 				|image_passe_partout{1220,380}
 				|image_recadre{1220,380,'center','transparent'}
 				|image_nb
 				|image_alpha{110}
-				|extraire_attribut{src})]
+				|extraire_attribut{src}))]
 			})]
 			,
 				[(#SET{background_1,linear-gradient(to bottom, #f5b527, #d95609)})]
 			})]
 		,
 			[(#GET{logo}|?{
-				[(#SET{background_1,[(#GET{logo}
+				[(#SET{background_1,[((#GET{logo}
 					|image_passe_partout{1220,380}
 					|image_recadre{1220,380,'center','transparent'}
 					|image_alpha{110}
-					|extraire_attribut{src})]
+					|extraire_attribut{src}))]
 				})]
 			,
 				[(#SET{background_1,linear-gradient(to bottom, #506f6d, #2e4140)})]
 			})]
-
 		})]
 
 	</BOUCLE_rubrique>
 <//B_article>
 <BOUCLE_evenement(EVENEMENTS){id_evenement}>
-	#SET{background_1,(#LOGO_EVENEMENT
+	#SET{background_1,((#LOGO_EVENEMENT
 		|image_passe_partout{1220,380}
 		|image_recadre{1220,380,'center','transparent'}
 		|image_nb
 		|image_alpha{110}
-		|extraire_attribut{src})}
+		|extraire_attribut{src}))
+	}
 	#SET{background_2,linear-gradient(to bottom, #506f6d, #2e4140)}
 </BOUCLE_evenement>
 <BOUCLE_organisation(ORGANISATIONS){id_organisation}>
-	#SET{background_1,(#LOGO_ORGANISATION
+	#SET{background_1,((#LOGO_ORGANISATION
 		|image_passe_partout{1220,380}
 		|image_recadre{1220,380,'center','transparent'}
 		|image_nb
 		|image_alpha{110}
-		|extraire_attribut{src})
-
+		|extraire_attribut{src}))
+	}
 	#SET{background_2,linear-gradient(to bottom, #506f6d, #2e4140)}
 </BOUCLE_organisation>
 .page-head > header {
-	background-image: url([(#GET{background_1}|trim))][, (#GET{background_2})];
+	background-image:[ (#GET{background_1}|trim)][, (#GET{background_2})];
 }
