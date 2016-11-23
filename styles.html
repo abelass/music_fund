@@ -1,8 +1,8 @@
 #HTTP_HEADER{Content-Type: text/css;}
 <BOUCLE_article(ARTICLES){id_article}>
 	#SET{background_1,[url((#LOGO_ARTICLE_SURVOL|sinon{#LOGO_ARTICLE_NORMAL}
-		|image_passe_partout{1220,380}
-		|image_recadre{1220,380,'center','transparent'}
+		|image_passe_partout{1220,500}
+		|image_recadre{1220,500,'center','transparent'}
 		|image_nb
 		|image_alpha{110}
 		|extraire_attribut{src}))]}
@@ -18,8 +18,8 @@
 	[(#COMPOSITION|in_array{#LISTE{home,news,support_us,contact}}|ou{#ID_TRAD|in_array{#LISTE{33,29}}}|?{
 			[(#GET{logo}|?{
 				[(#SET{background_1,[url((#GET{logo}
-				|image_passe_partout{1220,380}
-				|image_recadre{1220,380,'center','transparent'}
+				|image_passe_partout{1220,500}
+				|image_recadre{1220,500,'center','transparent'}
 				|image_nb
 				|image_alpha{110}
 				|extraire_attribut{src}))]
