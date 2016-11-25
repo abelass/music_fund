@@ -104,7 +104,7 @@
 		.chapo {
 			color: #ffffff;
 			font-size:1.1em;
-			margin: 0 13em;
+			margin: 0 3em;
 		}
 		nav {
 			margin: 0 13em;
@@ -277,16 +277,50 @@
 		}
 	}
 }
-/*
+
+/**
+ * Home
+ */
+
+ .home {
+ 	.page-head {
+ 		> header {
+ 			h1 {
+	 			visibility: hidden;
+	 		}
+ 		}
+
+ 		.chapo {
+ 			font-size: 2.5em;
+ 			line-height: normal;
+ 		}
+ 	}
+ }
+
+
+
+/**
  * Section Our Work.
  */
 
 /*Rubrique What we do */
 .what_we_do {
 	.main{
-		p {
-			float:left;
-			width: 33%;
+		.texte {
+			width: 66%;
+			float: left;
+			p {
+				border-radius: 11em;
+				background-image: url(images/what-we-do-1.jpg);
+		    display: inline-block;
+		    margin-right: 2em;
+		    max-width: 20em;
+		    padding: 9em 1em;
+			}
+			p:last-child {
+				background-image: url(images/what-we-do-2.jpg);
+				margin-right: 0;
+			}
 		}
 	}
 	.boutons {
