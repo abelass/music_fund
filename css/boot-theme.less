@@ -1,3 +1,7 @@
+/**
+ * Variables
+ */
+
 @grayDark:                               #443220;
 @orange:                                 #f0821a;
 
@@ -12,6 +16,9 @@
 @navbarInverseText:                      @grayDark;
 @navbarInverseLinkColor:                 @grayDark;
 @navbarInverseLinkColorHover:            @orange;
+
+@formActionsBackground:                  transparent;
+
 
 
 /*
@@ -138,7 +145,11 @@
 
 // Footer
 #footer {
-	margin: 2em 1em;
+	background-image: url(images/bg_footer.png);
+	background-size: cover;
+	.colophon{
+		margin: 2em 1em;
+	}
 }
 
 /*
@@ -150,7 +161,7 @@
 	.bouton;
 }
 
-.navbar .action-buttons {
+.action-buttons {
 	.btn{
 		float: right;
 		margin-top: 0;
@@ -162,10 +173,33 @@
 }
 .btn.facebook{
 	.bouton(#e4e4e4);
+	background-image: url(images/icon-facebook.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	width:9px;
+	color: #e4e4e4;
+	overflow: hidden;
+	span {
+		visibility: hidden;
+	}
+
 }
 .formulaire_menu_lang {
 	.bouton(#e4e4e4);
 }
+
+
+#footer {
+	.navigation {
+		border-bottom: 1px #ffffff solid;
+		padding-bottom: 2em;
+	}
+	.btn.facebook {
+		background-color: #2e4140;
+		background-image: url(images/icon-facebook-white.png)
+	}
+}
+
 /*
  * Menus
  */
@@ -197,6 +231,29 @@
 	margin-bottom: 0;
 	.nav{
 		float:right;
+	}
+}
+
+.footer {
+
+}
+
+#footer {
+	border-top: none;
+	text-align: center;
+	.navbar-inner {
+		background-color: transparent;
+		background-image: none;
+		li {
+			float: left;
+			a {
+				padding: 0.7em 0.5em;
+				color: @white;
+			}
+		}
+		li.on > a{
+			color: @orange;
+		}
 	}
 }
 /*
