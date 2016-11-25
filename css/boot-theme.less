@@ -1,9 +1,12 @@
+@import "css/formulaires.less";
+
 /**
  * Variables
  */
 
 @grayDark:                               #443220;
 @orange:                                 #f0821a;
+@charcoal:                               #2e4140;
 
 @linkColor:                              @orange;
 
@@ -145,10 +148,27 @@
 
 // Footer
 #footer {
+	background-color: @charcoal;
 	background-image: url(images/bg_footer.png);
 	background-size: cover;
-	.colophon{
-		margin: 2em 1em;
+	padding-bottom: 0;
+	padding-top: 1em;
+
+	.colophon {
+		margin: 2em 1em 0;
+		padding-right: 0;
+
+	}
+	.copyright {
+		background-color: @charcoal;
+		padding: 2em 0;
+		margin-bottom: 0;
+	}
+	.newsletter {
+		padding: 4em 0 2.5em 0;
+		strong {
+			font-size: 2em;
+		}
 	}
 }
 
@@ -178,7 +198,7 @@
 	background-repeat: no-repeat;
 	width:9px;
 	color: #e4e4e4;
-	overflow: hidden;
+	margin-right: 0;
 	span {
 		visibility: hidden;
 	}
@@ -195,7 +215,7 @@
 		padding-bottom: 2em;
 	}
 	.btn.facebook {
-		background-color: #2e4140;
+		background-color: @charcoal;
 		background-image: url(images/icon-facebook-white.png)
 	}
 }
@@ -234,11 +254,9 @@
 	}
 }
 
-.footer {
-
-}
 
 #footer {
+	color: @white;
 	border-top: none;
 	text-align: center;
 	.navbar-inner {
@@ -250,6 +268,9 @@
 				padding: 0.7em 0.5em;
 				color: @white;
 			}
+		}
+		li:first-child a {
+			padding-left: 0;
 		}
 		li.on > a{
 			color: @orange;

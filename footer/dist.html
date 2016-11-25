@@ -1,17 +1,19 @@
-<div class="colophon">
-	<div class="main">
-		<div class="navigation">
-			<INCLURE{fond=barre_nav/menu_secteurs,env} />
-		</div>
-		<div class="newsletter">
-			<p><strong><:music_fund:restez_informe:></strong></p>
-			<p><:music_fund:restez_informe_texte:></p>
-			<div class="ajax">
-				#FORMULAIRE_NEWSLETTER_SUBSCRIBE
+<div class="container">
+	<div class="colophon">
+		<div class="main">
+			<div class="navigation">
+				<INCLURE{fond=barre_nav/menu_secteurs,env} />
+			</div>
+			<div class="newsletter">
+				<p><strong><:music_fund:restez_informe:></strong></p>
+				<p><:music_fund:restez_informe_texte:></p>
+				<div class="ajax">
+					#FORMULAIRE_NEWSLETTER_SUBSCRIBE
+				</div>
 			</div>
 		</div>
-		<p class="copyright">
-			Copyright #NOM_SITE_SPIP <BOUCLE_annee(ARTICLES){par date}{0,1}>[(#DATE|annee)]</BOUCLE_annee>-</B_annee>[(#DATE|annee) ]  
-		</p>
 	</div>
 </div>
+<p class="copyright">
+	Copyright #NOM_SITE_SPIP <BOUCLE_annee(ARTICLES){par date}{0,1}>[(#DATE|annee)]</BOUCLE_annee>-</B_annee>[(#DATE|annee) ]  
+</p>
