@@ -1,27 +1,28 @@
 <B_projects_actives>
+#SET{total_boucle,#TOTAL_BOUCLE}
 	<BOUCLE_test(CONDITION){si #ENV{compteur}|oui}>
-		<p>
-		<span class="ongoing-projects">#TOTAL_BOUCLE</span> <:music_fund:projets_cours:>
+		<p class="compteur">
+		<span class="ongoing-projects">#GET{total_boucle}</span> <:music_fund:projets_cours:>
 		<B_projects_finis>
-			<span class="separateur"> - </span><span class="finished-projects">#TOTAL_BOUCLE</span> <:music_fund:projets_finis:>
+			<span class="separateur"> - </span><span class="finished-projects">#TOTAL_BOUCLE <:music_fund:projets_finis:></span>
 		<BOUCLE_projects_finis(ORGANISATIONS spip_mots_liens){id_mot=4000016}> </BOUCLE_projects_finis>
 		</p>
 	</BOUCLE_test>
 	<div class="liste-detail">
 	<BOUCLE_projects_actives(ORGANISATIONS spip_mots_liens){gis}{id_mot=4000015}{par num nom, nom}{id_organisation!=#ENV{exclu,0}}>
-	<article class="row">
-		<div class="span6">
-			[(#LOGO_ORGANISATION
-				|image_passe_partout{#ENV{width,277},#ENV{height,175.5}}
-				|image_recadre{#ENV{width,277},#ENV{height,175.5}})]
+	#SET{logo,(#LOGO_ORGANISATION|image_passe_partout{#ENV{width,554},#ENV{height,352}}|image_recadre{#ENV{width,554},#ENV{height,352}})}
+	<article class="row-fluid">
+		[<div class="span6 logo">(#COMPTEUR_BOUCLE|alterner{#GET{logo},''})</div>]
+		<div class="span6 texte">
+			<div class="wrapper">
+				<h3 class="#EDIT{nom}"><a href="#URL_ORGANISATION">#NOM</a></h3>
+				<span class="lieu">
+						#VILLE[, (#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})]
+				</span>
+				[<div class="#EDIT{descriptif} texte surlignable">(#DESCRIPTIF|couper{500})</div>]
+			</div>
 		</div>
-		<div class="span6">
-			<h3 class="#EDIT{nom}"><a href="#URL_ORGANISATION">#NOM</a></h3>
-			<span class="lieu">
-					#VILLE[, (#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})]
-			</span>
-			[<div class="#EDIT{descriptif} texte surlignable">(#DESCRIPTIF)</div>]
-		</div>
+		[<div class="span6 logo">(#COMPTEUR_BOUCLE|alterner{'',#GET{logo}})</div>]
 	</article>
 	</BOUCLE_projects_actives>
 	</div>

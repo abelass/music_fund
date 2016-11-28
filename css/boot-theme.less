@@ -64,12 +64,10 @@
 }
 
 .page-body {
+	padding-top: 4em;
 	padding-bottom: 3em;
 }
 
-.page-body:first-child {
-	padding-top: 2em;
-}
 
 .home #content .cartouche {
 		display: block;
@@ -327,7 +325,6 @@
 
 /*Rubrique What we do */
 .what_we_do {
-
 	.boutons-images {
 		.bouton-image{
 			position: relative;
@@ -346,6 +343,7 @@
 				transform: translate(-50%, -50%);
 				left: 50%;
 				line-height: normal;
+				text-transformation: uppercase;
 				span {
 					display: block;
 					padding: 0 1.5em;
@@ -371,7 +369,34 @@
 		a {
 				display:block;
 				margin: 0 0 1em 5em;
+				color: @charcoal;
 			}
+	}
+}
+
+// Projects.
+
+section.ongoing_projects{
+	background-color: #f6f4ef;
+	.liste-detail {
+		background-color: @white;
+	}
+	.row-fluid .span6  {
+		width: 50%;
+	}
+	.span6.texte{
+		.wrapper {
+			padding: 3em;
+		}
+	}
+	.compteur {text-align: center;}
+	.ongoing-projects {
+		.bouton(@amber);
+		border-radius:10em;
+		padding: 0.1em 0.5em;
+	}
+	.finished-projects {
+		text-decoration: underline;
 	}
 }
 

@@ -1,18 +1,18 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
 	<header class="cartouche">
-		<h1 class="#EDIT{titre}">#TITRE</h1>
+		<h1 class="#EDIT{titre}">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</h1>
 	</header>
 
 	<div class="main">
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 		<INCLURE{fond=inclure/projets,compteur=oui,env}/>
 	</div>
-	
+
 	<aside>
 		[(#REM) Gestion du portfolio et des documents ]
 		[(#INCLURE{fond=inclure/documents,id_rubrique})]
 	</aside>
-	
+
 	<footer>
 	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
 	</footer>
