@@ -331,15 +331,25 @@
 	.boutons-images {
 		.bouton-image{
 			position: relative;
-		}
-		img {
-			border-radius: 11em;
-		}
-		.texte {
-			color: @white;
-			display: block;
-			left: 0;
-			position: absolute;
+			 text-align: center;
+			img {
+				border-radius: 11em;
+			}
+			.texte {
+				font-size: 1.4em;
+				color: @white;
+				display: block;
+				top: 50%;
+				width: 100%;
+				position: absolute;
+				padding: 0 5px;
+				transform: translate(-50%, -50%);
+				left: 50%;
+				span {
+					display: block;
+					padding: 0 1em;
+				}
+			}
 		}
 	}
 	> .main{

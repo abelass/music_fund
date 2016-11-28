@@ -9,9 +9,9 @@
 	(#FICHIER
 		|image_passe_partout{#ENV{largeur,310},#ENV{hauteur,310}}
 		|image_recadre{#ENV{largeur,310},#ENV{hauteur,310}})
-		<span class="texte">
-			[(#GET{textes}|table_valeur{#COMPTEUR_BOUCLE|moins{1}})]
-		</span>
+		[<div class="texte">
+			<span>(#GET{textes}|table_valeur{#COMPTEUR_BOUCLE|moins{1}})</span>
+		</div>]
 	</div>]
 </BOUCLE_images>
 </div>
