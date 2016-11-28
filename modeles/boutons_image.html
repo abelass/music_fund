@@ -1,0 +1,18 @@
+#SET{images,#ENV{images}|explode{';'}}
+#SET{textes,#ENV**{textes}|explode{';'}}
+[(#SET{span, #VAL{12}|div{#GET{images}|count}})]
+
+<B_images>
+<div class="boutons-images row-fluid">
+<BOUCLE_images(DOCUMENTS){id_document IN #GET{images}}{tout}{0,3}>
+	[<div class="bouton-image span#GET{span}">
+	(#FICHIER
+		|image_passe_partout{#ENV{largeur,310},#ENV{hauteur,310}}
+		|image_recadre{#ENV{largeur,310},#ENV{hauteur,310}})
+		<span class="texte">
+			[(#GET{textes}|table_valeur{#COMPTEUR_BOUCLE|moins{1}})]
+		</span>
+	</div>]
+</BOUCLE_images>
+</div>
+</B_images>

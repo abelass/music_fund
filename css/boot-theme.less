@@ -7,6 +7,7 @@
 @grayDark:                               #443220;
 @orange:                                 #f0821a;
 @charcoal:                               #2e4140;
+@amber:                                  #f5bb27;
 
 @linkColor:                              @orange;
 
@@ -58,7 +59,16 @@
  */
 
 .container > section, .container > div.main {
-	padding: 0 45px;
+	padding-right: 45px;
+	padding-left: 45px;
+}
+
+.page-body {
+	padding-bottom: 3em;
+}
+
+.page-body:first-child {
+	padding-top: 2em;
 }
 
 .home #content .cartouche {
@@ -127,6 +137,8 @@
 	}
 }
 
+
+
 // Breadcrumbs.
 .breadcrumb {
 	background-color: transparent;
@@ -176,9 +188,19 @@
  * General.
  */
 
+ .cartouche {
+ 	text-align:center
+ }
+
 // Boutons
 .btn {
 	.bouton;
+}
+
+.btn-success:hover,
+.btn-success:focus,
+.btn-success:active {
+	background-color: @amber;
 }
 
 .action-buttons {
@@ -282,20 +304,20 @@
  * Home
  */
 
- .home {
- 	.page-head {
- 		> header {
- 			h1 {
-	 			visibility: hidden;
-	 		}
- 		}
+.home {
+	 .page-head {
+		 > header {
+			 h1 {
+				 visibility: hidden;
+			 }
+		 }
 
- 		.chapo {
- 			font-size: 2.5em;
- 			line-height: normal;
- 		}
- 	}
- }
+		 .chapo {
+			 font-size: 2.5em;
+			 line-height: normal;
+		 }
+	 }
+}
 
 
 
@@ -305,30 +327,40 @@
 
 /*Rubrique What we do */
 .what_we_do {
-	.main{
+
+	.boutons-images {
+		.bouton-image{
+			position: relative;
+		}
+		img {
+			border-radius: 11em;
+		}
 		.texte {
+			color: @white;
+			display: block;
+			left: 0;
+			position: absolute;
+		}
+	}
+	> .main{
+		display:table;
+		.texte {
+			display:table-cell;
 			width: 66%;
-			float: left;
-			p {
-				border-radius: 11em;
-				background-image: url(images/what-we-do-1.jpg);
-		    display: inline-block;
-		    margin-right: 2em;
-		    max-width: 20em;
-		    padding: 9em 1em;
-			}
-			p:last-child {
-				background-image: url(images/what-we-do-2.jpg);
-				margin-right: 0;
-			}
 		}
 	}
 	.boutons {
-		float:left;
-		width: 33%;
-		a {
-			display:block;
+		width:33%;
+		display: table-cell;
+		vertical-align: middle;
+
+		> div {
+			vertical-align:middle
 		}
+		a {
+				display:block;
+				margin: 0 0 1em 5em;
+			}
 	}
 }
 
@@ -340,7 +372,8 @@
 
 	// Blocks
 	.container > section, .container > div.main {
-		padding: 0 90px;
+		padding-right: 90px;
+		padding-left: 90px;
 	}
 }
 

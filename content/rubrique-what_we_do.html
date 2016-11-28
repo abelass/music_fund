@@ -5,21 +5,26 @@
 	</header>
 
 	<div class="main">
-	
+
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 		<B_boutons>
 		<div class="boutons">
 		<BOUCLE_boutons(RUBRIQUES){id_trad IN 39,37,32} {tout} {lang}>
 			<BOUCLE_article(ARTICLES){id_rubrique}>
-				<a class="btn btn-success" href="#URL_ARTICLE">#TITRE</a>
+				<div>
+					<a class="btn btn-success" href="#URL_ARTICLE">#TITRE</a>
+				</div>
 			</BOUCLE_article>
-				<a class="btn btn-success" href="#URL_RUBRIQUE">#TITRE</a>
+				<div>
+					<a class="btn btn-success" href="#URL_RUBRIQUE">#TITRE</a>
+				</div>
 			<//B_article>
 		</BOUCLE_boutons>
+		</div>
 		</B_boutons>
 	</div>
-	
-	
+
+
 	[<footer>
 	<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>
 	</footer>]
