@@ -4,20 +4,16 @@
 			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		]
 		<h1 class="#EDIT{titre}">#TITRE</h1>
-		[(#ENV{header}|oui)
+
 			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
 			<INCLURE{fond=inclure/menu_sousrubriques,env} />
-		]
+
 	</header>
 	[(#ENV{header}|oui)<div class="container">]
-		<div class="main">
-			[(#ENV{header}|?{
+		[<div class="main">
+			(#ENV{header}|oui)
 				[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-			,
-				[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{255,255}|image_recadre{255,255})]
-				[<div class="#EDIT{introduction} introduction">(#INTRODUCTION)</div>]
-			})]
-		</div>
+		</div>]
 
 		<aside>
 			[(#REM) Gestion du portfolio et des documents ]

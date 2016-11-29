@@ -1,4 +1,5 @@
 <BOUCLE_vevent(EVENEMENTS){gis}{id_evenement=#ENV{id,#ENV{id_evenement}}}{tout}>
+	<article>
 	<header class="cartouche">
 		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		<h1 class="#EDIT{titre}">#TITRE</h1>
@@ -34,7 +35,7 @@
 			</header>
 			[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
 		</section>
-		<section id="details_pratique" class="clearfix">
+		<aside id="details_pratique" class="clearfix">
 			<header class="cartouche">
 				<h2><:music_fund:titre_details_pratique:></h2>
 			</header>
@@ -79,23 +80,24 @@
 					id_evenement,
 					objets=evenements}/>
 			</div>
-		</section>
-		[<section id="photos_videos" class="clearfix">
+		</aside>
+		[<aside id="photos_videos" class="clearfix">
 			<header class="cartouche">
 				<h2><:music_fund:titre_photos_videos:></h2>
 			</header>
 			[(#REM) Gestion du portfolio et des documents ]
 			(#INCLURE{fond=inclure/documents,id_rubrique})
-		</section>]
-		<section class="more clearfix">
+		</aside>]
+		<aside class="more clearfix">
 			<header class="cartouche">
 				<h2>[(#VAL{music_fund:titre_plus_#COMPOSITION}|_T)]</h2>
 			</header>
 			<INCLURE{fond=inclure/evenements,id_article,exclu=#ID_EVENEMENT,env}/>
-		</section>
+		</aside>
 
 		<footer>
 		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
 		</footer>
 	</div>
+</article>
 </BOUCLE_vevent>

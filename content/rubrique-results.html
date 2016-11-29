@@ -5,40 +5,53 @@
 	</header>
 
 	<div class="main">
-	
+		#SET{titre,(#CHAMP_EXTRA{collected_instruments,label}|extraire_multi)}
 		[<div class="collected_instruments">
+			<div class="icon">
+				<img src="#CHEMIN{images/collected_instruments.svg}" alt="logo #GET{titre}" />
+			</div>
 			<div class="#EDIT{collected_instruments} nombre">
 				(#COLLECTED_INSTRUMENTS)
 			</div>
 			[<div class="label">
-				(#CHAMP_EXTRA{collected_instruments,label}|extraire_multi)
+				(#GET{titre})
 			</div>]
 		</div>]
+		#SET{titre,(#CHAMP_EXTRA{repaired_given_instruments,label}|extraire_multi)}
 		[<div class="repaired_given_instruments">
-			<div class="#EDIT{repaired_given_instruments}">
+			<div class="icon">
+				<img src="#CHEMIN{images/repaired_given_instruments.svg}" alt="logo #GET{titre}" />
+			</div>
+			<div class="#EDIT{repaired_given_instruments} nombre">
 				(#REPAIRED_GIVEN_INSTRUMENTS)
 			</div>
 			[<div class="label">
-				(#CHAMP_EXTRA{repaired_given_instruments,label}|extraire_multi)
+				(#GET{titre})
 			</div>]
 		</div>]
+		#SET{titre,(#CHAMP_EXTRA{permanent_workshops_created,label}|extraire_multi)}
 		[<div class="permanent_workshops_created">
-			<div class="#EDIT{permanent_workshops_created}">
+			<div class="icon">
+				<img src="#CHEMIN{images/permanent_workshops_created.svg}" alt="logo #GET{titre}" />
+			</div>
+			<div class="#EDIT{permanent_workshops_created} nombre">
 			(#PERMANENT_WORKSHOPS_CREATED)
 			</div>
 			[<div class="label">
-				(#CHAMP_EXTRA{permanent_workshops_created,label}|extraire_multi)
+				(#GET{titre})
 			</div>]
 		</div>]
+		#SET{titre,(#CHAMP_EXTRA{permanent_collection_points,label}|extraire_multi)}
 		[<div class="permanent_collection_points">
-			<div class="#EDIT{permanent_collection_points}">
+			<div class="icon">
+				<img src="#CHEMIN{images/permanent_collection_points.svg}" alt="logo #GET{titre}" />
+			</div>
+			<div class="#EDIT{permanent_collection_points} nombre">
 				(#PERMANENT_COLLECTION_POINTS)
 			</div>
 			[<div class="label">
-				(#CHAMP_EXTRA{permanent_collection_points,label}|extraire_multi)
+				(#GET{titre})
 			</div>]
 		</div>]
 	</div>
-	
-
 </BOUCLE_content>
