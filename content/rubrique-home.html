@@ -6,7 +6,9 @@
 	,
 	#SET{id_trad,#ID_RUBRIQUE}
 })]
-	<INCLURE{fond=content/rubrique, id_rubrique, composition='', env, header=oui, breadcrumb=''} />
+	<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">
+		<INCLURE{fond=content/rubrique, id_rubrique, composition='', env, header=oui, breadcrumb=''} />
+	</section>
 
 	<BOUCLE_enfant(RUBRIQUES){id_trad IN #GET{id_trads}}{tout}{lang}>
 	[(#ID_TRAD|>{0}|?{
@@ -14,10 +16,8 @@
 		,
 		#SET{id_trad,#ID_RUBRIQUE}
 	})]
-	<div class="container">
-		<section class="clearfix  [(#COMPOSITION|sinon{rubrique})]" id="rubrique-#GET{id_trad}">
-			<INCLURE{fond=content/#ENV{type-page}, id_rubrique, composition=#COMPOSITION, env,header='', breadcrumb=''} />
-		</section>
-	</div>
+	<section class="clearfix  [(#COMPOSITION|sinon{rubrique})] page-body" id="rubrique-#GET{id_trad}">
+		<INCLURE{fond=content/#ENV{type-page}, id_rubrique, composition=#COMPOSITION, env,header='', breadcrumb=''} />
+	</section>
 	</BOUCLE_enfant>
 </BOUCLE_principal>

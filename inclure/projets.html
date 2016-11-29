@@ -9,8 +9,15 @@
 		</p>
 	</BOUCLE_test>
 	<div class="liste-detail">
-	<BOUCLE_projects_actives(ORGANISATIONS spip_mots_liens){gis}{id_mot=4000015}{par num nom, nom}{id_organisation!=#ENV{exclu,0}}>
-	#SET{logo,(#LOGO_ORGANISATION|image_passe_partout{#ENV{width,554},#ENV{height,352}}|image_recadre{#ENV{width,554},#ENV{height,352}})}
+	#ANCRE_PAGINATION
+	<BOUCLE_projects_actives(ORGANISATIONS spip_mots_liens)
+		{gis}
+		{id_mot=4000015}
+		{par num nom, nom}
+		{id_organisation!=#ENV{exclu,0}}
+		{pagination #ENV{pagination,2}}
+		{0,#ENV{limite,2}}>
+	#SET{logo,(#LOGO_ORGANISATION|image_passe_partout{#ENV{width,565.5},#ENV{height,423}}|image_recadre{#ENV{width,565.5},#ENV{height,423}})}
 	<article class="row-fluid">
 		[<div class="span6 logo">(#COMPTEUR_BOUCLE|alterner{#GET{logo},''})</div>]
 		<div class="span6 texte">
@@ -25,5 +32,6 @@
 		[<div class="span6 logo">(#COMPTEUR_BOUCLE|alterner{'',#GET{logo}})</div>]
 	</article>
 	</BOUCLE_projects_actives>
+		[<p class="pagination">(#PAGINATION)</p>]
 	</div>
 </B_projects_actives>

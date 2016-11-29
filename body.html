@@ -23,13 +23,9 @@
 			[(#COMPOSITION|in_array{#GET{affichage_page}}|non|ou{#ID_PARENT|in_array{#GET{id_parent}}|oui})
 				<INCLURE{fond=content/rubrique-secteur,env} />
 			]
-
 			[(#COMPOSITION|in_array{#GET{affichage_page}}|oui|et{#ID_PARENT|in_array{#GET{id_parent}}|non})
-			<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">
 				<INCLURE{fond=content/#ENV{type-page},header=oui,breadcrumb=oui,env} />
-			</section>
 			]
-
 		]
 		[(#ENV{type-page}|=={rubrique}|non)
 			<INCLURE{fond=content/#ENV{type-page},breadcrumb=oui,env} />

@@ -63,7 +63,10 @@ section.page-body, .container > div.main {
 	padding-left: 3.25px;
 }
 
-section.page-body.ongoing_projects{
+section.page-body.ongoing_projects,
+section.page-body.events,
+section.page-body.workshops{
+	background-color: #f6f4ef;
 	padding-right: 1.6em;
 	padding-left: 1.6em;
 }
@@ -71,6 +74,9 @@ section.page-body.ongoing_projects{
 .page-body {
 	padding-top: 4em;
 	padding-bottom: 3em;
+	h1 {
+		margin-bottom:1em;
+	}
 }
 
 
@@ -194,6 +200,19 @@ section.page-body.ongoing_projects{
  .cartouche {
  	text-align:center
  }
+
+ 	.liste-detail {
+		background-color: @white;
+		.row-fluid .span6  {
+			width: 50%;
+		}
+		.span6.texte{
+			.wrapper {
+				padding: 3em;
+			}
+		}
+	}
+
 
 // Boutons
 .btn {
@@ -383,18 +402,7 @@ section.page-body.ongoing_projects{
 // Projects.
 
 section.ongoing_projects{
-	background-color: #f6f4ef;
-	.liste-detail {
-		background-color: @white;
-	}
-	.row-fluid .span6  {
-		width: 50%;
-	}
-	.span6.texte{
-		.wrapper {
-			padding: 3em;
-		}
-	}
+
 	.compteur {text-align: center;}
 	.ongoing-projects {
 		.bouton(@amber);
@@ -419,7 +427,9 @@ section.ongoing_projects{
 		padding-left: 6.5em;
 	}
 
-	section.page-body.ongoing_projects{
+	section.page-body.ongoing_projects,
+	section.page-body.events,
+	section.page-body.workshops{
 		padding-right: 3.2em;
 		padding-left: 3.2em;
 	}
