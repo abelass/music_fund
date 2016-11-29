@@ -16,20 +16,16 @@
 <div class="span6">
 	<article>
 	[(#LOGO_ARTICLE_RUBRIQUE
-		|image_passe_partout{#ENV{width,80},#ENV{height,80}}
-		|image_recadre{#ENV{width,80},#ENV{height,80}})]
-	<h3 class="h3 entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
-	<div class="info-publi">
-		[<abbr class="published" title="[(#DATE|date_iso)]">(#DATE|affdate_jourcourt)</abbr>]
-	</div>
-	[<div class="#EDIT{intro} introduction entry-content">(#INTRODUCTION{150})</div>]
-	<div class="meta-publi">
-	<a class="lire-la-suite" href="#URL_ARTICLE"><span class="lire-la-suite-titre"><:zcore:lire_la_suite_de:> <em>#TITRE</em></span></a>
-	<BOUCLE_nb_commentaires(FORUMS) {id_article}{plat} />	[(#TOTAL_BOUCLE|oui)
-		<span class="sep">|</span>
-		<a[ href="(#URL_ARTICLE|ancre_url{forum})"] class="nb_commentaires">[(#TOTAL_BOUCLE)]&nbsp;[(#TOTAL_BOUCLE|=={1}|?{<:zcore:commentaire:>,<:zcore:commentaires:>})]</a>
-		]
-	<//B_nb_commentaires>
+		|image_passe_partout{#ENV{width,160},#ENV{height,160}}
+		|image_recadre{#ENV{width,160},#ENV{height,160}})]
+	<div class="texte">
+		<div class="wrapper">
+			<h3 class="h3 entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
+			<div class="info-publi">
+				[<abbr class="published" title="[(#DATE|date_iso)]">(#DATE|affdate_jourcourt)</abbr>]
+			</div>
+			[<div class="#EDIT{intro} introduction entry-content">(#INTRODUCTION{150})</div>]
+		</div>
 	</div>
 	</article>
 </div>

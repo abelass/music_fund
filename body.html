@@ -33,7 +33,9 @@
 
 		]
 		[(#ENV{type-page}|=={rubrique}|non)
+		<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">
 			<INCLURE{fond=content/#ENV{type-page},breadcrumb=oui,env} />
+		</section>
 		]
 	</div>
 	<div class="footer" id="footer">

@@ -5,6 +5,7 @@
  */
 
 @grayDark:                               #443220;
+@grayLight:                              #728483;
 @orange:                                 #f0821a;
 @charcoal:                               #2e4140;
 @amber:                                  #f5bb27;
@@ -66,7 +67,7 @@ section.page-body, .container > div.main {
 section.page-body.ongoing_projects,
 section.page-body.events,
 section.page-body.workshops,
-section.page-body.articles_rubrique{
+section.page-body.articles_rubrique {
 	background-color: #f6f4ef;
 	padding-right: 1.6em;
 	padding-left: 1.6em;
@@ -82,12 +83,11 @@ section.page-body.articles_rubrique {
 		margin-bottom:1em;
 	}
 }
-
-
 .home #content .cartouche {
 		display: block;
 }
 
+.main {text-align: left;}
 // Header.
 .home #content .cartouche {
 	display: block!important;
@@ -110,7 +110,7 @@ section.page-body.articles_rubrique {
 
 .page-head {
 	text-align: center;
-	> header{
+	> header, article header{
 		color: #ffffff;
 		min-height: 380px;
 		background-color:transparent;
@@ -225,6 +225,35 @@ p.all {
 		color: @charcoal;
 		text-decoration: underline;
 	}
+}
+
+.liste.articles {
+	.liste-items {
+		h3 {
+			margin-bottom: 0.5em;
+		}
+		img {
+			float:left;
+			width: 33%;
+		}
+		.texte {
+			float:left;
+			width: 66%;
+			.wrapper {
+				padding-left: 2em;
+			}
+		}
+	}
+}
+
+.info-publi {
+	margin-bottom: 0.5em;
+}
+
+abbr[title], acronym[title], abbr[data-original-title] {
+	border-bottom: none;
+	text-decoration: none;
+	color: @grayLight;
 }
 // Boutons
 .btn {
