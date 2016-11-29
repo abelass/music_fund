@@ -65,12 +65,16 @@ section.page-body, .container > div.main {
 
 section.page-body.ongoing_projects,
 section.page-body.events,
-section.page-body.workshops{
+section.page-body.workshops,
+section.page-body.articles_rubrique{
 	background-color: #f6f4ef;
 	padding-right: 1.6em;
 	padding-left: 1.6em;
 }
 
+section.page-body.articles_rubrique {
+	background-color: @white;
+}
 .page-body {
 	padding-top: 4em;
 	padding-bottom: 3em;
@@ -213,7 +217,15 @@ section.page-body.workshops{
 		}
 	}
 
-
+p.all {
+	text-align: center;
+	margin-top: 3em;
+	margin-bottom: 0;
+	a {
+		color: @charcoal;
+		text-decoration: underline;
+	}
+}
 // Boutons
 .btn {
 	.bouton;
@@ -429,7 +441,8 @@ section.ongoing_projects{
 
 	section.page-body.ongoing_projects,
 	section.page-body.events,
-	section.page-body.workshops{
+	section.page-body.workshops,
+	section.page-body.articles_rubrique{
 		padding-right: 3.2em;
 		padding-left: 3.2em;
 	}

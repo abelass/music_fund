@@ -15,7 +15,7 @@
 		{id_mot=4000015}
 		{par num nom, nom}
 		{id_organisation!=#ENV{exclu,0}}
-		{pagination #ENV{pagination,2}}
+		{pagination #ENV{pagination,20}}
 		{0,#ENV{limite,2}}>
 	#SET{logo,(#LOGO_ORGANISATION|image_passe_partout{#ENV{width,565.5},#ENV{height,423}}|image_recadre{#ENV{width,565.5},#ENV{height,423}})}
 	<article class="row-fluid">

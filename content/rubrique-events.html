@@ -2,10 +2,14 @@
 	<header class="cartouche">
 		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
 	</header>
+	[(#ENV{header}|oui)<div class="container">]
 	<div class="main">
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 		<BOUCLE_art_evenement(ARTICLES){id_rubrique=#ID_TRAD}{lang_select=non}>
-			<INCLURE{fond=inclure/evenements,id_article,env}/>
+			[(#ENV{header}|?{#SET{limite,1000},#SET{limite,2}})]
+			<INCLURE{fond=inclure/evenements,id_article,env,limite=#GET{limite}}/>
 		</BOUCLE_art_evenement>
 	</div>
+	[(#ENV{header}|non)<p class="all"><a href="#URL_RUBRIQUE" title="<:music_fund:load_events:>"><:music_fund:load_events:></a>]
+	[(#ENV{header}|oui)</div>]
 </BOUCLE_contenu_rubrique>
