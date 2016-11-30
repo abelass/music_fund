@@ -6,7 +6,7 @@
 
 	<div class="main">
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		<div class="famous_fans">
+		<div class="fans">
 		<BOUCLE_famous(CONTACTS spip_mots_liens){id_mot= 4000019}>
 			<div class="fan">
 				[(#LOGO_CONTACT|image_passe_partout{160,160}|image_recadre{160,160}|inserer_attribut{alt,#PRENOM #NOM})]
@@ -14,8 +14,8 @@
 					[<span class="#EDIT{prenom} prenom">(#PRENOM)</span>] [<span class="#EDIT{nom} nom">(#NOM)</span>]
 				</p>
 				[<p class="#EDIT{fonction} fonction">(#FONCTION)</p>]
-				[<p class="#EDIT{url} url">(#URL)</p>]
-			<div class="fan">
+				[<p class=" url"><a href="(#URL)">#URL</a></p>]
+			</div>
 		</BOUCLE_famous>
 		</div>
 	</div>

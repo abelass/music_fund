@@ -1,23 +1,14 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
-[(#LOGO_RUBRIQUE_SURVOL|?{
-	#SET{logo_header,#LOGO_RUBRIQUE_SURVOL}
-	,
-	#SET{logo_header,#LOGO_RUBRIQUE_NORMAL}
-})]
-<div class="wrapper" [style="background-image: url((#GET{logo_header}
-			|image_reduire{1170}
-			|extraire_attribut{src}))"]>
+<div class="wrapper">
 	<header class="cartouche">
-
 		<h1 class="#EDIT{titre}">#TITRE</h1>
-
 	</header>
 
 	<div class="main">
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-		<div class="team">
+		<div class="team row-fluid">
 		<BOUCLE_team(CONTACTS spip_mots_liens){id_mot=4000020}>
-			<div class="membre">
+			<div class="membre span4">
 				[<p class="#EDIT{fonction} fonction">(#FONCTION)</p>]
 				<p class="prenom_nom">
 					[<span class="#EDIT{prenom} prenom">(#PRENOM)</span>] [<span class="#EDIT{nom} nom">(#NOM)</span>]
@@ -31,15 +22,18 @@
 			</div>
 		</BOUCLE_team>
 		</div>
+		<BOUCLE_contact(RUBRIQUES){id_trad=6}{tout}{lang}>
+			<a href="#URL_RUBRIQUE" title="#TITRE" class='btn'>[(#TITRE_SECONDAIRE|sinon{#TITRE})]</a>
+		</BOUCLE_contact>
 	</div>
-	
+
 	<aside>
 		[(#REM) Gestion du portfolio et des documents ]
 		[(#INCLURE{fond=inclure/documents,id_rubrique})]
 	</aside>
-	
+
 	<footer>
 	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
 	</footer>
-</div> 
+</div>
 </BOUCLE_content>

@@ -66,8 +66,8 @@
  */
 
 section.page-body, .container > div.main {
-	padding-right: 3.25px;
-	padding-left: 3.25px;
+	padding-right: 3.25em;
+	padding-left: 3.25em;
 }
 
 section.page-body.ongoing_projects,
@@ -556,10 +556,104 @@ body.support_us {
 		padding: 1em 2em;
 		a {
 			.bouton();
-			color: @white;
+			color: @charcoal;
+		}
+		a:hover {
+			background-color: @amber;
 		}
 		a:nth-child(even) {
 			background-color: @amber;
+		}
+		a:nth-child(even):hover {
+			background-color: @green;
+		}
+	}
+}
+
+// About.
+
+.rub-orig-29 {
+	.page-body:nth-child(odd) {
+		background-color: @beige;
+	}
+	.page-body {
+		img {
+			float: right;
+			margin-left: 2em;
+			width: 50%
+		}
+		.documents_joints .liste-items .item {
+			border:none;
+			padding-left: 0;
+			.bouton();
+			strong{
+				font-weight: normal;
+			}
+			a {
+				color: @charcoal;
+			}
+		}
+	}
+	section.team{
+		background-color: @charcoal;
+		background-size: cover;
+		color: @white;
+		h1, a {
+			color: @white;
+		}
+		a.btn {
+			color: @charcoal;
+		}
+		.main {
+			text-align: center;
+		}
+		.team {
+			margin-top: 14em;
+			margin-bottom: 2em;
+			text-align: left;
+			p {
+				margin-bottom: 0.2em;
+			}
+			a {
+				text-decoration: underline;
+			}
+			.fonction {
+				font-size: 1.2em;
+				font-weight: bold;
+				margin-bottom: 0.6em;
+			}
+		}
+	}
+	section.famous_fans {
+		.fan {
+			width: 50%;
+			float: left;
+			margin-bottom: 2em;
+			a {
+				text-decoration: underline;
+				color: @charcoal;
+			}
+			img {
+				float: left;
+				width: auto;
+				margin-right: 2em;
+				margin-left: 0;
+				width: 26%;
+			}
+			p {
+				margin-bottom: 0.2em;
+			}
+			.prenom_nom {
+				font-size: 1.2em;
+				font-weight: bold;
+				margin-top: 0.5em;
+				margin-bottom: 0.6em;
+			}
+		}
+	}
+	.sponsors {
+		img {
+			width: auto;
 		}
 	}
 }
@@ -573,8 +667,8 @@ body.support_us {
 	// Blocks
 
 	section.page-body, .container > div.main {
-		padding-right: 6.5em;
-		padding-left: 6.5em;
+		padding-right: 8em;
+		padding-left: 8em;
 	}
 
 	section.page-body.ongoing_projects,

@@ -43,6 +43,19 @@
 .page-head > header {
 	background-image:[ (#GET{background_1}|trim)][, (#GET{background_2})];
 }
+
+	<BOUCLE_team(RUBRIQUES){id_parent}{composition=team}{tout}>
+	#SET{logo, #LOGO_RUBRIQUE_SURVOL|sinon{#LOGO_RUBRIQUE_NORMAL}}
+	[(#SET{background_1,[url((#GET{logo}
+		|image_alpha{110}
+		|image_passe_partout{1000,620}
+		|image_recadre{1000,620,'center','transparent'}
+		|extraire_attribut{src}))]
+	})]
+.team.page-body {
+	background-image:[ (#GET{background_1}|trim)];
+}
+	</BOUCLE_team>
 #SET{rubrique,oui}
 	</BOUCLE_rubrique>
 <//B_article>

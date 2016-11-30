@@ -1,10 +1,23 @@
 <B_sponsors>
 <aside class="sponsors">
-<BOUCLE_sponsors(ORGANISATIONS spip_mots_liens){id_mot=4000018}>
-	[<a href="#URL_SITE" title="#NOM">(#LOGO_ORGANISATION
+	<div class="row1">
+<BOUCLE_sponsors(ORGANISATIONS spip_mots_liens){id_mot=4000018} {par num nom} >
+
+	[(#COMPTEUR_BOUCLE|<={2}|?{
+		[<a href="#URL_SITE" title="#NOM">(#LOGO_ORGANISATION
+		|inserer_attribut{alt,#NOM}
+		|image_reduire{120})</a>]
+		,
+		[<a href="#URL_SITE" title="#NOM">(#LOGO_ORGANISATION
 		|inserer_attribut{alt,#NOM}
 		|image_passe_partout{96,36}
 		|image_recadre{96,36})</a>]
+	})]
+	[(#COMPTEUR_BOUCLE|=={2}|oui)
+	</div>
+	<div class="row2">
+	]
 </BOUCLE_sponsors>
+	</div>
 </aside>
 </B_sponsors>
