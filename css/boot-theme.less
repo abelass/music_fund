@@ -233,6 +233,18 @@ section.page-body.articles_rubrique {
 		}
 	}
 
+.page-body {
+	.liste-items {
+		.item {
+			border:none;
+			padding-left: 0;
+		}
+		.item:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
 p.all {
 	text-align: center;
 	margin-top: 3em;
@@ -582,18 +594,18 @@ body.support_us {
 			margin-left: 2em;
 			width: 50%
 		}
-		.documents_joints .liste-items .item {
-			border:none;
-			padding-left: 0;
-			.bouton();
-			strong{
-				font-weight: normal;
-			}
-			a {
-				color: @charcoal;
+	}
+		#rubrique-44 {
+			.documents_joints .liste-items .item {
+				.bouton();
+				strong{
+					font-weight: normal;
+				}
+				a {
+					color: @charcoal;
+				}
 			}
 		}
-	}
 	section.team{
 		background-color: @charcoal;
 		background-size: cover;
