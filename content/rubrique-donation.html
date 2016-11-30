@@ -1,13 +1,13 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
-	<header class="cartouche">
+	[(#ENV{header}|oui)<header class="cartouche">
 		[(#ENV{breadcrumb}|oui)
 			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		]
 		<h1 class="#EDIT{titre}">#TITRE</h1>
-		[(#ENV{header}|oui)
+
 			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
-		]
-	</header>
+
+	</header>]
 
 	[(#ENV{header}|oui)<div class="container">]
 	<div class="main">
@@ -17,7 +17,10 @@
 		]
 		[(#ENV{header}|non)
 			[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{255,255}|image_recadre{255,255})]
-			[<div class="#EDIT{introduction} introduction">(#INTRODUCTION)</div>]
+			<div class="contenu">
+				[<h1 class="#EDIT{titre}">(#TITRE)</h1>]
+				[<div class="#EDIT{introduction} texte">(#INTRODUCTION)</div>]
+			</div>
 		]
 	</div>
 

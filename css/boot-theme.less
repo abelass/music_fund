@@ -4,8 +4,9 @@
  * Variables
  */
 
-@grayDark:                               #443220;
-@grayLight:                              #728483;
+@greyDark:                               #443220;
+@greyLight:                              #728483;
+@beige:                                  #f6f4ef;
 @orange:                                 #f0821a;
 @charcoal:                               #2e4140;
 @amber:                                  #f5bb27;
@@ -18,10 +19,10 @@
 @navbarInverseBackgroundHighlight:       @white;
 @navbarInverseBorder:                    @white;
 
-@navbarLinkColorHover:                   @grayDark;
+@navbarLinkColorHover:                   @greyDark;
 
-@navbarInverseText:                      @grayDark;
-@navbarInverseLinkColor:                 @grayDark;
+@navbarInverseText:                      @greyDark;
+@navbarInverseLinkColor:                 @greyDark;
 @navbarInverseLinkColorHover:            @orange;
 
 @formActionsBackground:                  transparent;
@@ -73,7 +74,7 @@ section.page-body.ongoing_projects,
 section.page-body.events,
 section.page-body.workshops,
 section.page-body.articles_rubrique {
-	background-color: #f6f4ef;
+	background-color: @beige;
 	padding-right: 1.6em;
 	padding-left: 1.6em;
 }
@@ -263,13 +264,13 @@ p.all {
 
 .info-publi {
 	margin-bottom: 0.5em;
-	color: @grayLight;
+	color: @greyLight;
 }
 
 abbr[title], acronym[title], abbr[data-original-title] {
 	border-bottom: none;
 	text-decoration: none;
-	color: @grayLight;
+	color: @greyLight;
 }
 
 .results {
@@ -527,7 +528,9 @@ abbr[title], acronym[title], abbr[data-original-title] {
 
 section.ongoing_projects{
 
-	.compteur {text-align: center;}
+	.compteur {
+		text-align: center;
+	}
 	.ongoing-projects {
 		.bouton(@amber);
 		border-radius:10em;
@@ -540,8 +543,25 @@ section.ongoing_projects{
 
 // Support us.
 
-.support_us {
-
+body.support_us {
+	.page-body:nth-child(odd) {
+		background-color: @beige;
+	}
+	img {
+		border-radius:11em;
+		float: left;
+		margin-right:2em;
+	}
+	.contenu{
+		padding: 1em 2em;
+		a {
+			.bouton();
+			color: @white;
+		}
+		a:nth-child(even) {
+			background-color: @amber;
+		}
+	}
 }
 
 @media (min-width: 1200px) {
