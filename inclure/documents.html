@@ -12,12 +12,17 @@
 			{id_organisation ?}
 			{extension !IN gif,jpg,png,mp4}
 			{vu=non}
-			{par num titre, date}>[
+			{par num titre, date}>
 		<li class="item">
-			<strong><a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">[(#TITRE|sinon{<:info_document:>})]</a></strong>
-			<span class="small">(<span>#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)]</span>)</span>
-			#DESCRIPTIF
-		]</li>
+			<span class="btn telecharger"> </span>
+			<div class="wrapper">
+				<a href="(#URL_DOCUMENT)" title="<:bouton_telecharger:>" type="#MIME_TYPE">
+					[(#TITRE|sinon{<:info_document:>})]
+				</a>
+				<span class="poids"><span>#TYPE_DOCUMENT[ &ndash; (#TAILLE|taille_en_octets)]</span></span>
+				#DESCRIPTIF
+			</div>
+		</li>
 		</BOUCLE_documents_joints>
 	</ul>
 	</section>
@@ -37,7 +42,7 @@
 	</BOUCLE_mp4>
 	</section>
 </B_mp4>
-	
+
 <//B_documents_joints>
 
 [(#REM) Portfolio : album d'images ]
