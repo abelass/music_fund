@@ -65,7 +65,9 @@
  * Blocks
  */
 
-section.page-body, .container > div.main {
+.page-body,
+.container > div.main,
+.page_evenement #content > .container  {
 	padding-right: 3.25em;
 	padding-left: 3.25em;
 }
@@ -160,10 +162,13 @@ section.page-body.articles_rubrique {
 			}
 		}
 	}
-	.main {
-		padding-bottom: 5em;
-		padding-top: 5em;
-	}
+}
+
+.contact.page-head .main,
+.support_us.page-head .main,
+.page_evenement #content > .container {
+	padding-top: 5em;
+	padding-bottom: 5em;
 }
 
 
@@ -817,6 +822,13 @@ body.support_us {
 	}
 }
 
+// Evénements
+.page_evenement {
+	#details_pratique {
+		background-color: @beige;
+	}
+}
+
 @media (min-width: 1200px) {
 	.page {
 		max-width: 1220px;
@@ -824,16 +836,18 @@ body.support_us {
 	}
 
 	// Blocks
-
-	section.page-body, .container > div.main {
+	.page-body, .container > div.main {
 		padding-right: 8em;
 		padding-left: 8em;
 	}
 
+
+
 	section.page-body.ongoing_projects,
 	section.page-body.events,
 	section.page-body.workshops,
-	section.page-body.articles_rubrique{
+	section.page-body.articles_rubrique,
+	.page_evenement #content > .container {
 		padding-right: 3.2em;
 		padding-left: 3.2em;
 	}

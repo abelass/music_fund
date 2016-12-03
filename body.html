@@ -30,12 +30,13 @@
 				<INCLURE{fond=content/#ENV{type-page},header=oui,breadcrumb=oui,env} />
 				[(#COMPOSITION|!={home}|oui)</section>]
 			]
-
 		]
+
 		[(#ENV{type-page}|=={rubrique}|non)
-		<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">
+		[(#ENV{type-page}|in_array{#LISTE{evenement}}|non)<section class="clearfix [(#COMPOSITION|sinon{#ENV{type-page}})] page-head">]
 			<INCLURE{fond=content/#ENV{type-page},breadcrumb=oui,env} />
-		</section>
+
+		[(#ENV{type-page}|in_array{#LISTE{evenement}}|non)</section>]
 		]
 	</div>
 	<div class="footer" id="footer">

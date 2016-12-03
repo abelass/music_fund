@@ -1,12 +1,39 @@
-[(#REM)
-/**
- * Plugin Agenda 4 pour Spip 3.0
- * Licence GPL 3
- *
- * 2006-2011
- * Auteurs : cf paquet.xml
- */]
+<BOUCLE_content(ARTICLES){id_article}>
+[(#ID_TRAD|>{0}|?{
+	#SET{id_trad,#ID_TRAD},
+	#SET{id_trad,#ID_ARTICLE}
+})]
+<article>
+	<header class="cartouche">
+	[(#ENV{breadcrumb}|oui)
+		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+	]
 
-<BOUCLE_ev(EVENEMENTS){id_evenement}>
-	<INCLURE{fond=content/article-evenement,id_article,id_evenement,env} />
-</BOUCLE_ev>
+	[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
+	<h1><span class="#EDIT{titre}">#TITRE</span>[
+		<small class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</small>
+	]</h1>
+	[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
+		<p class="info-publi">
+			<time pubdate="pubdate" datetime="[(#DATE|date_iso)]">
+				[(#DATE|nom_jour) ][(#DATE|affdate_court)]
+			</time>
+		</p>
+	</header>
+	<div class="container">
+		<div class="main">
+			[<div class="#EDIT{texte} texte surlignable">(#TEXTE|image_reduire{500,0})</div>]
+			[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
+		</div>
+
+		<footer>
+		[<div class="#EDIT{ps} ps surlignable"><h2><:info_ps:></h2>(#PS|image_reduire{500,0})</div>]
+		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+		</footer>
+
+		<aside>
+		<INCLURE{fond=inclure/evenements,env} />
+	</aside>
+	</div>
+</article>
+</BOUCLE_content>
