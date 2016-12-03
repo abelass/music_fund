@@ -160,6 +160,10 @@ section.page-body.articles_rubrique {
 			}
 		}
 	}
+	.main {
+		padding-bottom: 5em;
+		padding-top: 5em;
+	}
 }
 
 
@@ -234,7 +238,7 @@ section.page-body.articles_rubrique {
 		}
 	}
 
-.page-body {
+.page-body, .page-head {
 	.liste-items {
 		.item {
 			border:none;
@@ -775,6 +779,40 @@ body.support_us {
 			float:left;
 			clear:none;
 			.poids {display: block;}
+		}
+	}
+}
+
+.contact.page-head {
+	.lieux {
+		.lieu {
+			display: inline-block;
+			width: 49%;
+			.titre {
+				font-weight:bold;
+				margin-bottom: 1em;
+			}
+		}
+	}
+	.carte {
+		margin:0 2em 3em  2em;
+	}
+	.leaflet-container  {
+		background-color: transparent;
+	}
+	.cherchez {
+		padding: 5em 0;
+		background-color: @green;
+		.item {
+			display: inline-block;
+			a {
+				.bouton();
+				background-color: @amber;
+				color: @charcoal;
+			}
+		}
+		a:hover {
+			background-color: @beige;
 		}
 	}
 }

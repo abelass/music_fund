@@ -10,18 +10,22 @@
 			<BOUCLE_lieux(GIS){id_rubrique}>
 				<div class="lieu">
 					<p class="titre">#TITRE</p>
-					[<span class="adresse">(#ADRESSE**|extraire_multi)</span><span class="seperateur">, </span>][<span class="ville">(#VILLE)</span>]
-					[<p class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</p>]
+					[<span class="#EDIT{adresse} adresse">(#ADRESSE**|extraire_multi)</span><span class="seperateur">, </span>][<span class="#EDIT{adresse} ville">(#VILLE)</span>]
+					[<span class="pays"><span class="seperateur">, </span>(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
+					[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
 				</div>
 			</BOUCLE_lieux>
 			</div>
-			<INCLURE{fond=modeles/carte_gis,
-						autocenterandzoom=oui,
-						zoom=16,
-						id_trad,
-						objets=rubriques}/>
 		</div>
-		<aside>
+	</div>
+	<div class="carte">
+		<INCLURE{fond=modeles/carte_gis,
+			autocenterandzoom=oui,
+			zoom=16,
+			id_trad,
+			objets=rubriques}/>
+	</div>
+		<aside class="cherchez">
 			<B_articles>
 			<h2><:music_fund:vous_cherchez:></h2>
 			<nav>
