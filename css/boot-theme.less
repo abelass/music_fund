@@ -74,7 +74,6 @@ section.page-body.ongoing_projects,
 section.page-body.events,
 section.page-body.workshops,
 section.page-body.articles_rubrique {
-	background-color: @beige;
 	padding-right: 1.6em;
 	padding-left: 1.6em;
 }
@@ -215,7 +214,9 @@ section.page-body.articles_rubrique {
 /*
  * General.
  */
-
+.page-body:nth-child(odd) {
+	background-color: @beige;
+}
 
  .cartouche {
  	text-align:center;
@@ -285,7 +286,96 @@ abbr[title], acronym[title], abbr[data-original-title] {
 	color: @greyLight;
 }
 
-.results {
+section.page-body {
+
+}
+.page-body.results {
+	background-color: @amber;
+	h1, .label, .nombre {
+		color: @yellowBrown;
+	}
+	h1 {
+		font-weight: bold;
+	}
+	.main {
+		text-align: center;
+		> div {
+			float: left;
+			width: 25%;
+		}
+	}
+	.icon {
+		border: 2px solid @yellowBrown;
+		border-radius: 11em;
+		margin: 0 auto;
+		height: 11vw;
+		width: 11vw;
+	}
+	img {
+  height: 69%;
+  padding: 15% 0;
+  width: 69%;
+	}
+	.label {
+		background-color: transparent;
+		font-size: 1em;
+		font-weight: normal;
+		line-height: normal;
+		padding: 0;
+		text-shadow: none;
+		white-space: normal;
+		width: 69%;
+	}
+	.nombre {
+		font-size: 1.8em;
+		font-weight: bold;
+		line-height: normal;
+		margin: 0.5em 0 0.1em;
+	}
+}.results {
+	background-color: @amber;
+	h1, .label, .nombre {
+		color: @yellowBrown;
+	}
+	h1 {
+		font-weight: bold;
+	}
+	.main {
+		text-align: center;
+		> div {
+			float: left;
+			width: 25%;
+		}
+	}
+	.icon {
+		border: 2px solid @yellowBrown;
+		border-radius: 11em;
+		margin: 0 auto;
+		height: 11vw;
+		width: 11vw;
+	}
+	img {
+  height: 69%;
+  padding: 15% 0;
+  width: 69%;
+	}
+	.label {
+		background-color: transparent;
+		font-size: 1em;
+		font-weight: normal;
+		line-height: normal;
+		padding: 0;
+		text-shadow: none;
+		white-space: normal;
+		width: 69%;
+	}
+	.nombre {
+		font-size: 1.8em;
+		font-weight: bold;
+		line-height: normal;
+		margin: 0.5em 0 0.1em;
+	}
+}.results {
 	background-color: @amber;
 	h1, .label, .nombre {
 		color: @yellowBrown;
@@ -585,9 +675,6 @@ body.support_us {
 // About.
 
 .rub-orig-29 {
-	.page-body:nth-child(odd) {
-		background-color: @beige;
-	}
 	.page-body {
 		img {
 			float: right;
