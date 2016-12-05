@@ -13,27 +13,29 @@
 		]
 	</header>
 	[(#ENV{header}|oui)<div class="container">]
-		<div class="main">
+
 			[(#ENV{header}|?{
-				[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+				[<div class="main">
+					<div class="#EDIT{texte} texte">(#TEXTE)</div>
+				</div>]
 			,
+				<div class="main">
 				[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{564,383}|image_recadre{564,383})]
 				[<div class="#EDIT{introduction} introduction">(#INTRODUCTION)</div>]
+				</div>
 			})]
 			<B_articles>
 			<br class="nettoyeur"/>
 			<BOUCLE_articles(ARTICLES){id_rubrique}>
 				<INCLURE{fond=content/article, id_article, composition, env} />
 			</BOUCLE_articles>
-		</div>
-
-		<aside>
+		[<aside>
 			[(#REM) Gestion du portfolio et des documents ]
-			[(#INCLURE{fond=inclure/documents,id_rubrique}|sinon{#INCLURE{fond=inclure/documents,id_rubrique=#ID_TRAD}})]
-		</aside>
+			(#INCLURE{fond=inclure/documents,id_rubrique}|sinon{#INCLURE{fond=inclure/documents,id_rubrique=#ID_TRAD}})
+		</aside>]
 
-		<footer>
-		[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
-		</footer>
+		[<footer>
+		<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+		</footer>]
 	[(#ENV{header}|oui)</div>]
 </BOUCLE_content>

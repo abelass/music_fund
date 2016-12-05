@@ -1,15 +1,19 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
-	[(#ENV{header}|oui)<header class="cartouche">
+[(#ENV{header}|oui)
+<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">
+	<header class="cartouche">
 		[(#ENV{breadcrumb}|oui)
 			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		]
 		<h1 class="#EDIT{titre}">#TITRE</h1>
-
 			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
+	</header>
+</section>]
 
-	</header>]
 
-	[(#ENV{header}|oui)<div class="container">]
+	[(#ENV{header}|oui)
+	<section class="clearfix page-body">
+	<div class="container">]
 	<div class="main">
 		[(#ENV{header}|oui)
 			[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
@@ -32,5 +36,5 @@
 	<footer>
 	[<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
 	</footer>
-	[(#ENV{header}|oui)</div>]
+	[(#ENV{header}|oui)</div></section>]
 </BOUCLE_content>

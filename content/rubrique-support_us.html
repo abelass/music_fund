@@ -10,10 +10,11 @@
 
 	</header>]
 	[(#ENV{header}|oui)<div class="container">]
-		<div class="main">
+
 			[(#ENV{header}|?{
-				[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+				[<div class="main"><div class="#EDIT{texte} texte">(#TEXTE)</div></div>]
 			,
+			<div class="main">
 				[(#ENV{home}|?{
 				<div class="contenu">
 					[<h1 class="#EDIT{titre}">(#TITRE)</h1>]
@@ -27,8 +28,8 @@
 					[<div class="#EDIT{introduction} texte">(#INTRODUCTION)</div>]
 				</div>
 				})]
+				</div>
 			})]
-		</div>
 
 		<aside>
 			[(#REM) Gestion du portfolio et des documents ]

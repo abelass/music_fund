@@ -27,9 +27,9 @@
 			]
 
 			[(#COMPOSITION|in_array{#GET{affichage_page}}|oui|et{#ID_PARENT|in_array{#GET{id_parent}}|non})
-				[(#COMPOSITION|!={home}|oui)<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">]
+				[(#COMPOSITION|in_array{#LISTE{home,donation}}|non)<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">]
 				<INCLURE{fond=content/#ENV{type-page},header=oui,breadcrumb=oui,env} />
-				[(#COMPOSITION|!={home}|oui)</section>]
+				[(#COMPOSITION|in_array{#LISTE{home,donation}}|non)</section>]
 			]
 		]
 

@@ -2,6 +2,7 @@
 	certificat,
 	label=<:music_fund:label_certificat:>,
 	valeur_non=off,
+	autocomplete=off
 	})]
 
 
@@ -17,7 +18,8 @@
 	[(#SAISIE{oui_non,
 		recurrent,
 		label=<:music_fund:label_recurrent:>,
-		valeur_non=off
+		valeur_non=off,
+		autocomplete=off
 		})]
 
 ]
@@ -46,6 +48,7 @@
 		$set.each(function (index, element) {
 			searchVars[this.name] = this.value;
 		});
+		searchVars['recurrent'] = 'nada';
 		searchVars[champChange] = valeurChange;
 		ajaxReload('donation', {
 			args : searchVars
