@@ -14,11 +14,19 @@
 			[(#ENV{header}|?{
 				[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 			,
+				[(#ENV{home}|?{
+				<div class="contenu">
+					[<h1 class="#EDIT{titre}">(#TITRE)</h1>]
+					[(#INCLURE{fond=inclure/menu_sousrubriques,id_rubrique,header=''})]
+				</div>
+
+				,
 				[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{255,255}|image_recadre{255,255})]
 				<div class="contenu">
 					[<h1 class="#EDIT{titre}">(#TITRE)</h1>]
 					[<div class="#EDIT{introduction} texte">(#INTRODUCTION)</div>]
 				</div>
+				})]
 			})]
 		</div>
 

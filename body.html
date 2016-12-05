@@ -18,7 +18,8 @@
 					donation,
 					support_us,
 					home,
-					events}
+					events,
+					articles_rubrique}
 			}
 			#SET{id_parent,#LISTE{3,9,13}}
 			[(#COMPOSITION|in_array{#GET{affichage_page}}|non|ou{#ID_PARENT|in_array{#GET{id_parent}}|oui})
@@ -33,7 +34,7 @@
 		]
 
 		[(#ENV{type-page}|=={rubrique}|non)
-		[(#ENV{type-page}|in_array{#LISTE{evenement}}|non)<section class="clearfix [(#COMPOSITION|sinon{#ENV{type-page}})] page-head">]
+		[(#ENV{type-page}|in_array{#LISTE{evenement, organisation}}|non)<section class="clearfix [(#COMPOSITION|sinon{#ENV{type-page}})] page-head">]
 			<INCLURE{fond=content/#ENV{type-page},breadcrumb=oui,env} />
 
 		[(#ENV{type-page}|in_array{#LISTE{evenement}}|non)</section>]

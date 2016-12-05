@@ -46,7 +46,8 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_lifecycles_date_fin' => 'Fin Lifecycle',
 	'label_titre_secondaire' => 'Titre secondaire',
 	'lifecycles_statut' => 'Statut Lifecycle',
-	'load_events' => 'Charger tous les événments',
+	'load_events' => 'Charger tous les événements',
+	'load_news' => 'Charger toutes les nouvelles',
 
 	// M
 	'music_fund_titre' => 'Music Fund',

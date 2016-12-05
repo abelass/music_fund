@@ -10,6 +10,11 @@
 			<INCLURE{fond=inclure/evenements,id_article,env,limite=#GET{limite}}/>
 		</BOUCLE_art_evenement>
 	</div>
-	[(#ENV{header}|non)<p class="all"><a href="#URL_RUBRIQUE" title="<:music_fund:load_events:>"><:music_fund:load_events:></a>]
+	[(#ENV{header}|non)
+		<p class="all">
+			<a href="#URL_RUBRIQUE" title="<:music_fund:load_events:>">
+				<:music_fund:load_events:>
+			</a>
+		</p>]
 	[(#ENV{header}|oui)</div>]
 </BOUCLE_contenu_rubrique>

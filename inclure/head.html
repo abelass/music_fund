@@ -60,11 +60,23 @@
 
 [<script type="text/javascript" src="(#CHEMIN{js/bootstrap-collapse.js})"></script>]
 [<script type="text/javascript" src="(#CHEMIN{lib/jquery.OnePageNav/jquery.nav.js})"></script>]
+[<script type="text/javascript" src="(#CHEMIN{lib/makefixed/makefixed.min.js})"></script>]
 
 <script type="text/javascript">
 $(document).ready(function() {
     $('#nav-menu').onePageNav();
   });
+
+$('.page-head nav').makeFixed({
+  onFixed: function (el)
+  {
+		$(el).addClass('fixed');
+  },
+  onUnFixed: function (el)
+  {
+  	$(el).removeClass('fixed');
+  }
+});
 </script>
 
 <!--[if lt IE 9]>

@@ -90,9 +90,11 @@ section.page-body.articles_rubrique {
 	.cartouche {
 		margin-bottom: 3em;
 	}
+	h1, h2 {
+		font-weight: bold;
+	}
 	h1 {
 		margin-bottom: 0.5em;
-		font-weight: bold;
 	}
 }
 .home #content .cartouche {
@@ -143,18 +145,28 @@ section.page-body.articles_rubrique {
 			font-size:1.1em;
 			margin: 0 3em;
 		}
+		 nav.fixed {
+		 	width: 100%!important;
+		 	margin: 0;
+		 	left: 0!important
+		 }
 		nav {
-			margin: 0 13em;
+			margin: 0 14em;
 			.btn {
 				color: #ffffff;
 				background-color: transparent;
 				border: 2px #ffffff solid;
 			}
-			.liste-items .item {
-				border-top: none;
-				clear: none;
-				display: inline-block;
-				margin-right: 0.4em;
+			.liste-items {
+				.current a{
+					background-color: @white;
+				}
+				.item {
+					border-top: none;
+					clear: none;
+					display: inline-block;
+					margin-right: 0.4em;
+				}
 			}
 			.liste-items .item:last-child {
 				border-bottom: none;
@@ -273,10 +285,9 @@ p.all {
 		img {
 			float:left;
 			width: 33%;
+			margin-right: 2em;
 		}
 		.texte {
-			float:left;
-			width: 66%;
 			.wrapper {
 				padding-left: 2em;
 			}
@@ -556,6 +567,9 @@ section.page-body {
 	}
 	.support_us{
 		background-color: @green;
+		.main {
+			text-align: center;
+		}
 		h1 {
 			color: @white;
 		}
@@ -635,20 +649,70 @@ section.page-body {
 	}
 }
 
-// Projects.
+// Projets.
 
 section.ongoing_projects{
 
 	.compteur {
 		text-align: center;
+		font-weight: bold;
+		.finished-projects {
+			font-weight: normal;
+		}
 	}
 	.ongoing-projects {
 		.bouton(@amber);
 		border-radius:10em;
-		padding: 0.1em 0.5em;
+		padding: 0.2em 0.5em 0.1em;
 	}
 	.finished-projects {
 		text-decoration: underline;
+	}
+	.lieu {
+		color: @greyLight;
+	}
+}
+
+// Projet
+.page_organisation {
+	header {
+		.location {
+			color: @greyLight;
+		}
+	}
+	.carte {
+		width: 80%;
+		height: 18em;
+		margin: 2em auto;
+	}
+	.results {
+		background-color: transparent;
+	}
+	.sponsors{
+		.row1 {
+			display: flex;
+			flex-direction: row;
+		}
+		margin: 0 -5em;
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: center;
+	  a {
+	  	flex-grow: 1;
+	  }
+	}
+	#support_projet {
+		background-color: @green;
+		text-align: center;
+		h2 {
+			color: @white;
+		}
+		.btn {
+			background-color: @amber;
+		}
+	}
+	.lieu {
+		color: @greyLight;
 	}
 }
 
@@ -681,6 +745,7 @@ body.support_us {
 	}
 }
 
+
 // About.
 
 .rub-orig-29 {
@@ -694,6 +759,9 @@ body.support_us {
 		#rubrique-44 {
 			.documents_joints .liste-items .item {
 				.bouton();
+				.telecharger, .poids {
+					display: none;
+				}
 				strong{
 					font-weight: normal;
 				}
@@ -790,6 +858,10 @@ body.support_us {
 
 .contact.page-head {
 	.lieux {
+		a {
+			color: @charcoal;
+			text-decoration: underline;
+		}
 		.lieu {
 			display: inline-block;
 			width: 49%;
@@ -829,6 +901,7 @@ body.support_us {
 	}
 }
 
+
 @media (min-width: 1200px) {
 	.page {
 		max-width: 1220px;
@@ -850,6 +923,22 @@ body.support_us {
 	.page_evenement #content > .container {
 		padding-right: 3.2em;
 		padding-left: 3.2em;
+	}
+
+	.page-head {
+		> header,
+		article > header{
+			nav {
+				margin: 0 16em;
+			}
+		}
+	}
+
+	// Projet
+	.page_organisation {
+		.carte {
+			width: 70%;
+		}
 	}
 }
 

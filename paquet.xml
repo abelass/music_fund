@@ -16,6 +16,7 @@
 	<licence>GNU/GPL</licence>
 
 	<lib nom="jquery.OnePageNav" lien="https://github.com/davist11/jQuery-One-Page-Nav/archive/master.zip"/>
+	<lib nom="makefixed" lien="https://github.com/guimadaleno/makefixed.js/archive/master.zip"/>
 
 	<necessite nom="wsps_html5" compatibilite="[1.2.1;]" />
 	<necessite nom="wsp_ml" compatibilite="[0.2.6;]" />

@@ -2,8 +2,13 @@
 <nav>
 	<ul id="nav-menu" class="liste-items">
 	<BOUCLE_sous_menu(RUBRIQUES){id_parent=#ID_RUBRIQUE}{tout}{par num titre}>
+		[(#ID_TRAD|>{0}|?{
+			#SET{id_trad,#ID_TRAD}
+			,
+			#SET{id_trad,#ID_RUBRIQUE}
+		})]
 		<li class="item hentry">
-			<a class="btn" href="[(#ENV{header}|non)#URL_RUBRIQUE{#ENV{id_rubrique}}]#rubrique-#ID_RUBRIQUE">
+			<a class="btn" href="[(#ENV{header}|non)#URL_RUBRIQUE{#ENV{id_rubrique}}]#rubrique-#GET{id_trad}">
 				#TITRE
 			</a>
 		</li>

@@ -1,13 +1,26 @@
-<BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>
-<section>
-	<header class="cartouche">
-		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
-	</header>
-	<div class="main">	
-	[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
-[(#REM) Articles de la rubrique ]
+<BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>#SET{limite, 4}
 
-<INCLURE{fond=inclure/articles_rubrique,id_rubrique,env,ajax,id_trad,id_parent}/>
+	<header class="cartouche">
+		[(#ENV{breadcrumb}|oui)
+			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+		]
+		<h1 class="h1 #EDIT{titre}">#TITRE</h1>
+		[(#ENV{header}|oui)
+		#SET{limite, 100}
+			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
+		]
+	</header>
+	[(#ENV{header}|oui)<div class="container">]
+	<div class="main">
+	[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
+	[(#REM) Articles de la rubrique ]
+	<INCLURE{fond=inclure/articles_rubrique,id_rubrique,env,ajax,id_trad,id_parent,limite=#GET{limite}}/>
 </BOUCLE_contenu_rubrique>
 	</div>
-</section>
+	[(#ENV{header}|oui)</div>]
+		[(#ENV{header}|non)
+			<p class="all">
+				<a href="#URL_RUBRIQUE" title="<:music_fund:load_news:>">
+					<:music_fund:load_news:>
+				</a>
+			</p>]

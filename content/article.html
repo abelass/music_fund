@@ -3,7 +3,7 @@
 	#SET{id_trad,#ID_TRAD},
 	#SET{id_trad,#ID_ARTICLE}
 })]
-<article>
+<section class="article page-head">
 	<header class="cartouche">
 	[(#ENV{breadcrumb}|oui)
 		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
@@ -20,6 +20,8 @@
 			</time>
 		</p>
 	</header>
+</section>
+<section  class="clearfix page-body">
 	<div class="container">
 		<div class="main">
 			[<div class="#EDIT{texte} texte surlignable">(#TEXTE|image_reduire{500,0})</div>]
@@ -36,5 +38,5 @@
 			[(#INCLURE{fond=inclure/documents,id_article}|sinon{#INCLURE{fond=inclure/documents,id_article=#GET{id_trad}}})]
 		</aside>
 	</div>
-</article>
-</BOUCLE_content>1
+</section>
+</BOUCLE_content>
