@@ -34,10 +34,14 @@
 		]
 
 		[(#ENV{type-page}|=={rubrique}|non)
-		[(#ENV{type-page}|in_array{#LISTE{evenement, organisation}}|non)<section class="clearfix [(#COMPOSITION|sinon{#ENV{type-page}})] page-head">]
+		#SET{exclus, #LISTE{
+			evenement,
+			organisation,
+			article}}
+		[(#ENV{type-page}|in_array{#GET{exclus}}|non)<section class="clearfix [(#COMPOSITION|sinon{#ENV{type-page}})] page-head">]
 			<INCLURE{fond=content/#ENV{type-page},breadcrumb=oui,env} />
 
-		[(#ENV{type-page}|in_array{#LISTE{evenement}}|non)</section>]
+		[(#ENV{type-page}|in_array{#GET{exclus}}|non)</section>]
 		]
 	</div>
 	<div class="footer" id="footer">

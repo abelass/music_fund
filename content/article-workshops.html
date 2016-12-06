@@ -3,7 +3,7 @@
 	#SET{id_trad,#ID_TRAD},
 	#SET{id_trad,#ID_ARTICLE}
 })]
-<article>
+<section class="clearfix [(#COMPOSITION|sinon{#ENV{type-page}})] page-head">
 	<header class="cartouche">
 	[(#ENV{breadcrumb}|oui)
 		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
@@ -20,6 +20,8 @@
 			</time>
 		</p>
 	</header>
+</section>
+<section class="clearfix page-body">
 	<div class="container">
 		<div class="main">
 			[<div class="#EDIT{texte} texte surlignable">(#TEXTE|image_reduire{500,0})</div>]
@@ -35,5 +37,5 @@
 		<INCLURE{fond=inclure/evenements,env} />
 	</aside>
 	</div>
-</article>
+</section>
 </BOUCLE_content>
