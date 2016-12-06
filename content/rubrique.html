@@ -33,9 +33,8 @@
 			[(#REM) Gestion du portfolio et des documents ]
 			(#INCLURE{fond=inclure/documents,id_rubrique}|sinon{#INCLURE{fond=inclure/documents,id_rubrique=#ID_TRAD}})
 		</aside>]
-
 		[<footer>
-		<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>]
+		<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>
 		</footer>]
 	[(#ENV{header}|oui)</div>]
 </BOUCLE_content>
