@@ -62,8 +62,13 @@
 <//B_article>
 <BOUCLE_evenement(EVENEMENTS){id_evenement}>
 	#SET{logo, #LOGO_EVENEMENT_SURVOL|sinon{#LOGO_EVENEMENT_NORMAL}}
-	#SET{background_1,url((#GET{logo}|image_passe_partout{1000,300}|image_recadre{1000,300,'center','transparent'}|image_nb|image_alpha{110}|extraire_attribut{src}))
-	}
+	[(#SET{background_1,
+		[url((#GET{logo}|
+			image_passe_partout{1000,300}
+			|image_recadre{1000,300,'center','transparent'}
+			|image_nb|image_alpha{110}
+			|extraire_attribut{src}))]
+	})]
 	[(#GET{background_1}|?{
 			#SET{background_2,linear-gradient(to bottom, #506f6d, #2e4140)}
 		,
@@ -73,8 +78,13 @@
 </BOUCLE_evenement>
 <BOUCLE_organisation(ORGANISATIONS){id_organisation}>
 	#SET{logo, #LOGO_ORGANISATION_SURVOL|sinon{#LOGO_ORGANISATION_NORMAL}}
-	#SET{background_1,url((#GET{logo}|image_passe_partout{1000,300}|image_recadre{1000,300,'center','transparent'}|image_nb|image_alpha{110}|extraire_attribut{src}))
-	}
+	[(#SET{background_1,
+		[url((#GET{logo}
+			|image_passe_partout{1000,300}
+			|image_recadre{1000,300,'center','transparent'}
+			|image_nb|image_alpha{110}
+			|extraire_attribut{src}))}
+	})]
 	[(#GET{background_1}|?{
 			#SET{background_2,linear-gradient(to bottom, #506f6d, #2e4140)}
 		,
