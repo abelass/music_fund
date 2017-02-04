@@ -804,29 +804,35 @@ body.support_us {
 		}
 	}
 	section.famous_fans {
-		.fan {
-			width: 50%;
-			float: left;
-			margin-bottom: 2em;
-			a {
-				text-decoration: underline;
-				color: @charcoal;
+		.fans {
+			display: flex;
+			flex-wrap: wrap;
+			.fan {
+				width: 48%;
+				margin: 0 0 2em 2%;
+				a {
+					text-decoration: underline;
+					color: @charcoal;
+				}
+				img {
+					float: left;
+					width: auto;
+					margin-right: 2em;
+					margin-left: 0;
+					width: 26%;
+				}
+				p {
+					margin-bottom: 0.2em;
+				}
+				.prenom_nom {
+					font-size: 1.2em;
+					font-weight: bold;
+					margin-top: 0.5em;
+					margin-bottom: 0.6em;
+				}
 			}
-			img {
-				float: left;
-				width: auto;
-				margin-right: 2em;
+			.fan:nth-child(odd) {
 				margin-left: 0;
-				width: 26%;
-			}
-			p {
-				margin-bottom: 0.2em;
-			}
-			.prenom_nom {
-				font-size: 1.2em;
-				font-weight: bold;
-				margin-top: 0.5em;
-				margin-bottom: 0.6em;
 			}
 		}
 	}
