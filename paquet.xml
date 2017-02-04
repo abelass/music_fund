@@ -29,6 +29,7 @@
 	<necessite nom="newsletters" compatibilite="[1.3.30;]"/>
 	<necessite nom="spip_hop" compatibilite="[0.4.11;]"/>
 	<necessite nom="saisies" compatibilite="[2.8.1;]"/>
+	<necessite nom="partenaires" compatibilite="[1.6.0;]"/>
 
 	<utilise nom="multilingue" compatibilite="[1.0.6;]" />
 

@@ -7,14 +7,12 @@
 	<div class="main">
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 		<div class="fans">
-		<BOUCLE_famous(CONTACTS spip_mots_liens){id_mot= 4000019}>
+		<BOUCLE_famous(PARTENAIRES spip_partenaires_types_liens){id_type=4}>
 			<div class="fan">
-				[(#LOGO_CONTACT|image_passe_partout{160,160}|image_recadre{160,160}|inserer_attribut{alt,#PRENOM #NOM})]
-				<p class="prenom_nom">
-					[<span class="#EDIT{prenom} prenom">(#PRENOM)</span>] [<span class="#EDIT{nom} nom">(#NOM)</span>]
-				</p>
-				[<p class="#EDIT{fonction} fonction">(#FONCTION)</p>]
-				[<p class=" url"><a href="(#URL)">#URL</a></p>]
+				[(#LOGO_PARTENAIRE|image_passe_partout{160,160}|image_recadre{160,160}|inserer_attribut{alt,#TITRE})]
+				[<p class="#EDIT{nom} nom">(#NOM)</p>]
+				[<p class="#EDIT{descriptif} descriptif">(#DESCRIPTIF)</p>]
+				[<p class="url_sie"><a href="(#URL_SITE)">#URL_SITE</a></p>]
 			</div>
 		</BOUCLE_famous>
 		</div>
