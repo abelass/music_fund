@@ -30,6 +30,7 @@
 	<necessite nom="spip_hop" compatibilite="[0.4.11;]"/>
 	<necessite nom="saisies" compatibilite="[2.8.1;]"/>
 	<necessite nom="partenaires" compatibilite="[1.6.0;]"/>
+	<necessite nom="videos" compatibilite="[0.12.6;]"/>
 
 	<utilise nom="multilingue" compatibilite="[1.0.6;]" />
 

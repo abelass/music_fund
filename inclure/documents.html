@@ -10,7 +10,7 @@
 			{id_produit ?}
 			{id_evenement ?}
 			{id_organisation ?}
-			{extension !IN gif,jpg,png,mp4}
+			{extension !IN gif,jpg,png,m4v,mp4,webm,ogv,mkv,dist_daily,dist_youtu,dist_vimeo}
 			{vu=non}
 			{par num titre, date}>
 		<li class="item">
@@ -35,10 +35,10 @@
 		{id_produit ?}
 		{id_evenement ?}
 		{id_organisation ?}
-		{extension = mp4}
+		{extension IN m4v,mp4,webm,ogv,mkv,dist_daily,dist_youtu,dist_vimeo}
 		{vu=non}
 		{par num titre, date}>
-		<INCLURE{fond=modeles/emb,env,id_document}/>
+		<INCLURE{fond=modeles/video,env,document=#ID_DOCUMENT}/>
 	</BOUCLE_mp4>
 	</section>
 </B_mp4>
