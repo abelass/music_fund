@@ -145,14 +145,14 @@ section.page-body.articles_rubrique {
 			font-size:1.1em;
 			margin: 0 3em;
 		}
-		 nav.fixed {
-		 	width: 100%!important;
-		 	margin: 0;
-		 	left: 0!important;
-		 	ul {
-		 		margin-bottom: 0;
-		 	}
-		 }
+		nav.fixed {
+			width: 100%!important;
+			margin: 0;
+			left: 0!important;
+			ul {
+				margin-bottom: 0;
+			}
+		}
 		nav {
 			margin: 0 14em;
 			.btn {
@@ -242,11 +242,22 @@ section.page-body.articles_rubrique {
 	background-color: @beige;
 }
 
- .cartouche {
- 	text-align:center;
- }
+.cartouche {
+	text-align: center;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: -webkit-flex;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+	> * {
+		width: 100%
+	}
+}
 
- 	.liste-detail {
+
+	.liste-detail {
 		background-color: @white;
 		.row-fluid .span6  {
 			width: 50%;
@@ -335,9 +346,9 @@ section.page-body {
 		width: 11vw;
 	}
 	img {
-  height: 69%;
-  padding: 15% 0;
-  width: 69%;
+	height: 69%;
+	padding: 15% 0;
+	width: 69%;
 	}
 	.label {
 		background-color: transparent;
@@ -378,9 +389,9 @@ section.page-body {
 		width: 11vw;
 	}
 	img {
-  height: 69%;
-  padding: 15% 0;
-  width: 69%;
+	height: 69%;
+	padding: 15% 0;
+	width: 69%;
 	}
 	.label {
 		background-color: transparent;
@@ -421,9 +432,9 @@ section.page-body {
 		width: 11vw;
 	}
 	img {
-  height: 69%;
-  padding: 15% 0;
-  width: 69%;
+	height: 69%;
+	padding: 15% 0;
+	width: 69%;
 	}
 	.label {
 		background-color: transparent;
@@ -560,10 +571,10 @@ section.page-body {
 	.page-head {
 		> header {
 			h1 {
-				 visibility: hidden;
+				visibility: hidden;
 			}
-		 }
-		 .chapo {
+		}
+		.chapo {
 			font-size: 2.5em;
 			line-height: normal;
 		}
@@ -605,7 +616,7 @@ section.page-body {
 	.boutons-images {
 		.bouton-image{
 			position: relative;
-			 text-align: center;
+			text-align: center;
 			img {
 				border-radius: 11em;
 			}
@@ -697,12 +708,12 @@ section.ongoing_projects{
 			flex-direction: row;
 		}
 		margin: 0 -5em;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  a {
-	  	flex-grow: 1;
-	  }
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		a {
+			flex-grow: 1;
+		}
 	}
 	#support_projet {
 		background-color: @green;
