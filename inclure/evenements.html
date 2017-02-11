@@ -8,7 +8,7 @@
 		{id_evenement!=#ENV{exclu,0}}
 		{pagination #ENV{pagination,20}}
 		{0,#ENV{limite,2}}>
-	#SET{logo,#LOGO_EVENEMENT|image_passe_partout{#ENV{width,565.5},#ENV{height,423}}|image_recadre{#ENV{width,565.5},#ENV{height,423}}}
+	#SET{logo,#LOGO_EVENEMENT_NORMAL|image_passe_partout{#ENV{width,565.5},#ENV{height,423}}|image_recadre{#ENV{width,565.5},#ENV{height,423}}}
 	<article class="row-fluid">
 		[<div class="span6 logo">(#COMPTEUR_BOUCLE|alterner{#GET{logo},''})</div>]
 		<div class="span6 texte">
