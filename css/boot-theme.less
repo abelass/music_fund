@@ -736,25 +736,27 @@ body.support_us {
 	.page-body:nth-child(odd) {
 		background-color: @beige;
 	}
-	img {
-		border-radius:11em;
-		float: left;
-		margin-right:2em;
-	}
-	.contenu{
-		padding: 1em 2em;
-		a {
-			.bouton();
-			color: @charcoal;
+	section {
+		img {
+			border-radius:11em;
+			float: left;
+			margin-right:2em;
 		}
-		a:hover {
-			background-color: @amber;
-		}
-		a:nth-child(even) {
-			background-color: @amber;
-		}
-		a:nth-child(even):hover {
-			background-color: @green;
+		.contenu{
+			padding: 1em 2em;
+			a {
+				.bouton();
+				color: @charcoal;
+			}
+			a:hover {
+				background-color: @amber;
+			}
+			a:nth-child(even) {
+				background-color: @amber;
+			}
+			a:nth-child(even):hover {
+				background-color: @green;
+			}
 		}
 	}
 }
