@@ -2,12 +2,12 @@
 	<div class="liste-detail">
 		#ANCRE_PAGINATION
 	<BOUCLE_events(EVENEMENTS)
-		{gis}
 		{id_article}
 		{par date_debut,date_fin}
+		{date_fin>=#DATE}
 		{id_evenement!=#ENV{exclu,0}}
 		{pagination #ENV{pagination,20}}
-		{0,#ENV{limite,2}}>
+		{0,#ENV{limite,1000}}>
 	#SET{logo,#LOGO_EVENEMENT_NORMAL|image_passe_partout{#ENV{width,565.5},#ENV{height,423}}|image_recadre{#ENV{width,565.5},#ENV{height,423}}}
 	<article class="row-fluid">
 		[<div class="span6 logo">(#COMPTEUR_BOUCLE|alterner{#GET{logo},''})</div>]
@@ -16,14 +16,16 @@
 				<h3 class="#EDIT{titre}"><a href="#URL_EVENEMENT">#TITRE</a></h3>
 				<div class="info-publi">
 				<time pubdate="pubdate" datetime="[(#DATE_DEBUT|date_iso)]">
-					[(#DATE|nom_jour) ][(#DATE|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
+					[(#DATE_DEBUT|nom_jour) ][(#DATE_DEBUT|affdate_court)][(#DATE_DEBUT|affdate{d-m-Y}|!={[(#DATE_FIN|affdate{d-m-Y})]}|oui)
 						[ - (#DATE_FIN|affdate)]
 					]
 				</time>
 				<B_lieu>
+				<BOUCLE_lieu(GIS){id_evenement}>
 				<span class="seperateur">|</span> <span class="lieu">
 						#VILLE[, (#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})]
 				</span>
+				</BOUCLE_lieu>
 				<B_lieu>
 				</div>
 				[<div class="#EDIT{descriptif} texte surlignable">(#DESCRIPTIF|couper{600})</div>]
