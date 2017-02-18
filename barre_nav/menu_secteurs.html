@@ -1,22 +1,28 @@
 <div class="row-fluid">
 	<BOUCLE_nav(RUBRIQUES) {racine} {par num titre, titre}{!par date}{tout}{lang}>
 		<B_enfants>
-		<div class="menu menu-container navbar-inner clearfix span8">
+		<div class="menu menu-container navbar-inner clearfix">
 			<ul class="menu-items menu-liste nav">
-			<BOUCLE_enfants(RUBRIQUES){id_parent} {par num titre, titre}{tout}>
-			<li class="item menu-entree[ (#EXPOSE)]">
-				<a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a>
-			</li>
-			</BOUCLE_enfants>
+				<BOUCLE_enfants(RUBRIQUES){id_parent} {par num titre, titre}{tout}>
+				<li class="item menu-entree[ (#EXPOSE)]">
+					<a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a>
+				</li>
+				</BOUCLE_enfants>
+				<li class="action-buttons">
+					<BOUCLE_support(RUBRIQUES){id_trad=1}{tout}{lang}>
+					<div>
+						<a class="btn" href="#URL_RUBRIQUE" title="#TITRE">#TITRE</a>
+					</div>
+					</BOUCLE_support>
+					<INCLURE{fond=inclure/menu_langues_select,env}/>
+					<div>
+						<a class="btn facebook" href="https://www.facebook.com/MusicFund/" title="Facebook">
+							<span>Facebook</span>
+						</a>
+					</div>
+				</li>
 			</ul>
 		</div>
 		</B_enfants>
 	</BOUCLE_nav>
-	<div class="action-buttons span4">
-		<a class="btn facebook" href="https://www.facebook.com/MusicFund/" title="Facebook"><span>Facebook</span></a>
-		<INCLURE{fond=inclure/menu_langues_select,env}/>
-		<BOUCLE_support(RUBRIQUES){id_trad=1}{tout}{lang}>
-		<a class="btn" href="#URL_RUBRIQUE" title="#TITRE">#TITRE</a>
-		</BOUCLE_support>
-	</div>
 </div>

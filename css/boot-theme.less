@@ -15,11 +15,10 @@
 
 @linkColor:                              @orange;
 
+// Inverted navbar
 @navbarInverseBackground:                @white;
 @navbarInverseBackgroundHighlight:       @white;
 @navbarInverseBorder:                    @white;
-
-@navbarLinkColorHover:                   @greyDark;
 
 @navbarInverseText:                      @greyDark;
 @navbarInverseLinkColor:                 @greyDark;
@@ -60,6 +59,35 @@
 
 @serifFontFamily: montserratregular;
 
+/*
+ * Navigation
+ */
+.navbar .nav {
+	float: none;
+	text-align: right;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	margin: 0;
+	li {
+		float:none;
+	}
+	.action-buttons {
+		width: 256px;
+	}
+}
+
+.navbar-inverse .btn-navbar {
+	background: @orange;
+	padding: 1.1em 0.8em;
+	border-radius: 3.125em;
+}
+
+.navbar .btn-navbar .icon-bar {
+	background-color: @white;
+	width: 24px;
+	border-radius: 3px;
+}
 
 /*
  * Blocks
@@ -478,13 +506,14 @@ section.page-body {
 }
 
 .action-buttons {
+	display: flex;
+	flex-wrap: no-wrap;
+	justify-content: flex-end;
 	.btn{
-		float: right;
 		margin-top: 0;
-		margin-right: 0.4em;
 	}
 	> div {
-		margin-right: 0.4em;
+		margin-left: 0.4em;
 	}
 }
 .btn.facebook{
@@ -976,3 +1005,55 @@ body.support_us {
 	}
 }
 
+@media (min-width: 1200px) {
+
+}
+
+@media (min-width: 768px) and (max-width: 979px) {
+
+
+}
+
+@media (max-width: 767px) {
+	#header {
+		margin: 2em 0;
+	}
+
+	.navbar-responsive {
+		right: 0;
+		top: -5px;
+	}
+
+	.collapse {
+		position:absolute;
+		z-index: 200;
+		right: 0;
+		height: 0;
+		top: 49px;
+	}
+	// Boutons
+
+	.nav-collapse{
+		.action-buttons {
+			.formulaire_menu_lang {
+				float: none;
+			}
+			.btn {
+				float: none;
+				border-radius: 50px;
+				padding: 0.7em 1.2em;
+			}
+		}
+	}
+	.navbar {
+		.btn-navbar {
+			margin: 0;
+		}
+		.nav {
+			display: block;
+			.action-buttons {
+				width: 100%;
+			}
+		}
+	}
+}
