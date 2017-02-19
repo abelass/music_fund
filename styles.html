@@ -113,4 +113,10 @@
 [.page-head > header nav.fixed {
 	background-image:(#GET{background_2}|sinon{#GET{background_1}});
 }]
+
+@media (max-width: 767px) {
+	.page-head > header {
+		background-image:[ (#GET{background_2}|trim|sinon{#GET{background_1}|trim})];
+	}
+}
 #FILTRE{trim}
