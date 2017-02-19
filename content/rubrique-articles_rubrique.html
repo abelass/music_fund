@@ -14,7 +14,16 @@
 	<div class="main">
 	[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 	[(#REM) Articles de la rubrique ]
-	<INCLURE{fond=inclure/articles_rubrique,id_rubrique,env,ajax,id_trad,id_parent,limite=#GET{limite}}/>
+	<INCLURE{fond=inclure/articles_rubrique,
+		id_rubrique,
+		env,
+		ajax,
+		id_trad,
+		id_parent,
+		limite=#GET{limite},
+		width=503,
+		height=503
+		}/>
 </BOUCLE_contenu_rubrique>
 	</div>
 	[(#ENV{header}|oui)</div>]

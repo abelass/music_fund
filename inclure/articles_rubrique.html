@@ -4,7 +4,7 @@
 	[(#ID_RUBRIQUE|?{<h2 class="h2 invisible"><:articles_rubrique:></h2>,<h2 class="h2 articles_recents"><:derniers_articles:></h2>})]
 	<div class="liste-items">
 		<BOUCLE_articles(ARTICLES) {id_rubrique} {par num titre}{lang} {0, #ENV{limite,4}} {pagination 20}>
-		#INCLURE{fond=inclure/article-resume,id_article}
+		#INCLURE{fond=inclure/article-resume,id_article,env}
 		</BOUCLE_articles>
 	</div>
 	[<div class="pagination">(#PAGINATION)</div>]
