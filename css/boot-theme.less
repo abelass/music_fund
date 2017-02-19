@@ -676,6 +676,8 @@ section.page-body {
 				span {
 					display: block;
 					padding: 0 1.5em;
+					max-width: 290px;
+					margin: 0 auto;
 				}
 			}
 		}
@@ -1018,9 +1020,26 @@ body.support_us {
 	#header {
 		margin: 2em 0;
 	}
-	
-	.page-head > header .chapo, .page-head article > header .chapo {
-		margin: 0 3em;
+
+	.page-head > header {
+		min-height: auto;
+		background-image: none;
+		padding-bottom: 0;
+		.chapo, .page-head article > header .chapo, nav {
+			margin: 0 0.6875em;
+		}
+
+	}
+
+	.home {
+		h1 {
+			display: none;
+		}
+		.page-head .chapo {
+			padding: 1em 0 0.01em 0;
+			font-size: 1.5em;
+			line-height: 1.2em;
+		}
 	}
 
 	.navbar-responsive {
@@ -1060,4 +1079,70 @@ body.support_us {
 			}
 		}
 	}
+
+	#footer .navbar-inner {
+		li {
+			float: none;
+			display: inline-block;
+		}
+		.action-buttons {
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			> div {
+				display: inline-block;
+			}
+			> div:first-child {
+				margin-left: 0;
+			}
+			.btn.facebook {
+				padding: 0.7em 1.2em;
+			}
+			#formulaire_menu_lang {
+				height: 2.85em;
+			}
+    }
+		}
+	}
+
+	section.page-body.ongoing_projects, section.page-body.events, section.page-body.workshops, section.page-body.articles_rubrique {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.page-body:nth-child(odd) {
+		background-color: none;
+	}
+	.liste-detail .span6.texte .wrapper {
+		padding: 3em 0;
+	}
+
+	.page-body.results {
+		.main > div {
+			float: none;
+			width: 100%;
+		}
+		.icon {
+			height: 30vw;
+			width: 30vw;
+		}
+	}
+	.what_we_do {
+		 > .main .texte, .boutons {
+			display: block;
+			width: 100%;
+		}
+		.boutons {
+			max-width: 310px;
+			margin: 0 auto;
+			a {
+				margin: 0 0 1em 0;
+			}
+		}
+		.bouton-image {
+			margin-bottom: 1em;
+		}
+	}
+	.liste-detail .row-fluid .span6 {
+		width: 100%;
+}
 }
