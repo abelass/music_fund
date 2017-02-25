@@ -7,7 +7,12 @@
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 		<BOUCLE_art_evenement(ARTICLES){id_rubrique=#ID_TRAD}{lang_select=non}>
 			[(#ENV{header}|?{#SET{limite,1000},#SET{limite,2}})]
-			<INCLURE{fond=inclure/evenements,id_article,env,limite=#GET{limite}}/>
+			<INCLURE{fond=inclure/evenements,
+				id_article,
+				env,
+				limite=#GET{limite},
+				width=726,
+				height=544}/>
 		</BOUCLE_art_evenement>
 	</div>
 	[(#ENV{header}|non)
