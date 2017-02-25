@@ -1098,10 +1098,21 @@ body.support_us {
 		}
 	}
 
-	section.page-body.ongoing_projects, section.page-body.events, section.page-body.workshops, section.page-body.articles_rubrique {
+	section.page-body.ongoing_projects,
+	section.page-body.events,
+	section.page-body.workshops,
+	section.page-body.articles_rubrique {
 		padding-right: 0;
 		padding-left: 0;
 	}
+
+	.page-body,
+	.container > div.main,
+	.page_evenement #content > .container {
+		padding-right: 0;
+		padding-left: 0;
+	}
+
 	.page-body:nth-child(odd) {
 		background-color: #ffffff;
 	}
@@ -1113,7 +1124,7 @@ body.support_us {
 			padding-left: 0;
 			margin-top: 1em;
 		}
-		 img {
+		img {
 			width: 100%;
 			float: none;
 		}
@@ -1130,7 +1141,7 @@ body.support_us {
 		}
 	}
 	.what_we_do {
-		 > .main .texte, .boutons {
+		> .main .texte, .boutons {
 			display: block;
 			width: 100%;
 		}
@@ -1147,5 +1158,27 @@ body.support_us {
 	}
 	.liste-detail .row-fluid .span6 {
 		width: 100%;
+	}
+
+	.rub-orig-29 {
+		section.famous_fans .fans .fan {
+		width: 100%;
+		margin: 0 0 2em 0;
+		}
+		section.team .team {
+			margin-top: 0;
+			padding: 1.5em;
+			.membre {
+				margin-bottom: 1em;
+			}
+		}
+		.media .item {
+			width: 100%;
+			float: none;
+		}
+	}
+	.contact.page-head .lieux .lieu {
+	    display: block;
+	    width: 100%;
 	}
 }
