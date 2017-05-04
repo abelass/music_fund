@@ -83,7 +83,7 @@
 	#SET{background_color,#2e4140}
 </BOUCLE_evenement>
 <BOUCLE_organisation(ORGANISATIONS){id_organisation}>
-	#SET{logo, #LOGO_ORGANISATION_SURVOL|sinon{#LOGO_ORGANISATION_NORMAL})}
+	#SET{logo,#LOGO_ORGANISATION_SURVOL|sinon{#LOGO_ORGANISATION_NORMAL}}
 	[(#GET{logo}|oui)
 		[(#SET{background_1,
 			[url((#GET{logo}
@@ -93,7 +93,6 @@
 				|extraire_attribut{src}))]
 		})]
 	]
-
 	[(#GET{background_1}|trim|?{
 			#SET{background_2,linear-gradient(to bottom, #506f6d, #2e4140)}
 		,
