@@ -24,7 +24,6 @@
 				[(#SET{background_1,[url((#GET{logo}
 				|image_passe_partout{1000,300}
 				|image_recadre{1000,300,'center','transparent'}
-				|image_nb
 				|image_alpha{100}
 				|extraire_attribut{src}))]
 			})]
@@ -38,7 +37,6 @@
 			[(#GET{logo}|?{
 				[(#SET{background_1,[url((#GET{logo}
 					|image_passe_partout{1000,300}
-					|image_nb
 					|image_alpha{100}
 					|image_recadre{1000,300,'center','transparent'}
 					|extraire_attribut{src}))]
@@ -71,7 +69,8 @@
 			[url((#GET{logo}|
 				image_passe_partout{1000,300}
 				|image_recadre{1000,300,'center','transparent'}
-				|image_nb|image_alpha{100}
+				|image_nb
+				|image_alpha{100}
 				|extraire_attribut{src}))]
 		})]
 	]
@@ -89,7 +88,8 @@
 			[url((#GET{logo}
 				|image_passe_partout{1000,300}
 				|image_recadre{1000,300,'center','transparent'}
-				|image_nb|image_alpha{100}
+				|image_nb
+				|image_alpha{100}
 				|extraire_attribut{src}))]
 		})]
 	]
