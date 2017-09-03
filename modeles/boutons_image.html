@@ -8,8 +8,8 @@
 	#SET{texte,#GET{textes}|table_valeur{#COMPTEUR_BOUCLE|moins{1}}}
 	[<div class="bouton-image span#GET{span}">
 	(#FICHIER
-		|image_passe_partout{#ENV{largeur,310},#ENV{hauteur,310}}
-		|image_recadre{#ENV{largeur,310},#ENV{hauteur,310}}
+		|image_passe_partout{#ENV{largeur,267},#ENV{hauteur,267}}
+		|image_recadre{#ENV{largeur,267},#ENV{hauteur,267}}
 		|inserer_attribut{alt,[(#GET{texte})]})
 		[<div class="texte">
 			<span>(#GET{texte})</span>

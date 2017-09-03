@@ -55,6 +55,7 @@
 }
 
 @serifFontFamily: montserratregular;
+@HelvetiaFontFamily : Helvetica, Arial, sans-serif;
 
 /*
  * Navigation
@@ -123,8 +124,8 @@ body {
 }
 
 .page-body {
-	padding-top: 5em;
-	padding-bottom: 5em;
+	padding-top: 3.142857143em;
+	padding-bottom: 0;
 	.cartouche {
 		margin-bottom: 3em;
 	}
@@ -147,7 +148,7 @@ body {
 }
 
 #header {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: @HelvetiaFontFamily;
 	margin: 2.28125em 1em 2.28125em 1.2725em;
 	font-size: 1.142857143em;
 	color: #443220;
@@ -189,6 +190,7 @@ body {
 			color: #ffffff;
 			font-size:1.1em;
 			margin: 0 3em;
+			text-shadow: 0 0 5px #000000;
 		}
 		nav.fixed {
 			width: 100%!important;
@@ -230,8 +232,6 @@ body {
 	padding-top: 5em;
 	padding-bottom: 5em;
 }
-
-
 
 // Breadcrumbs.
 .breadcrumb {
@@ -287,6 +287,12 @@ body {
 	//background-color: @beige;
 }
 
+.page-head {
+	> header {
+		font-family: @HelvetiaFontFamily;
+	}
+}
+
 .cartouche {
 	text-align: center;
 		display: -webkit-box;
@@ -313,18 +319,17 @@ body.home {
 	}
 }
 
-
-	.liste-detail {
-		background-color: @white;
-		.row-fluid .span6  {
-			width: 50%;
-		}
-		.span6.texte{
-			.wrapper {
-				padding: 3em;
-			}
+.liste-detail {
+	background-color: @white;
+	.row-fluid .span6  {
+		width: 50%;
+	}
+	.span6.texte{
+		.wrapper {
+			padding: 3em;
 		}
 	}
+}
 
 .page-body, .page-head {
 	.liste-items {
@@ -634,7 +639,8 @@ section.page-body {
 			}
 		}
 		.chapo {
-			font-size: 2.5em;
+			font-size: 3.714285714em;
+
 			line-height: normal;
 		}
 	}
@@ -1026,7 +1032,11 @@ body.support_us {
 }
 
 @media (min-width: 1200px) {
+	.page-body, .container > div.main{
+		padding-right: 9.75em;
+		padding-left: 9.75em;
 
+	}
 }
 
 @media (min-width: 768px) and (max-width: 979px) {
