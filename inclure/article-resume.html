@@ -1,8 +1,8 @@
 [(#REM)
 
-  Squelette Presentation d'un article dans une liste
-  (c) 2009 Zpip
-  Distribue sous licence GPL
+	Squelette Presentation d'un article dans une liste
+	(c) 2009 Zpip
+	Distribue sous licence GPL
 
 ]
 
@@ -13,11 +13,12 @@
 )]
 
 <BOUCLE_articles(ARTICLES) {id_article} {statut?}>
-<div class="span6">
+<div class="item">
 	<article>
-	[(#LOGO_ARTICLE_RUBRIQUE
-		|image_passe_partout{#ENV{width,160},#ENV{height,160}}
-		|image_recadre{#ENV{width,160},#ENV{height,160}})]
+		[<div class="logo">(#LOGO_ARTICLE_RUBRIQUE
+			|image_passe_partout{#ENV{width,160},#ENV{height,160}}
+			|image_recadre{#ENV{width,160},#ENV{height,160}})
+		</div>]
 	<div class="texte">
 		<div class="wrapper">
 			<h3 class="h3 entry-title"><a href="#URL_ARTICLE" rel="bookmark">#TITRE</a></h3>
