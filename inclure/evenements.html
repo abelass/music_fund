@@ -8,12 +8,16 @@
 		{id_evenement!=#ENV{exclu,0}}
 		{pagination #ENV{pagination,20}}
 		{0,#ENV{limite,1000}}>
+		#SET{id_evenement,#ID_EVENEMENT}
+		[(#ID_EVENEMENT_SOURCE|!={0}|oui)
+			#SET{id_evenement,#ID_EVENEMENT_SOURCE}
+		]
 	<article class="event">
-		[<div class="logo">
-			(#LOGO_EVENEMENT_NORMAL
+		<div class="logo">
+			[(#LOGO_EVENEMENT_NORMAL{#GET{id_evenement}}
 				|image_passe_partout{#ENV{width,565.5},#ENV{height,423}}
-				|image_recadre{#ENV{width,565.5},#ENV{height,423}})
-		</div>]
+				|image_recadre{#ENV{width,565.5},#ENV{height,423}})]
+		</div>
 		<div class="contenu">
 			<div class="wrapper">
 				<h3 class="#EDIT{titre}"><a href="#URL_EVENEMENT">#TITRE</a></h3>
