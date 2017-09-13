@@ -118,6 +118,38 @@ function music_fund_declarer_champs_extras($champs = array()) {
 		),
 	);
 
+	$champs['spip_rubriques']['repair_technicians_trained'] = array(
+		'saisie' => 'input',
+		'options' => array(
+			'nom' => 'repair_technicians_trained',
+			'label' => _T('music_fund:label_repair_technicians_trained'),
+			'type' => 'text',
+			'size' => '40',
+			'autocomplete' => 'defaut',
+			'restrictions' => array(
+				'branches' => '49',
+			),
+			'sql' => 'text DEFAULT \'\' NOT NULL',
+			'rechercher_ponderation' => '2',
+		),
+	);
+
+	$champs['spip_rubriques']['partner_projects'] = array(
+		'saisie' => 'input',
+		'options' => array(
+			'nom' => 'partner_projects',
+			'label' => _T('music_fund:label_partner_projects'),
+			'type' => 'text',
+			'size' => '40',
+			'autocomplete' => 'defaut',
+			'restrictions' => array(
+				'branches' => '49',
+			),
+			'sql' => 'text DEFAULT \'\' NOT NULL',
+			'rechercher_ponderation' => '2',
+		),
+	);
+
 
 	// Table : spip_evenements
 	if (!is_array($champs['spip_evenements'])) {
