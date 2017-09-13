@@ -14,11 +14,27 @@
 						<a class="btn" href="#URL_RUBRIQUE" title="#TITRE">#TITRE</a>
 					</div>
 					</BOUCLE_support>
-					<INCLURE{fond=inclure/menu_langues_select,env}/>
+					[(#FOOTER|non)
+						<INCLURE{fond=inclure/menu_langues_select,env}/>
+					]
 					<div>
+					[(#FOOTER|oui)
+						<div class="follow-us"><:music_fund:follow_us:></div>
+					]
 						<a class="btn facebook" href="https://www.facebook.com/MusicFund/" title="Facebook">
 							<span>Facebook</span>
 						</a>
+						[(#FOOTER|oui)
+						<a class="btn facebook" href="https://www.facebook.com/MusicFund/" title="Facebook">
+							<span>Facebook</span>
+						</a>
+						<a class="btn facebook" href="https://www.facebook.com/MusicFund/" title="Facebook">
+							<span>Facebook</span>
+						</a>
+						]
+					[(#FOOTER|oui)
+						<INCLURE{fond=inclure/menu_langues_select,env}/>
+					]
 					</div>
 				</li>
 			</ul>

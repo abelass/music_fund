@@ -12,6 +12,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'donate' => 'Donate',
 
 	//F
+	'follow_us' => 'Follow us',
 	'footer_title' => 'Under the High Patronage of Her Majesty the Queen Mathilde',
 
 	// G

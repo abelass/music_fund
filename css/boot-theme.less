@@ -287,8 +287,6 @@ body {
 // Footer
 #footer {
 	background-color: @charcoal;
-	background-image: url(images/bg_footer.png);
-	background-size: cover;
 	padding-bottom: 0;
 	padding-top: 1em;
 
@@ -500,9 +498,13 @@ section.page-body {
 		border-bottom: 1px #ffffff solid;
 		padding-bottom: 2em;
 	}
-	.btn.facebook {
-		background-color: @charcoal;
-		background-image: url(images/icon-facebook-white.png)
+	.follow-us {
+		display:inline-block;
+		vertical-align: top;
+		line-height: 2.7em;
+	}
+	.btn {
+		vertical-align:top;
 	}
 }
 
@@ -550,8 +552,7 @@ section.page-body {
 		li {
 			float: left;
 			a {
-				padding: 0.7em 0.5em;
-				color: @white;
+				padding: 0.6em 1em;
 			}
 		}
 		li:first-child a {

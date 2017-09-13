@@ -17,6 +17,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'editer_contact' => 'Edition contact',
 
 	//F
+	'follow_us' => 'Follow us',
 	'footer_title' => 'Sous le Haut Patronage de Sa Majesté la Reine Mathilde',
 
 	// G
