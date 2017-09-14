@@ -494,6 +494,7 @@ section.page-body {
 #footer {
 	margin-top: 0;
 	padding-top: 0;
+	font-size: 1.142857143em;
 	.navigation {
 		border-bottom: 1px #ffffff solid;
 		padding-bottom: 2em;
@@ -505,6 +506,9 @@ section.page-body {
 	}
 	.btn {
 		vertical-align:top;
+	}
+	a {
+		color: #ffffff;
 	}
 }
 
@@ -560,6 +564,14 @@ section.page-body {
 		}
 		li.on > a{
 			color: @orange;
+		}
+		li.action-buttons {
+			float:right;
+		}
+	}
+	.action-buttons {
+		> div > * {
+			margin-left: 0.4em;
 		}
 	}
 }

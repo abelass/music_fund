@@ -12,7 +12,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'donate' => 'Een gift doen',
 
 	//F
-	'follow_us' => 'Follow us',
+	'follow_us' => 'Follow us:',
 	'footer_title' => 'Onder de Hoge Bescherming van Hare Majesteit Koningin Mathilde',
 
 	// G
