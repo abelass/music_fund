@@ -53,6 +53,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// M
 	'music_fund_titre' => 'Music Fund',
 
+	// N
+	'no_event' => 'There is currently no event planned',
+
 	// P
 	'projets_cours' => 'ongoing projects',
 	'projets_finis' => 'finished projects',

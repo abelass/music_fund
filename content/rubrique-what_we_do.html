@@ -12,11 +12,11 @@
 		<BOUCLE_boutons(RUBRIQUES){id_trad IN 39,37,32} {tout} {lang}>
 			<BOUCLE_article(ARTICLES){id_rubrique}>
 				<div>
-					<a class="btn btn-success" href="#URL_ARTICLE">#TITRE</a>
+					<a class="btn btn-success" href="#URL_ARTICLE">[(TITRE_SECONDAIRE|sinon{#TITRE})]</a>
 				</div>
 			</BOUCLE_article>
 				<div>
-					<a class="btn btn-success" href="#URL_RUBRIQUE">#TITRE</a>
+					<a class="btn btn-success" href="#URL_RUBRIQUE">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</a>
 				</div>
 			<//B_article>
 		</BOUCLE_boutons>
