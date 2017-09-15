@@ -202,7 +202,6 @@ body {
 	text-align: center;
 	> header, article > header{
 		color: #ffffff;
-		min-height: 601px;
 		background-color:#000000;
 		background-size: cover;
 		padding-bottom: 2em;
@@ -258,6 +257,12 @@ body {
 	}
 }
 
+.home .page-head {
+	> header{
+		min-height: 601px;
+	}
+}
+
 .contact.page-head .main,
 .support_us.page-head .main,
 .page_evenement #content > .container {
@@ -297,10 +302,17 @@ body {
 	.main {
 		text-align: center;
 	}
+	.bottom {
+		border-top: 1px #ffffff solid;
+		border-bottom: 1px #ffffff solid;
+		padding: 0.5em 0.2em;
+		margin-bottom: 5em;
+	}
+	.address {
+		float:left;
+	}
 	.copyright {
-		background-color: @charcoal;
-		padding: 2em 0;
-		margin-bottom: 0;
+		float:right
 	}
 	.newsletter {
 		padding: 4em 0 2.5em 0;
@@ -496,7 +508,6 @@ section.page-body {
 	padding-top: 0;
 	font-size: 1.142857143em;
 	.navigation {
-		border-bottom: 1px #ffffff solid;
 		padding-bottom: 2em;
 	}
 	.follow-us {

@@ -4,6 +4,9 @@
 if (!defined('_ECRIRE_INC_VERSION')) return;
 
 $GLOBALS[$GLOBALS['idx_lang']] = array(
+	// A
+	'adresse_mf' => 'Music Fund ASBL, Galerie de la Reine, 28, 1000 - Brussels, Belgium',
+
 	//C
 	'creer_article' => 'Créer un article...',
 	'creer_contact' => 'Créer un contact..',
