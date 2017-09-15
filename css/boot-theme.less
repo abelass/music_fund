@@ -951,10 +951,11 @@ body.support_us {
 .events{
 	.liste-detail {
 		display: flex;
+		flex-wrap: wrap;
 		line-height: 1.857142857em;
 		.event {
-			width: 33%;
-			margin-right: 6em;
+			width: calc((100% / 3) - 6em);
+			margin-right: 4em;
 			img {
 				margin-bottom: 0.444444444em;
 			}

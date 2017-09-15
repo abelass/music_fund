@@ -9,16 +9,10 @@
 		[<div class="#EDIT{texte} texte">(#TEXTE)</div>]
 		<B_boutons>
 		<div class="boutons">
-		<BOUCLE_boutons(RUBRIQUES){id_trad IN 39,37,32} {tout} {lang}>
-			<BOUCLE_article(ARTICLES){id_rubrique}>
-				<div>
-					<a class="btn btn-success" href="#URL_ARTICLE">[(TITRE_SECONDAIRE|sinon{#TITRE})]</a>
-				</div>
-			</BOUCLE_article>
+		<BOUCLE_boutons(RUBRIQUES){id_trad IN 39,36,35} {tout} {lang}>
 				<div>
 					<a class="btn btn-success" href="#URL_RUBRIQUE">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</a>
 				</div>
-			<//B_article>
 		</BOUCLE_boutons>
 		</div>
 		</B_boutons>
