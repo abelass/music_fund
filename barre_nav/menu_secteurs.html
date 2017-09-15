@@ -8,6 +8,10 @@
 					<a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a>
 				</li>
 				</BOUCLE_enfants>
+				[(#FOOTER|oui)
+				<li>
+					<a rel="contents" href="#URL_PAGE{plan}" class="first"><:plan_site:></a>
+				</li>]
 				<li class="action-buttons">
 					<BOUCLE_support(RUBRIQUES){id_trad=1}{tout}{lang} {si #FOOTER|non}>
 					<div>
