@@ -1,6 +1,6 @@
 <BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
 	<header class="cartouche">
-		<h1 class="#EDIT{titre}">#TITRE</h1>
+		<h1 class="#EDIT{titre}">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</h1>
 		[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
 	</header>
 

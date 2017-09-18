@@ -4,7 +4,7 @@
 		[(#ENV{breadcrumb}|oui)
 			<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
 		]
-		<h1 class="#EDIT{titre}">#TITRE</h1>
+		<h1 class="#EDIT{titre}">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</h1>
 		[(#ENV{header}|oui)
 			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
 			[(#ID_PARENT|=={0}|non)
