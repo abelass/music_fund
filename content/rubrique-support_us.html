@@ -17,7 +17,7 @@
 			<div class="main">
 				[(#ENV{home}|?{
 				<div class="contenu">
-					[<h1 class="#EDIT{titre}">(#TITRE)</h1>]
+					[<h1 class="#EDIT{titre}">(#TITRE_SECONDAIRE|sinon{#TITRE})</h1>]
 					[(#INCLURE{fond=inclure/menu_sousrubriques,id_rubrique,header=''})]
 				</div>
 
