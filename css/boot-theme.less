@@ -133,8 +133,11 @@ body {
 	padding-bottom: 0;
 	.cartouche {
 		margin-bottom: 3em;
+		.texte {
+			font-size: 1.230769231em;
+		}
 	}
-	h1, h2 {
+	h2 {
 		font-weight: bold;
 	}
 	h1 {
@@ -656,7 +659,8 @@ section.page-body {
 				transform: translate(-50%, -50%);
 				left: 50%;
 				line-height: normal;
-				text-transformation: uppercase;
+				text-transform: uppercase;
+				text-decoration: underline;
 				span {
 					display: block;
 					padding: 0 1.5em;
@@ -693,7 +697,6 @@ section.page-body {
 // Projets.
 
 section.ongoing_projects{
-
 	.compteur {
 		text-align: center;
 		font-weight: bold;
@@ -954,6 +957,9 @@ body.support_us {
 		flex-wrap: wrap;
 		line-height: 1.857142857em;
 		justify-content: space-between;
+		h3 {
+			margin-bottom: 0.2em;
+		}
 		.event {
 			width: 27%;
 			img {
