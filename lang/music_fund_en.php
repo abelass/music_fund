@@ -49,6 +49,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'lifecycles_statut' => 'Statut Lifecycle',
 	'load_events' => 'View all events',
 	'load_news' => 'Load all news',
+	'load_projects' => 'Load all projects',
 
 	// M
 	'music_fund_titre' => 'Music Fund',
@@ -57,7 +58,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'no_event' => 'There is currently no event planned',
 
 	// P
-	'projets_cours' => 'ongoing projects',
+	'projets_cours' => 'Ongoing projects',
 	'projets_finis' => 'finished projects',
 
 	// R

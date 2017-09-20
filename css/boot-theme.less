@@ -96,17 +96,15 @@
  * Blocks
  */
 
-.page-body,
+.home .page-body,
 .container > div.main,
 .page_evenement #content > .container  {
 	padding-right: 3.25em;
 	padding-left: 3.25em;
 }
 
-
-
 section.page-body.articles_rubrique {
-	background-color: @white; 
+	background-color: @white;
 	.liste-items {
 		display: flex;
 		flex-wrap: wrap;
@@ -120,6 +118,7 @@ section.page-body.articles_rubrique {
 	}
 }
 
+
 body {
 	background-color: #E4E4E4;
 }
@@ -129,8 +128,10 @@ body {
 }
 
 .page-body {
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 3.142857143em;
 	padding-top: 3.142857143em;
-	padding-bottom: 0;
 	.cartouche {
 		margin-bottom: 3em;
 		.texte {
@@ -312,7 +313,7 @@ body {
 		border-top: 1px #ffffff solid;
 		border-bottom: 1px #ffffff solid;
 		padding: 0.5em 0.2em;
-		margin-bottom: 5em;
+		margin-bottom: 2em;
 	}
 	.address {
 		float:left;
@@ -332,9 +333,12 @@ body {
  * General.
  */
 .page-body:nth-child(odd) {
-	//background-color: @beige;
+	background-color: @beige;
 }
 
+.home .page-body:nth-child(odd) {
+	background-color: @white;
+}
 .page-head {
 	> header {
 		font-family: @HelvetiaFontFamily;
@@ -367,9 +371,6 @@ body.home {
 		.chapo {
 			width: auto;
 		}
-	}
-	.articles_rubrique.page-body {
-		padding-bottom: 3.142857143em;
 	}
 }
 
@@ -420,9 +421,14 @@ section.page-body {
 	}
 }
 
+.liste-detail .span6.texte .wrapper {
+	padding: 3em;
+}
+
+// Results.
 .results.page-body {
 	padding-top: 0;
-	margin-bottom: 10.928571429em;
+	margin-bottom: 5em;
 
 	.wrapper {
 		position: absolute;
@@ -630,7 +636,7 @@ section.page-body {
 			border-top: none;
 			clear: none;
 			display: inline-block;
-			margin-right: 0.4em;
+			margin-right: 1.5em;
 		}
 		.liste-items .item:last-child {
 			border-bottom: none;
@@ -659,7 +665,7 @@ section.page-body {
 				color: @white;
 				display: block;
 				top: 50%;
-				width: 100%;
+				width: 80%;
 				position: absolute;
 				padding: 0 5px;
 				transform: translate(-50%, -50%);
@@ -998,6 +1004,7 @@ body.support_us {
 					display: none;
 				}
 				.texte {
+					font-size: 1.230769231em;
 					color: @orange;
 					text-transform: initial;
 					text-decoration: none;
@@ -1040,20 +1047,21 @@ body.support_us {
 
 
 @media (min-width: 1200px) {
+
+	.liste-detail .row-fluid .span6 {
+			width: 50%;
+	}
+
 	.page {
 		max-width: 1220px;
 		margin: 0 auto;
 	}
 
 	// Blocks
-	.page-body, .container > div.main {
+
+	.home .page-body, .container > div.main {
 		padding-right: 8em;
 		padding-left: 8em;
-	}
-
-	.results.page-body {
-		padding-right: 0;
-		padding-left: 0;
 	}
 
 
@@ -1071,14 +1079,6 @@ body.support_us {
 		.carte {
 			width: 70%;
 		}
-	}
-}
-
-@media (min-width: 1200px) {
-	.page-body, .container > div.main{
-		padding-right: 9.75em;
-		padding-left: 9.75em;
-
 	}
 }
 

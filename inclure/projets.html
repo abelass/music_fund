@@ -1,14 +1,13 @@
+		<INCLURE{fond=modeles/carte_gis,
+				autocenterandzoom=oui,
+				zoom=16,
+				limit='1000',
+				objets=organisations,
+				height=100%}/>
+
 <B_projects_actives>
 #SET{total_boucle,#TOTAL_BOUCLE}
-	<BOUCLE_test(CONDITION){si #ENV{compteur}|oui}>
-		<p class="compteur">
-		<span class="ongoing-projects">#GET{total_boucle}</span> <:music_fund:projets_cours:>
-		<B_projects_finis>
-			<span class="separateur"> - </span><span class="finished-projects">#TOTAL_BOUCLE <:music_fund:projets_finis:></span>
-		<BOUCLE_projects_finis(ORGANISATIONS spip_mots_liens){id_mot=4000016}> </BOUCLE_projects_finis>
-		</p>
-	</BOUCLE_test>
-	<div class="liste-detail">
+	<div class="liste-detail projets">
 	#ANCRE_PAGINATION
 	<BOUCLE_projects_actives(ORGANISATIONS spip_mots_liens)
 		{gis}
