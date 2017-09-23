@@ -37,6 +37,18 @@ function music_fund_upgrade($nom_meta_base_version, $version_cible) {
 	cextras_api_upgrade(music_fund_declarer_champs_extras(), $maj['create']);
 	cextras_api_upgrade(music_fund_declarer_champs_extras(), $maj['1.0.2']);
 	cextras_api_upgrade(music_fund_declarer_champs_extras(), $maj['1.1.0']);
+	cextras_api_upgrade(music_fund_declarer_champs_extras(), $maj['1.1.4']);
+
+	$maj['1.1.3'] = array (
+		array (
+			'sql_alter',
+			'TABLE spip_organisations CHANGE resultats impact text DEFAULT \'\' NOT NULL',
+		),
+		array(
+			'sql_alter',
+			'TABLE spip_organisations DROP approche',
+		)
+	);
 
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);

@@ -26,10 +26,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'highdef' => 'A high definition version of each picture is available on simple click. Use "right click" on the HD version and choose "Save" to download the picture.',
 
 	// L
-	'label_approche' => 'Approche',
 	'label_bring' => 'What to bring',
 	'label_certificat' => 'Do you need a certificate for tax deduction?',
 	'label_collected_instruments' => 'collected instruments over the year',
+	'label_impact' => 'Impact',
 	'label_montant' => 'Amount in €',
 	'label_partner_projects' => 'partner projects in 8 countries',
 	'label_paypal_annuel' => 'Yearly',
@@ -39,18 +39,17 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_pays' => 'Country',
 	'label_permanent_collection_points' => 'permanent collection points in 6 countries',
 	'label_permanent_workshops_created' => 'permanent repair workshops created',
-	'label_prix' => 'Prix',
+	'label_prix' => 'Price',
 	'label_recurrent' => 'Recurrent paiment?',
 	'label_repaired_given_instruments' => 'repaired & given instruments',
 	'label_repair_technicians_trained' => 'repair technicians trained',
-	'label_resultats' => 'Resultats',
 	'label_lifecycles_date_debut' => 'Début Lifecycle',
 	'label_lifecycles_date_fin' => 'Fin Lifecycle',
 	'label_titre_secondaire' => 'Additional title',
 	'lifecycles_statut' => 'Statut Lifecycle',
 	'load_events' => 'View all events',
 	'load_news' => 'View all news',
-	'load_projects' => 'Views all projects',
+	'load_projects' => 'View all projects',
 
 	// M
 	'music_fund_titre' => 'Music Fund',

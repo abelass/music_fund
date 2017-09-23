@@ -31,10 +31,10 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'highdef' => 'A high definition version of each picture is available on simple click. Use "right click" on the HD version and choose "Save" to download the picture.',
 
 	// L
-	'label_approche' => 'Approche',
 	'label_bring' => 'What to bring',
 	'label_certificat' => 'Besoin de certificat pour déduction fiscale ?',
 	'label_collected_instruments' => 'collected instruments over the year',
+	'label_impact' => 'Impact',
 	'label_montant' => 'Montant en €',
 	'label_partner_projects' => 'partner projects in 8 countries',
 	'label_paypal_annuel' => 'Annuel',
@@ -48,7 +48,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_recurrent' => 'Paiement récurrent ?',
 	'label_repaired_given_instruments' => 'repaired & given instruments',
 	'label_repair_technicians_trained' => 'repair technicians trained',
-	'label_resultats' => 'Resultats',
 	'label_lifecycles_date_debut' => 'Début Lifecycle',
 	'label_lifecycles_date_fin' => 'Fin Lifecycle',
 	'label_titre_secondaire' => 'Titre secondaire',

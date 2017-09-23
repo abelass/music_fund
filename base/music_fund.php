@@ -230,27 +230,11 @@ function music_fund_declarer_champs_extras($champs = array()) {
 		),
 	);
 
-	$champs['spip_organisations']['approche'] = array(
-		'saisie' => 'textarea',
-		'options' => array(
-			'nom' => 'approche',
-			'label' => _T('music_fund:label_approche'),
-			'class' => 'inserer_barre_edition inserer_previsualisation multilang',
-			'rows' => '5',
-			'cols' => '40',
-			'sql' => 'text DEFAULT \'\' NOT NULL',
-			'rechercher' => 'on',
-			'rechercher_ponderation' => '4',
-			'traitements' => '_TRAITEMENT_RACCOURCIS',
-			'versionner' => 'on',
-		),
-	);
-
-	$champs['spip_organisations']['resultats'] = array(
+	$champs['spip_organisations']['impact'] = array(
 		'saisie' => 'textarea',
 		'options' => array(
 			'nom' => 'resultats',
-			'label' => _T('music_fund:label_resultats'),
+			'label' => _T('music_fund:label_impact'),
 			'class' => 'inserer_barre_edition inserer_previsualisation multilang',
 			'rows' => '5',
 			'cols' => '40',
