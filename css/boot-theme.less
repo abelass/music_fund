@@ -590,8 +590,7 @@ section.page-body {
 .support_us.page-body{
 	padding-right: 3.25em;
 	padding-left: 3.25em;
-	background-color: @green;
-	.main {
+	.main{
 		text-align: center;
 	}
 	h1 {
@@ -855,8 +854,16 @@ section.ongoing_projects{
 // Support us.
 
 body.support_us {
+	.page-body {
+		h1 {
+			color: inherit;
+		}
+	}
 	.page-body:nth-child(odd) {
 		background-color: @beige;
+	}
+	.support_us.page-body .main {
+		text-align: left;
 	}
 	section {
 		img {
@@ -1140,7 +1147,11 @@ body.support_us {
 
 	// Blocks
 
-	.home .page-body, .container > div.main, .support_us.page-body, .content > div.main {
+	.home .page-body,
+	.container > div.main,
+	.support_us.page-body,
+	.content > div.main,
+	.support_us .content > section {
 		padding-right: 8em;
 		padding-left: 8em;
 	}
@@ -1250,19 +1261,12 @@ body.support_us {
 		}
 	}
 
-	section.page-body.ongoing_projects,
-	section.page-body.events,
-	section.page-body.workshops,
-	section.page-body.articles_rubrique {
-		padding-right: 0;
-		padding-left: 0;
-	}
-
-
 	.page-body,
 	.container > div.main,
 	.page_evenement #content > .container,
-	.support_us.page-body, .content > div.main {
+	.support_us.page-body,
+	.content > div.main,
+	.support_us > section {
 		padding-right: 0;
 		padding-left: 0;
 	}
