@@ -47,8 +47,6 @@
 [(#REM) Feuille de style personnalisee pour surcharger les precedentes
 	A noter par defaut cette css n'existe pas
 ]
-[<script type="text/javascript" src="(#CHEMIN{javascript/formulaires.js})"></script>]
-
 [<link rel="stylesheet" href="(#CSS{css/perso.css})" type="text/css" />]
 
 
@@ -57,25 +55,26 @@
 	Et appeler a la fin compacte_head pour agreger et compacter tout le head dans des fichiers statiques
 	si l'option est cochee dans Configuration
 ]
-
+[<script type="text/javascript" src="(#CHEMIN{js/formulaires.js})"></script>]
+[<script type="text/javascript" src="(#CHEMIN{js/mf_scripts.js})"></script>]
 [<script type="text/javascript" src="(#CHEMIN{js/bootstrap-collapse.js})"></script>]
 [<script type="text/javascript" src="(#CHEMIN{lib/jquery.OnePageNav/jquery.nav.js})"></script>]
 [<script type="text/javascript" src="(#CHEMIN{lib/makefixed/makefixed.min.js})"></script>]
 
 <script type="text/javascript">
 $(document).ready(function() {
-    $('#nav-menu').onePageNav();
-  });
+		$('#nav-menu').onePageNav();
+	});
 
 $('.page-head nav').makeFixed({
-  onFixed: function (el)
-  {
+	onFixed: function (el)
+	{
 		$(el).addClass('fixed');
-  },
-  onUnFixed: function (el)
-  {
-  	$(el).removeClass('fixed');
-  }
+	},
+	onUnFixed: function (el)
+	{
+		$(el).removeClass('fixed');
+	}
 });
 </script>
 

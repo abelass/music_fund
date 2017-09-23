@@ -27,6 +27,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'get_in_touch' => 'N\'hésitez pas à prendre contact',
 
 	//H
+	'hide_map' => 'Hide map',
 	'highdef' => 'A high definition version of each picture is available on simple click. Use "right click" on the HD version and choose "Save" to download the picture.',
 
 	// L
@@ -52,9 +53,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_lifecycles_date_fin' => 'Fin Lifecycle',
 	'label_titre_secondaire' => 'Titre secondaire',
 	'lifecycles_statut' => 'Statut Lifecycle',
-	'load_events' => 'Charger tous les événements',
-	'load_news' => 'Charger toutes les nouvelles',
-	'load_projects' => 'Charger tous les projets',
+	'load_events' => 'Voir tous les événements',
+	'load_news' => 'Voir toutes les nouvelles',
+	'load_projects' => 'Voir tous les projets',
 
 	// M
 	'music_fund_titre' => 'Music Fund',
@@ -69,6 +70,9 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// R
 	'restez_informe' => 'Restez informé',
 	'restez_informe_texte' => 'Inscrivez vous à la newsletter de Music fund et restez informé',
+
+	// S
+	'show_map' => 'Show map',
 
 	// T
 	'titre_approche_resultats' => 'Approche et resultats',

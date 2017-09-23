@@ -329,9 +329,47 @@ body {
 	}
 }
 
+
+// Map
+.carte_gis {
+	margin-bottom: 3em;
+}
+
 /*
  * General.
  */
+
+
+// Collapsible
+.actions {
+	display: none;
+	text-align: center;
+	cursor: pointer;
+	.trigger {
+		text-decoration: underline;
+	}
+	.hide {
+		display: block;
+	}
+	.show {
+		display: none;
+	}
+}
+
+.collapse.actions{
+	padding: 1em 0;
+	height: auto;
+}
+
+.actions.closed {
+	.hide {
+		display: none;
+	}
+	.show {
+		display:block
+	}
+}
+
 .page-body:nth-child(odd) {
 	background-color: @beige;
 }
@@ -537,6 +575,34 @@ section.page-body {
 	}
 }
 
+// Block support us
+.support_us.page-body{
+	padding-right: 3.25em;
+	padding-left: 3.25em;
+	background-color: @green;
+	.main {
+		text-align: center;
+	}
+	h1 {
+		color: @white;
+	}
+	.btn {
+		color: @charcoal;
+		background-color: @amber;
+		border: 2px @amber solid;
+	}
+	.liste-items .item {
+		border-top: none;
+		clear: none;
+		display: inline-block;
+		margin-right: 1.5em;
+	}
+	.liste-items .item:last-child {
+		border-bottom: none;
+		margin-right: 0;
+	}
+}
+
 /*
  * Menus
  */
@@ -601,6 +667,8 @@ section.page-body {
 	}
 }
 
+
+
 /**
  * Home
  */
@@ -617,30 +685,6 @@ section.page-body {
 			font-size: 3.714285714em;
 
 			line-height: normal;
-		}
-	}
-	.support_us{
-		background-color: @green;
-		.main {
-			text-align: center;
-		}
-		h1 {
-			color: @white;
-		}
-		.btn {
-			color: @charcoal;
-			background-color: @amber;
-			border: 2px @amber solid;
-		}
-		.liste-items .item {
-			border-top: none;
-			clear: none;
-			display: inline-block;
-			margin-right: 1.5em;
-		}
-		.liste-items .item:last-child {
-			border-bottom: none;
-			margin-right: 0;
 		}
 	}
 }
@@ -1059,7 +1103,7 @@ body.support_us {
 
 	// Blocks
 
-	.home .page-body, .container > div.main {
+	.home .page-body, .container > div.main, .support_us.page-body {
 		padding-right: 8em;
 		padding-left: 8em;
 	}

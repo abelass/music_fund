@@ -29,3 +29,10 @@
 		<BOUCLE_sousrubriques(BOUCLE_enfant)> </BOUCLE_sousrubriques>
 	</BOUCLE_enfant>
 </BOUCLE_principal>
+<BOUCLE_support(RUBRIQUES){id_trad=1}{lang}{tout}{si #ID_TRAD|=={33}|oui}>
+	<section class="clearfix  [(#COMPOSITION|sinon{rubrique})] page-body" id="rubrique-1">
+		<INCLURE{fond=content/#ENV{type-page}, id_rubrique, composition=#COMPOSITION, env, header=", home=oui} />
+	</section>
+</BOUCLE_support>
+
+
