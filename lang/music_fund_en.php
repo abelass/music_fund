@@ -50,7 +50,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'lifecycles_statut' => 'Statut Lifecycle',
 	'load_events' => 'View all events',
 	'load_news' => 'View all news',
-	'load_projects' => 'Views all projects',
+	'load_projects' => 'View all projects',
 
 	// M
 	'music_fund_titre' => 'Music Fund',
