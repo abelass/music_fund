@@ -29,52 +29,47 @@
 			<span class="lieu">(#VILLE)</span>[<span class="seperateur">, </span><span class="pays">(#INCLURE{fond=saisies-vues/pays, champ_pays=code, code_pays=oui, valeur=#CODE_PAYS})</span>]
 		</p>]
 	</header>
-	[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
-	<div class="carte">
-		<INCLURE{fond=modeles/carte_gis,
-				autocenterandzoom=oui,
-				zoom=16,
-				id_organisation,
-				objets=organisations,
-				height=100%}/>
+	<div class="main">
+		[<div class="#EDIT{descriptif} texte">(#DESCRIPTIF)</div>]
+		</section>
+		<section id="approche_resultats" class="clearfix page-body">
+			<header class="cartouche">
+				<h2><:music_fund:titre_approche_resultats:></h2>
+			</header>
+			<div class="row-fluid">
+				<div class="content span6">
+					<h3><:music_fund:label_approche:></h3>
+					[<div class="#EDIT{approche} texte">(#APPROCHE)</div>]
+				</div>
+
+				<div class="results span6">
+					<h3><:music_fund:label_resultats:></h3>
+					[<div class="#EDIT{resultat} texte">(#RESULTATS)</div>]
+				</div>
+			</div>
+
+		</section>
+		[<section id="photos_videos" class="clearfix page-body">
+			<header class="cartouche">
+				<h2><:music_fund:titre_photos_videos:></h2>
+			</header>
+			[(#REM) Gestion du portfolio et des documents ]
+			(#INCLURE{fond=inclure/documents,id_organisation})
+		</section>]
+		<section id="support_projet" class="clearfix page-body">
+			<header class="cartouche">
+				<h2><:music_fund:titre_support_projet:></h2>
+			</header>
+			<BOUCLE_rubriques(RUBRIQUES){id_trad IN 40, 39, 41}{tout}{lang}>
+				<a class="btn" href="#URL_RUBRIQUE">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</a>
+			</BOUCLE_rubriques>
+		</section>
+		<section class="more clearfix page-body">
+			<header class="cartouche">
+				<h2><:music_fund:titre_plus_projets:></h2>
+			</header>
+			<INCLURE{fond=inclure/projets,exclu=#ID_ORGANISATION, resume='',env}/>
+		</section>
+		</BOUCLE_vevent>
 	</div>
 </section>
-<section id="approche_resultats" class="clearfix page-body">
-	<header class="cartouche">
-		<h2><:music_fund:titre_approche_resultats:></h2>
-	</header>
-	<div class="row-fluid">
-		<div class="content span6">
-			<h3><:music_fund:label_approche:></h3>
-			[<div class="#EDIT{approche} texte">(#APPROCHE)</div>]
-		</div>
-
-		<div class="results span6">
-			<h3><:music_fund:label_resultats:></h3>
-			[<div class="#EDIT{resultat} texte">(#RESULTATS)</div>]
-		</div>
-	</div>
-
-</section>
-[<section id="photos_videos" class="clearfix page-body">
-	<header class="cartouche">
-		<h2><:music_fund:titre_photos_videos:></h2>
-	</header>
-	[(#REM) Gestion du portfolio et des documents ]
-	(#INCLURE{fond=inclure/documents,id_organisation})
-</section>]
-<section id="support_projet" class="clearfix page-body">
-	<header class="cartouche">
-		<h2><:music_fund:titre_support_projet:></h2>
-	</header>
-	<BOUCLE_rubriques(RUBRIQUES){id_trad IN 40, 39, 41}{tout}{lang}>
-		<a class="btn" href="#URL_RUBRIQUE">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</a>
-	</BOUCLE_rubriques>
-</section>
-<section class="more clearfix page-body">
-	<header class="cartouche">
-		<h2><:music_fund:titre_plus_projets:></h2>
-	</header>
-	<INCLURE{fond=inclure/projets,exclu=#ID_ORGANISATION, resume='',env}/>
-</section>
-</BOUCLE_vevent>

@@ -96,9 +96,10 @@
  * Blocks
  */
 
-.home .page-body,
+.page-body,
 .container > div.main,
-.page_evenement #content > .container  {
+.page_evenement #content > .container,
+.content > div.main {
 	padding-right: 3.25em;
 	padding-left: 3.25em;
 }
@@ -128,8 +129,6 @@ body {
 }
 
 .page-body {
-	padding-right: 0;
-	padding-left: 0;
 	padding-bottom: 3.142857143em;
 	padding-top: 3.142857143em;
 	.cartouche {
@@ -696,6 +695,11 @@ section.page-body {
  */
 
 /*Rubrique What we do */
+
+.rub-orig-33 .page-body {
+	padding-right: 0;
+	padding-left: 0;
+}
 .what_we_do {
 	.boutons-images {
 		.bouton-image{
@@ -1103,7 +1107,7 @@ body.support_us {
 
 	// Blocks
 
-	.home .page-body, .container > div.main, .support_us.page-body {
+	.home .page-body, .container > div.main, .support_us.page-body, .content > div.main {
 		padding-right: 8em;
 		padding-left: 8em;
 	}
@@ -1221,9 +1225,11 @@ body.support_us {
 		padding-left: 0;
 	}
 
+
 	.page-body,
 	.container > div.main,
-	.page_evenement #content > .container {
+	.page_evenement #content > .container,
+	.support_us.page-body, .content > div.main {
 		padding-right: 0;
 		padding-left: 0;
 	}
