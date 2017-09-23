@@ -12,6 +12,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'creer_contact' => 'Créer un contact..',
 
 	// D
+	'discover_projects' => 'Discover our other projects',
 	'donation_taxe' => 'Pour faire un don avec déduction fiscale, voir ci-après.<br />Merci pour votre aide!',
 	'donate' => 'Faire un don',
 
@@ -22,6 +23,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	//F
 	'follow_us' => 'Follow us:',
 	'footer_title' => 'Sous le Haut Patronage de Sa Majesté la Reine Mathilde',
+	'project_funded_by' => 'This project is funded by:',
 
 	// G
 	'get_in_touch' => 'N\'hésitez pas à prendre contact',
@@ -34,7 +36,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_bring' => 'What to bring',
 	'label_certificat' => 'Besoin de certificat pour déduction fiscale ?',
 	'label_collected_instruments' => 'collected instruments over the year',
-	'label_impact' => 'Impact',
+	'label_impact' => 'Our impact',
 	'label_montant' => 'Montant en €',
 	'label_partner_projects' => 'partner projects in 8 countries',
 	'label_paypal_annuel' => 'Annuel',
@@ -74,7 +76,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'show_map' => 'Show map',
 
 	// T
-	'titre_approche_resultats' => 'Approche et resultats',
 	'titre_descriptif' => 'Descriptif',
 	'titre_details_pratique' => 'Détails Pratiques',
 	'titre_lieu' => 'Où',
@@ -82,9 +83,11 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'titre_plus_projets' => 'Autres projets',
 	'titre_plus_workshops' => 'Autres workshops',
 	'titre_quand' => 'Quand',
+	'titre_photos' => 'Photos',
 	'titre_photos_videos' => 'Photos et videos',
 	'titre_sujet_projet' => 'Au sujet du projet',
 	'titre_support_projet' => 'Soutenez ce projet',
+	'titre_videos' => 'Videos',
 
 	// U
 	'userightclick' => 'Pour télécharger un fichier, utilisez le "click droit" et choisissez "Enregistrez le lien sous...".',

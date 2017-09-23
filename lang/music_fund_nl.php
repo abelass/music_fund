@@ -11,12 +11,14 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'creer_article' => 'Créer un article NL...',
 
 	//D
+	'discover_projects' => 'Discover our other projects',
 	'donation_taxe' => 'Voor een tax-vriendelijke donatie, gebruik de informatie hierna.<br />Bedankt voor uw hulp!',
 	'donate' => 'Een gift doen',
 
 	//F
 	'follow_us' => 'Follow us:',
 	'footer_title' => 'Onder de Hoge Bescherming van Hare Majesteit Koningin Mathilde',
+	'project_funded_by' => 'This project is funded by:',
 
 	// G
 	'get_in_touch' => 'Contacteer ons',
@@ -29,7 +31,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'label_bring' => 'What to bring',
 	'label_certificat' => 'Do you need a certificate for tax deduction?',
 	'label_collected_instruments' => 'collected instruments over the year',
-	'label_impact' => 'Impact',
+	'label_impact' => 'Our impact',
 	'label_montant' => 'Amount in €',
 	'label_partner_projects' => 'partner projects in 8 countries',
 	'label_paypal_annuel' => 'Yearly',
@@ -70,16 +72,17 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'show_map' => 'Show map',
 
 	// T
-	'titre_approche_resultats' => 'Approach & results',
 	'titre_descriptif' => 'Descriptif',
 	'titre_details_pratique' => 'Practical Details',
 	'titre_lieu' => 'Where',
 	'titre_plus_projets' => 'Other projects',
 	'titre_plus_workshops' => 'Other workshops',
 	'titre_quand' => 'When',
+	'titre_photos' => 'Photos',
 	'titre_photos_videos' => 'Photos and videos',
 	'titre_sujet_projet' => 'About the project',
 	'titre_support_projet' => 'Support this project',
+	'titre_videos' => 'Videos',
 
 	// U
 	'userightclick' => 'Use "right click" on the links and choose "Save" to download the movies.',

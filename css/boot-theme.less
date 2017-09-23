@@ -128,11 +128,16 @@ body {
 	background-color: @white;
 }
 
+.rub-orig-33 .page-body {
+	.cartouche {
+		margin-bottom: 3em;
+	}
+}
+
 .page-body {
 	padding-bottom: 3.142857143em;
 	padding-top: 3.142857143em;
 	.cartouche {
-		margin-bottom: 3em;
 		.texte {
 			font-size: 1.230769231em;
 		}
@@ -462,6 +467,13 @@ section.page-body {
 	padding: 3em;
 }
 
+// Flex box
+.flex-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
 // Results.
 .results.page-body {
 	padding-top: 0;
@@ -789,20 +801,32 @@ section.ongoing_projects{
 		height: 18em;
 		margin: 2em auto;
 	}
-	.results {
-		background-color: transparent;
+	#impact {
+	background-color : @white;
+		article{
+			column-count: 2;
+			column-gap: 5em;
+		}
+	}
+	.page-body {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	#photos_videos {
+		background-color: @beige;
+		section {
+			max-width: 870px;
+			margin: 0 auto 2em auto;
+		}
 	}
 	.sponsors{
-		.row1 {
-			display: flex;
-			flex-direction: row;
-		}
-		margin: 0 -5em;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
+		max-width: 570px;
+		margin: 0 auto;
+		padding: 3.142857143em 3.25em;
+		text-align: center;
 		a {
-			flex-grow: 1;
+			width: 33%;
+			margin-bottom: 1.5em;
 		}
 	}
 	#support_projet {
@@ -813,6 +837,14 @@ section.ongoing_projects{
 		}
 		.btn {
 			background-color: @amber;
+		}
+		.more {
+			margin-top: 1.42857143em;
+			margin-bottom: 0;
+			a {
+				color: @white;
+				text-decoration: underline;
+			}
 		}
 	}
 	.lieu {
@@ -942,6 +974,7 @@ body.support_us {
 		img {
 			width: auto;
 			float: none;
+
 		}
 		.row1{
 			margin-bottom: 3em;

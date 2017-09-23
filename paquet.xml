@@ -31,6 +31,7 @@
 	<necessite nom="saisies" compatibilite="[2.8.1;]"/>
 	<necessite nom="partenaires" compatibilite="[1.6.0;]"/>
 	<necessite nom="videos" compatibilite="[0.12.6;]"/>
+	<necessite nom="slick" compatibilite="[1.2.4;]"/>
 
 	<utilise nom="multilingue" compatibilite="[1.0.6;]" />
 

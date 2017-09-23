@@ -10,44 +10,44 @@
 						(#INCLURE{fond=inclure/nav,env}|navbar_responsive)
 					</div>]
 				</div>
+			</div>
 		</div>
-	</div>
-	<div class="content" id="content">
-		[(#ENV{type-page}|=={rubrique}|oui)
-			#SET{affichage_page,#LISTE{
-					donation,
-					support_us,
-					home,
-					events,
-					articles_rubrique}
-			}
-			#SET{id_parent,#LISTE{3,9,13}}
-			[(#COMPOSITION|in_array{#GET{affichage_page}}|non|ou{#ID_PARENT|in_array{#GET{id_parent}}|oui})
-				<INCLURE{fond=content/rubrique-secteur,env} />
+		<div class="content" id="content">
+			[(#ENV{type-page}|=={rubrique}|oui)
+				#SET{affichage_page,#LISTE{
+						donation,
+						support_us,
+						home,
+						events,
+						articles_rubrique}
+				}
+				#SET{id_parent,#LISTE{3,9,13}}
+				[(#COMPOSITION|in_array{#GET{affichage_page}}|non|ou{#ID_PARENT|in_array{#GET{id_parent}}|oui})
+					<INCLURE{fond=content/rubrique-secteur,env} />
+				]
+
+				[(#COMPOSITION|in_array{#GET{affichage_page}}|oui|et{#ID_PARENT|in_array{#GET{id_parent}}|non})
+					[(#COMPOSITION|in_array{#LISTE{home,donation}}|non)
+					<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">]
+						<INCLURE{fond=content/#ENV{type-page},header=oui,breadcrumb=oui,env} />
+					[(#COMPOSITION|in_array{#LISTE{home,donation}}|non)
+					</section>]
+				]
 			]
 
-			[(#COMPOSITION|in_array{#GET{affichage_page}}|oui|et{#ID_PARENT|in_array{#GET{id_parent}}|non})
-				[(#COMPOSITION|in_array{#LISTE{home,donation}}|non)
-				<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">]
-					<INCLURE{fond=content/#ENV{type-page},header=oui,breadcrumb=oui,env} />
-				[(#COMPOSITION|in_array{#LISTE{home,donation}}|non)
-				</section>]
+			[(#ENV{type-page}|=={rubrique}|non)
+			#SET{exclus, #LISTE{
+				evenement,
+				organisation,
+				article}}
+			[(#ENV{type-page}|in_array{#GET{exclus}}|non)<section class="clearfix [(#COMPOSITION|sinon{#ENV{type-page}})] page-head">]
+				<INCLURE{fond=content/#ENV{type-page},env} />
+
+			[(#ENV{type-page}|in_array{#GET{exclus}}|non)</section>]
 			]
-		]
-
-		[(#ENV{type-page}|=={rubrique}|non)
-		#SET{exclus, #LISTE{
-			evenement,
-			organisation,
-			article}}
-		[(#ENV{type-page}|in_array{#GET{exclus}}|non)<section class="clearfix [(#COMPOSITION|sinon{#ENV{type-page}})] page-head">]
-			<INCLURE{fond=content/#ENV{type-page},breadcrumb=oui,env} />
-
-		[(#ENV{type-page}|in_array{#GET{exclus}}|non)</section>]
-		]
-	</div>
-	<div class="footer" id="footer">
-		<INCLURE{fond=footer/#ENV{type-page},breadcrumb=oui,env} />
-	</div>
+		</div>
+		<div class="footer" id="footer">
+			<INCLURE{fond=footer/#ENV{type-page},breadcrumb=oui,env} />
+		</div>
 	</div>
 </body>

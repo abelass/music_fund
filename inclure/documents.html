@@ -29,6 +29,10 @@
 </B_documents_joints>
 <B_mp4>
 	<section class="liste documents videos">
+		<header class="cartouche">
+			<h2><:music_fund:titre_videos:></h2>
+		</header>
+
 	<BOUCLE_mp4(DOCUMENTS)
 		{id_article ?}
 		{id_rubrique ?}
@@ -48,24 +52,26 @@
 [(#REM) Portfolio : album d'images ]
 <B_documents_portfolio>
 <section class="documents documents_portfolio" id="documents_portfolio">
-	<BOUCLE_documents_portfolio(DOCUMENTS)
-	{id_article ?}
-	{id_rubrique ?}
-	{id_produit ?}
-	{id_evenement ?}
-	{id_organisation ?}
-	{tout}
-	{extension IN png,jpg,gif}
-	{par num titre, date}
-	{vu=non}>[
-	<a href="(#FICHIER|image_reduire{1500,*}|extraire_attribut{src})"
-		 type="#MIME_TYPE"
-		 rel="documents_portfolio[-a(#ID_ARTICLE)][-r(#ID_RUBRIQUE)]"
-	[ title="(#TITRE|attribut_html|couper{80})"]>[(#FICHIER
-        |image_passe_partout{#ENV{width,100},#ENV{height,100}}
-        |image_recadre{#ENV{width,100},#ENV{height,100}}
-		|inserer_attribut{class,spip_logos}
-		|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})]</a>
-	]</BOUCLE_documents_portfolio>
+	<header class="cartouche">
+		<h2><:music_fund:titre_photos:></h2>
+	</header>
+	<div id="slick">
+		<BOUCLE_documents_portfolio(DOCUMENTS)
+		{id_article ?}
+		{id_rubrique ?}
+		{id_produit ?}
+		{id_evenement ?}
+		{id_organisation ?}
+		{tout}
+		{extension IN png,jpg,gif}
+		{par num titre, date}
+		{vu=non}>
+			[<div>(#FICHIER
+				|image_passe_partout{#ENV{width,100},#ENV{height,100}}
+				|image_recadre{#ENV{width,100},#ENV{height,100}}
+				|inserer_attribut{class,spip_logos}
+				|inserer_attribut{alt,[(#TITRE|attribut_html|couper{80})]})</div>]
+		</BOUCLE_documents_portfolio>
+	</div>
 </section>
 </B_documents_portfolio>

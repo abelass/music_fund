@@ -1,15 +1,14 @@
 <B_sponsors>
 <aside class="sponsors">
-	<p class="row1">
-<BOUCLE_sponsors(PARTENAIRES spip_partenaires_types_liens) {id_rubrique ?} {id_type ?}{par num nom} >
-	[<a href="#URL_SITE" title="#NOM">(#LOGO_PARTENAIRE
-	|inserer_attribut{alt,#NOM}
-	|image_reduire{140})</a>]
-	[(#COMPTEUR_BOUCLE|=={2}|oui)
-		</p>
-		<p class="row2">
-	]
-</BOUCLE_sponsors>
-	</p>
+	[<header class="cartouche">
+		<h2>(#TITRE)</h2>
+	</header>]
+	<div class="flex-wrapper">
+	<BOUCLE_sponsors(PARTENAIRES spip_partenaires_types_liens) {id_rubrique ?} {id_organisation ?}{id_type ?}{par num nom} >
+		[<a class="item" href="#URL_SITE" title="#NOM">(#LOGO_PARTENAIRE
+		|inserer_attribut{alt,#NOM}
+		|image_reduire{#ENV{width,140},#ENV{height,140}})</a>]
+	</BOUCLE_sponsors>
+	</div>
 </aside>
 </B_sponsors>
