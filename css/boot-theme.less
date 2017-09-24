@@ -600,9 +600,10 @@ section.page-body {
 }
 
 // Block support us
-.support_us.page-body{
+body:not(.support_us) .support_us.page-body{
 	padding-right: 3.25em;
 	padding-left: 3.25em;
+	background-color: @green;
 	.main{
 		text-align: center;
 	}
@@ -625,6 +626,8 @@ section.page-body {
 		margin-right: 0;
 	}
 }
+
+
 
 /*
  * Menus
