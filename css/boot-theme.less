@@ -98,9 +98,11 @@
 
 .home .page-body:not(.results),
 .container > div.main,
-.page_evenement #content > .container,
+.page_evenement .page-body,
 .content > div.main,
-.support_us .content > section:not(.page-head) {
+.support_us .content > section:not(.page-head),
+.rub-orig-29 .page-body,
+.rubrique_news .page-body {
 	padding-right: 3.25em;
 	padding-left: 3.25em;
 }
@@ -334,7 +336,6 @@ body {
 	}
 }
 
-
 // Map
 .carte_gis {
 	margin-bottom: 3em;
@@ -403,7 +404,6 @@ body {
 	> * {
 		width: 100%
 	}
-
 	.info-publi {
 		color: @white;
 	}
@@ -491,7 +491,6 @@ section.page-body {
 .results.page-body {
 	padding-top: 0;
 	margin-bottom: 5em;
-
 	.wrapper {
 		position: absolute;
 		top: 0;
@@ -572,12 +571,11 @@ section.page-body {
 	span {
 		visibility: hidden;
 	}
-
 }
+
 .formulaire_menu_lang {
 	.bouton(#e4e4e4);
 }
-
 
 #footer {
 	margin-top: 0;
@@ -626,8 +624,6 @@ body:not(.support_us) .support_us.page-body{
 		margin-right: 0;
 	}
 }
-
-
 
 /*
  * Menus
@@ -693,8 +689,6 @@ body:not(.support_us) .support_us.page-body{
 	}
 }
 
-
-
 /**
  * Home
  */
@@ -714,8 +708,6 @@ body:not(.support_us) .support_us.page-body{
 		}
 	}
 }
-
-
 
 /**
  * Section Our Work.
@@ -1155,13 +1147,15 @@ body.support_us {
 
 	.home .page-body:not(.results),
 	.container > div.main,
+	.page_evenement .page-body,
 	.support_us.page-body,
 	.content > div.main,
-	.support_us .content > section:not(.page-head) {
+	.support_us .content > section:not(.page-head),
+	.rub-orig-29 .page-body,
+	.rubrique_news .page-body {
 		padding-right: 8em;
 		padding-left: 8em;
 	}
-
 
 	.page-head {
 		> header,
@@ -1269,10 +1263,12 @@ body.support_us {
 
 	.page-body,
 	.container > div.main,
-	.page_evenement #content > .container,
+	.page_evenement .page-body,
 	.support_us.page-body,
 	.content > div.main,
-	.support_us .content > section:not(.page-head){
+	.support_us .content > section:not(.page-head),
+	.rub-orig-29  .page-body,
+	.rubrique_news .page-body {
 		padding-right: 0;
 		padding-left: 0;
 	}
