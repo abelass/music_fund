@@ -1,4 +1,4 @@
-#SET{id_trads,#LISTE{34, 36, 38, 49, 1}}
+#SET{id_trads,#LISTE{36, 38, 49, 1}}
 
 <BOUCLE_principal(RUBRIQUES){id_rubrique}{tout}>
 [(#ID_TRAD|>{0}|?{
@@ -7,7 +7,19 @@
 	#SET{id_trad,#ID_RUBRIQUE}
 })]
 	<section class="clearfix [(#COMPOSITION|sinon{rubrique})] page-head">
-		<INCLURE{fond=content/rubrique, id_rubrique, composition='', env, header=oui, breadcrumb=''} />
+		<header class="cartouche">
+			<h1 class="#EDIT{titre}">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</h1>
+			[<div class="#EDIT{chapo} chapo surlignable">(#CHAPO|image_reduire{500,0})</div>]
+			[<div class="container">
+				<div class="main">
+					<div class="#EDIT{texte} texte">(#TEXTE)</div>
+				</div>
+			</div>]
+
+		</header>
+			<BOUCLE_whatwedo(RUBRIQUES) {id_trad=34} {lang} {tout}>
+				<INCLURE{fond=content/rubrique-what_we_do,id_rubrique,home=oui,env} />
+			</BOUCLE_whatwedo>
 	</section>
 
 	<BOUCLE_enfant(RUBRIQUES){id_trad IN #GET{id_trads}}{tout}{lang}>

@@ -695,6 +695,7 @@ body:not(.support_us) .support_us.page-body{
 
 .home {
 	.page-head {
+		background: @beige;
 		> header {
 			h1 {
 				visibility: hidden;
@@ -705,6 +706,24 @@ body:not(.support_us) .support_us.page-body{
 			font-size: 3.714285714em;
 
 			line-height: normal;
+		}
+		.main {
+			display: flex;
+			align-items: center;
+			padding : 1em 3em;
+			.texte{
+				width: 66%;
+			}
+			.boutons {
+				width: 33%;
+				text-align: right;
+				a {
+					display:block;
+					margin: 0 0 1em 5em;
+					color: @charcoal;
+				}
+			}
+
 		}
 	}
 }
@@ -720,35 +739,6 @@ body:not(.support_us) .support_us.page-body{
 	padding-left: 0;
 }
 .what_we_do {
-	.boutons-images {
-		.bouton-image{
-			position: relative;
-			text-align: center;
-			img {
-				border-radius: 11em;
-			}
-			.texte {
-				font-size: 1.4em;
-				color: @white;
-				display: block;
-				top: 50%;
-				width: 80%;
-				position: absolute;
-				padding: 0 5px;
-				transform: translate(-50%, -50%);
-				left: 50%;
-				line-height: normal;
-				text-transform: uppercase;
-				text-decoration: underline;
-				span {
-					display: block;
-					padding: 0 1.5em;
-					max-width: 290px;
-					margin: 0 auto;
-				}
-			}
-		}
-	}
 	> .main{
 		display:table;
 		width: 100%;
@@ -1060,6 +1050,7 @@ body.support_us {
 			display: none;
 		}
 		.main {
+
 			.boutons {
 				text-align: center;
 			}
@@ -1084,20 +1075,24 @@ body.support_us {
 				}
 			}
 		}
-		.boutons-images {
-			.bouton-image {
-				img {
-					display: none;
-				}
-				.texte {
-					font-size: 1.230769231em;
-					color: @orange;
-					text-transform: initial;
-					text-decoration: none;
-					span {
-						max-width: 100%;
-					}
-				}
+
+		.texte {
+			text-align: center;
+			font-size: 1.230769231em;
+			color: @orange;
+			text-transform: initial;
+			text-decoration: none;
+			p {
+				margin: 0;
+			}
+			> p:first-child {
+				color: @charcoal;
+			}
+		}
+		// crayon cause des problèmes pour la détection du premier p
+		.texte.crayon-init {
+			> p:nth-child(2) {
+				color: @charcoal;
 			}
 		}
 	}
