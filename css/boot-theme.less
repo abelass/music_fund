@@ -560,9 +560,8 @@ section.page-body {
 		margin-left: 0.4em;
 	}
 }
-.btn.facebook{
+.follow .btn{
 	.bouton(#e4e4e4);
-	background-image: url(images/icon-facebook.png);
 	background-position: center center;
 	background-repeat: no-repeat;
 	width:9px;
@@ -571,6 +570,19 @@ section.page-body {
 	span {
 		visibility: hidden;
 	}
+}
+
+.follow .btn.facebook {
+	background-image: url(images/icon-facebook.png);
+}
+
+
+.follow .btn.vimeo {
+	background-image: url(images/icon-vimeo.png);
+}
+
+.follow .btn.twitter {
+	background-image: url(images/icon-twitter.png);
 }
 
 .formulaire_menu_lang {
@@ -1231,6 +1243,8 @@ body.support_us {
 			.formulaire_menu_lang {
 				float: none;
 			}
+		}
+		.follow {
 			.btn {
 				float: none;
 				border-radius: 50px;
@@ -1264,7 +1278,7 @@ body.support_us {
 			> div:first-child {
 				margin-left: 0;
 			}
-			.btn.facebook {
+			.btn {
 				padding: 0.7em 1.2em;
 			}
 			#formulaire_menu_lang {
