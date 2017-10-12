@@ -1,22 +1,14 @@
-<div class="collapsible">
-	<INCLURE{fond=modeles/carte_gis,
-			autocenterandzoom=oui,
-			zoom=16,
-			limit='1000',
-			objets=organisations}/>
-</div>
 
 <B_projects_actives>
 #SET{total_boucle,#TOTAL_BOUCLE}
 	<div class="liste-detail projets">
 	#ANCRE_PAGINATION
-	<BOUCLE_projects_actives(ORGANISATIONS spip_mots_liens)
+	<BOUCLE_projects_actives(ORGANISATIONS)
 		{gis}
-		{id_mot=4000015}
 		{par num nom, nom}
 		{id_organisation!=#ENV{exclu,0}}
-		{pagination #ENV{pagination,20}}
-		{0,#ENV{limite,2}}>
+		{0, #ENV{limite,2}}
+		{pagination #ENV{pagination,20}}>
 	#SET{logo,(#LOGO_ORGANISATION_NORMAL|image_passe_partout{#ENV{width,565.5},#ENV{height,423}}|image_recadre{#ENV{width,565.5},#ENV{height,423}})}
 	<article class="row-fluid">
 		[<div class="span6 logo">(#COMPTEUR_BOUCLE|alterner{#GET{logo},''})</div>]
@@ -32,6 +24,6 @@
 		[<div class="span6 logo">(#COMPTEUR_BOUCLE|alterner{'',#GET{logo}})</div>]
 	</article>
 	</BOUCLE_projects_actives>
-		[<p class="pagination">(#PAGINATION)</p>]
+		[<div class="pagination">(#PAGINATION)</div>]
 	</div>
 </B_projects_actives>

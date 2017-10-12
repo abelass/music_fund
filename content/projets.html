@@ -3,6 +3,13 @@
 </header>
 
 <div class="main">
-	<INCLURE{fond=inclure/projets,limite=1000,width=726,height=544} />
+	<div class="collapsible">
+		<INCLURE{fond=modeles/carte_gis,
+				autocenterandzoom=oui,
+				zoom=16,
+				limit='1000',
+				objets=organisations}/>
+	</div>
+	<INCLURE{fond=inclure/projets,limite=1000,width=726,height=544,pagination=4,ajax,env} />
 </div>
 
