@@ -39,7 +39,6 @@ function music_fund_declarer_champs_extras($champs = array()) {
 		'options' => array(
 			'nom' => 'chapo',
 			'label' => _T('ecrire:info_chapeau'),
-			'class' => 'multilang',
 			'rows' => '3',
 			'sql' => 'text DEFAULT \'\' NOT NULL',
 			'rechercher_ponderation' => '2',
