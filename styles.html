@@ -2,8 +2,8 @@
 #SET{rubrique,''}
 <BOUCLE_article(ARTICLES){id_article}>
 	[(#SET{background_1,[url((#LOGO_ARTICLE_SURVOL|sinon{#LOGO_ARTICLE_NORMAL}
-		|image_passe_partout{1500,300}
-		|image_recadre{1500,300,'center','transparent'}
+		|image_passe_partout{1220,300}
+		|image_recadre{1220,300,'center','transparent'}
 		|extraire_attribut{src}))]}
 	)]
 	[(#GET{background_1}|?{
@@ -18,8 +18,8 @@
 	[(#COMPOSITION|in_array{#LISTE{home,news,support_us,contact}}|ou{#ID_TRAD|in_array{#LISTE{33,29}}}|?{
 			[(#GET{logo}|?{
 				[(#SET{background_1,[url((#GET{logo}
-				|image_passe_partout{1500,608}
-				|image_recadre{1500,608,'center','transparent'}
+				|image_passe_partout{1220,601}
+				|image_recadre{1220,601,'center','transparent'}
 				|extraire_attribut{src}))]
 			})]
 			[(#SET{background_2,linear-gradient(to bottom, #f5b527, #d95609)})]
@@ -34,8 +34,8 @@
 		,
 			[(#GET{logo}|?{
 				[(#SET{background_1,[url((#GET{logo}
-					|image_passe_partout{1500,300}
-					|image_recadre{1500,300,'center','transparent'}
+					|image_passe_partout{1220,300}
+					|image_recadre{1220,300,'center','transparent'}
 					|extraire_attribut{src}))]
 				})]
 				[(#SET{background_2,linear-gradient(to bottom, #506f6d, #2e4140)})]
@@ -48,8 +48,8 @@
 	<BOUCLE_team(RUBRIQUES){id_parent}{composition=team}{tout}>
 	#SET{logo, #LOGO_RUBRIQUE_SURVOL|sinon{#LOGO_RUBRIQUE_NORMAL}}
 	[(#SET{background_1,[url((#GET{logo}
-		|image_passe_partout{1500,620}
-		|image_recadre{1500,620,'center','transparent'}
+		|image_passe_partout{1220,620}
+		|image_recadre{1220,620,'center','transparent'}
 		|extraire_attribut{src}))]
 	})]
 .team.page-body {
@@ -63,8 +63,8 @@
 	[(#GET{logo}|oui)
 		[(#SET{background_1,
 			[url((#GET{logo}|
-				image_passe_partout{1500,300}
-				|image_recadre{1500,300,'center','transparent'}
+				image_passe_partout{1220,300}
+				|image_recadre{1220,300,'center','transparent'}
 				|extraire_attribut{src}))]
 		})]
 	]
@@ -80,8 +80,8 @@
 	[(#GET{logo}|oui)
 		[(#SET{background_1,
 			[url((#GET{logo}
-				|image_passe_partout{1500,300}
-				|image_recadre{1500,300,'center','transparent'}
+				|image_passe_partout{1220,300}
+				|image_recadre{1220,300,'center','transparent'}
 				|extraire_attribut{src}))]
 		})]
 	]
