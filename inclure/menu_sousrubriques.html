@@ -1,6 +1,6 @@
 <B_sous_menu>
 <nav>
-	<ul id="nav-menu" class="liste-items">
+	<ul[(#ENV{header}|oui) id="nav-menu"] class="liste-items">
 	<BOUCLE_sous_menu(RUBRIQUES){id_parent=#ID_RUBRIQUE}{tout}{par num titre}>
 		[(#ID_TRAD|>{0}|?{
 			#SET{id_trad,#ID_TRAD}
