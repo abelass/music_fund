@@ -26,7 +26,7 @@
 		#SET{id_trad,#ID_RUBRIQUE}
 	})]
 	<section class="clearfix  [(#COMPOSITION|sinon{rubrique})] page-body" id="rubrique-#GET{id_trad}">
-		<INCLURE{fond=content/#ENV{type-page}, id_rubrique, composition=#COMPOSITION, env,header='', breadcrumb='', home=oui} />
+		<INCLURE{fond=content/#ENV{type-page}, id_rubrique, composition=#COMPOSITION,env,header='',breadcrumb='',home=oui} />
 	</section>
 	</BOUCLE_enfant>
 </BOUCLE_principal>
