@@ -1,0 +1,30 @@
+<BOUCLE_content(RUBRIQUES){id_rubrique}{tout}{par num titre}>
+[(#ID_TRAD|>{0}|?{#SET{id_trad,#ID_TRAD},#SET{id_trad,#ID_RUBRIQUE}})]
+<header class="cartouche">
+	[(#ENV{breadcrumb}|oui)
+		<INCLURE{fond=breadcrumb/#ENV{type-page},env} />
+	]
+	<h1 class="#EDIT{titre}">[(#TITRE_SECONDAIRE|sinon{#TITRE})]</h1>
+</header>
+
+<div class="main">
+[(#LOGO_RUBRIQUE_NORMAL|image_passe_partout{564,383}|image_recadre{564,383})]
+[<div class="texte texte">(#TEXTE)</div>]
+</div>
+
+<div class="carte">
+	<INCLURE{fond=modeles/carte_gis,
+		autocenterandzoom=oui,
+		id_rubrique,
+		zoom=16,
+		id_trad,
+		objets=rubriques}/>
+</div>
+[<aside>
+	[(#REM) Gestion du portfolio et des documents ]
+	(#INCLURE{fond=inclure/documents,id_rubrique}|sinon{#INCLURE{fond=inclure/documents,id_rubrique=#ID_TRAD}})
+</aside>]
+[<footer>
+<div class="notes"><h2><:info_notes:></h2>(#NOTES)</div>
+</footer>]
+</BOUCLE_content>
