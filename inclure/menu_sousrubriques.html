@@ -1,5 +1,5 @@
 <B_sous_menu>
-<nav>
+<nav data-spy="affix" data-offset-top="40">
 	<ul[(#ENV{header}|oui) id="nav-menu"] class="liste-items">
 	<BOUCLE_sous_menu(RUBRIQUES){id_parent=#ID_RUBRIQUE}{tout}{par num titre}>
 		[(#ID_TRAD|>{0}|?{
